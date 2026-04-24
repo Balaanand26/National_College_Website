@@ -66,28 +66,36 @@ document.addEventListener("DOMContentLoaded", () => {
   counter("count4", 0, 100, 3000);
 });
 
+// Loading page
 
 window.onload = function() {
     const preloader = document.getElementById('preloader');
 
+    // 🔒 Lock scroll initially
+    document.body.classList.add("no-scroll");
+
     // Check if loader already shown in this session
     if (sessionStorage.getItem("loaderShown")) {
-        // Already shown → hide immediately
         preloader.style.display = "none";
+
+        // 🔓 Unlock scroll
+        document.body.classList.remove("no-scroll");
         return;
     }
 
-    // First time (or refresh) → show loader
     setTimeout(function() {
 
         preloader.style.opacity = '0';
         preloader.style.visibility = 'hidden';
 
-        // Mark as shown
         sessionStorage.setItem("loaderShown", "true");
 
         setTimeout(() => {
             preloader.style.display = 'none';
+
+            // 🔓 Unlock scroll after loader gone
+            document.body.classList.remove("no-scroll");
+
         }, 1000);
 
     }, 2300);

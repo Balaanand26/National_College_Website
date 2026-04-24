@@ -11,6 +11,7 @@ body {
 }
 section{
   width: 100%;
+  overflow: hidden;
 }
 p{
   font-size: 16px;
@@ -231,7 +232,7 @@ header {
 }
 .overlay {
   animation-name: animateText;
-  animation-duration: 5s;
+  animation-duration: 1s;
 }
 
 @keyframes animateText {
