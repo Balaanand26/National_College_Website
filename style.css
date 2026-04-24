@@ -16,6 +16,61 @@ body {
 }
 section{
   width: 100%;
+  overflow: hidden;
+}
+
+/*  LOADING VIDEO */
+
+#preloader {
+    position: fixed;
+    inset: 0; /* top, left, right, bottom = 0 */
+    width: 100%;
+    height: 100dvh; /* better for mobile (dynamic viewport) */
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    overflow: hidden;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+/* Fade out animation */
+.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Main content */
+#main-content {
+    display: block !important;
+}
+
+/* Video */
+#loader-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+@media (max-width: 768px) {
+    #loader-video {
+        object-fit: cover; /* keep full screen */
+    }
+}
+
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    #loader-video {
+        object-fit: cover;
+    }
+}
+
+@media (min-width: 1025px) {
+    #loader-video {
+        object-fit: cover;
+    }
 }
 
 
@@ -349,7 +404,8 @@ header {
 }
 @media (max-width: 768px) {
   .heroContent {
-    margin-top: 100px;
+    margin-top: 30px;
+    margin-bottom: 30px;
   }
 }
 @media (max-width: 425px) {
@@ -357,12 +413,17 @@ header {
     margin-top: 50px;
   }
 }
+@media (max-width: 321px){
+  .hero-bg-img{
+    width: 100%;
+  }
+}
 
 /* =============================================
    ABOUT SECTION
    ============================================= */
 .about {
-  margin-top: 100px;
+  margin-top: 10px;
   display: flex;
   width: 100%;
   height: 90vh;
@@ -451,13 +512,13 @@ header {
     width: 40%;
   }
   .about-content h1 {
-    font-size: 25px;
+    font-size: 27px;
   }
   .about-content p {
     margin-top: 0px;
     width: 300px;
 
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 

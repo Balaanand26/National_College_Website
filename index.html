@@ -35,6 +35,13 @@
   </head>
 
   <body>
+    <!-- Loading Video Overlay -->
+    <div id="preloader">
+      <video autoplay muted loop playsinline id="loader-video">
+        <source src="./Images/Scene-1.mp4" type="video/mp4" />
+      </video>
+    </div>
+    
     <!-- TOPBAR -->
     <div class="topbar">
       <div class="container d-flex justify-content-between align-items-center">
@@ -281,13 +288,15 @@
       </section>
 
       <!-- ===== ACADEMIC SECTION ===== -->
-      <section style="margin-top: 20px">
+      <section style="margin: 20px 0px">
         <div class="container">
           <div>
             <h2 class="ac-head" data-aos="fade-right" data-aos-duration="1000">
               Academic's
             </h2>
           </div>
+        </div>
+        <div class="container-fluid">
           <div class="AcademicBtn">
             <ul
               class="nav nav-pills mb-3 d-flex justify-content-center gap-1 gap-md-5 gap-lg-5"
@@ -336,7 +345,7 @@
               role="tabpanel"
               tabindex="0"
             >
-              <div class="container AcademicContainer">
+              <div class="container-fluid AcademicContainer">
                 <div class="row d-flex justify-content-center">
                   <div class="col-12 col-lg-4 col-xl-3 col-md-6">
                     <div class="academicCard">
@@ -439,7 +448,7 @@
               role="tabpanel"
               tabindex="0"
             >
-              <div class="container AcademicContainer">
+              <div class="container-fluid AcademicContainer">
                 <div class="row">
                   <div class="col-12 col-lg-4 col-xl-3 col-md-6">
                     <div class="academicCard">
@@ -1044,7 +1053,7 @@
       <section class="ContactSection">
         <div class="container">
           <div class="row">
-            <div class="col-12 col-lg-4">
+            <div class="col-12 col-lg-4 text-center">
               <div class="d-flex align-items-center gap-2">
                 <div>
                   <img src="./Images/UpdLogo.png" alt="" style="width: 150px" />
@@ -1055,7 +1064,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-12 col-lg-4 mt-4 mt-lg-0">
+            <div class="col-12 col-md-6 col-lg-4 mt-4 mt-lg-0">
               <h3>Madurai Main Campus</h3>
               <p>
                 <span
@@ -1074,7 +1083,7 @@
                 Madurai, Tamilnadu-625002
               </p>
             </div>
-            <div class="col-12 col-lg-4 mt-4 mt-lg-0">
+            <div class="col-12 col-md-6 col-lg-4 mt-4 mt-lg-0">
               <h3>Tirunelveli Campus</h3>
               <p>
                 <span
@@ -1169,7 +1178,9 @@
                   </a>
                 </div>
                 <div>
-                  <a href="https://www.linkedin.com/in/national-college-madurai-b7520117b/">
+                  <a
+                    href="https://www.linkedin.com/in/national-college-madurai-b7520117b/"
+                  >
                     <i class="fa-brands fa-linkedin"></i>
                   </a>
                 </div>
@@ -1260,8 +1271,12 @@
                 Management and Science
               </p>
               <div class="d-flex justify-content-center gap-3 mt-3">
-                <a href="./Private & Policy/private.html"><p class="fw-bold">Privacy Policy</p></a>
-                <a href="./Teams & Conditions/teams.html"><p class="fw-bold">Terms and conditions</p></a>
+                <a href="./Private & Policy/private.html"
+                  ><p class="fw-bold">Privacy Policy</p></a
+                >
+                <a href="./Teams & Conditions/teams.html"
+                  ><p class="fw-bold">Terms and conditions</p></a
+                >
               </div>
             </div>
           </div>
