@@ -279,92 +279,135 @@
             <div class="col-12 col-lg-6">
               <div class="row">
                 <div class="col-12 mx-3 mb-5">
-                  <div class="mb-5 mt-5 my-3 mt-lg-0 ">
+                  <div class="mb-5 mt-5 my-3 mt-lg-0">
                     <div class="formBtn1">
-                      <button >Personal Information</button>
-                      <button >Question Paper</button>
+                      <button>Personal Information</button>
+                      <button class="mt-3 ms-0 ms-md-3 ms-lg-4 mt-lg-0">
+                        Question Paper
+                      </button>
                     </div>
                   </div>
-                  <div>
-                    <form action="" class="formContainer">
-                      <h3 style="color: #7e1416;" class="fw-bolder mb-3">Information about you</h3>
+                  <div class="formTable">
+                    <form id="myForm2" class="formContainer">
+                      <h3 style="color: #7e1416" class="fw-bolder mb-3">
+                        Information about you
+                      </h3>
 
+                      <!-- Name -->
                       <input
-                        class="w-100 p-2 mb-3"
+                        id="name"
+                        class="w-100 p-2 mb-1"
                         type="text"
                         placeholder="Name"
-                      /><br />
+                      />
+                      <small id="nameError">Enter valid name</small>
 
+                      <!-- Email -->
                       <input
-                        class="w-100 p-2 mb-3"
+                        id="email"
+                        class="w-100 p-2 mb-1 mt-2"
                         type="text"
                         placeholder="Email ID"
                       />
+                      <small id="emailError">Enter valid email</small>
 
+                      <!-- Mobile -->
                       <input
-                        class="w-100 p-2"
-                        type="number"
+                        id="mobile"
+                        class="w-100 p-2 mb-1 mt-2"
+                        type="text"
                         placeholder="Mobile Number"
                       />
+                      <small id="mobileError">Enter valid mobile</small>
+
+                      <!-- Gender -->
                       <div class="d-flex mt-3">
                         <div class="d-flex flex-column w-50">
-                          <label for="" style="color: #7e1416;" class="fw-bolder">Gender</label>
+                          <label style="color: #7e1416" class="fw-bolder"
+                            >Gender</label
+                          >
                           <div class="d-flex gap-4 mt-2">
-                            <label for=""> <input type="radio" />Male </label>
-                            <label for=""> <input type="radio" />Female </label>
+                            <label
+                              ><input type="radio" name="gender" value="Male" />
+                              Male</label
+                            >
+                            <label
+                              ><input
+                                type="radio"
+                                name="gender"
+                                value="Female"
+                              />
+                              Female</label
+                            >
                           </div>
+                          <small id="genderError">Select gender</small>
                         </div>
+
+                        <!-- Nationality -->
                         <div class="d-flex flex-column w-50">
-                          <label for="" style="color: #7e1416;" class="fw-bolder">Nationality</label>
+                          <label style="color: #7e1416" class="fw-bolder"
+                            >Nationality</label
+                          >
                           <div class="d-flex gap-4 mt-2">
-                            <label for=""> <input type="radio" />Indian </label>
-                            <label for=""> <input type="radio" />Others </label>
+                            <label
+                              ><input
+                                type="radio"
+                                name="nation"
+                                value="Indian"
+                              />
+                              Indian</label
+                            >
+                            <label
+                              ><input
+                                type="radio"
+                                name="nation"
+                                value="Others"
+                              />
+                              Others</label
+                            >
                           </div>
+                          <small id="nationError">Select nationality</small>
                         </div>
                       </div>
 
-                      <label for="" class="my-2">Date of Birth</label><br />
+                      <!-- DOB -->
+                      <label class="my-2">Date of Birth</label>
+                      <input id="dob" class="w-100 p-2 mb-1" type="date" />
+                      <small id="dobError">Select DOB</small>
+
+                      <!-- Parent Mobile -->
                       <input
-                        class="w-100 p-2 mb-3"
-                        type="date"
-                        placeholder="DD-MM-YY"
-                      />
-                      <input
-                        class="w-100 p-2 mb-3"
+                        id="parentMobile"
+                        class="w-100 p-2 mb-1 mt-2"
                         type="text"
-                        placeholder="Father/Mother/Guardian Mobile Number"
+                        placeholder="Parent Mobile Number"
                       />
-                      <select
-                        class="w-100 p-2 mb-3"
-                        type="text"
-                        name="Course"
-                        id="Course"
-                      >
-                        <option value="" disabled selected hidden>
-                          Course
-                        </option>
-                        <option value="BBA Airlines & Airport Management">
-                          BBA Airlines & Airport Management
-                        </option>
-                        <option value="BBA International Business">
-                          BBA International Business
-                        </option>
-                        <option value="BBA Shipping and Logistics">
-                          BBA Shipping and Logistics
-                        </option>
-                        <option value="B.Com Banking & Finance">
-                          B.Com Banking & Finance
-                        </option>
+                      <small id="parentMobileError">Enter valid number</small>
+
+                      <!-- Course -->
+                      <select id="course" class="w-100 p-2 mb-1 mt-2">
+                        <option value="">Course</option>
+                        <option>BBA Airlines & Airport Management</option>
+                        <option>BBA International Business</option>
+                        <option>BBA Shipping and Logistics</option>
+                        <option>B.Com Banking & Finance</option>
                       </select>
+                      <small id="courseError">Select course</small>
+
+                      <!-- Address -->
                       <textarea
-                        class="w-100 h-25 p-2 text-black"
-                        name=""
-                        id=""
+                        id="address"
+                        class="w-100 p-2 mb-1 mt-2"
                         placeholder="Address"
                       ></textarea>
+                      <small id="addressError">Enter address</small>
+
                       <div class="text-center mt-4 formBtn">
-                        <button class="">SUBMIT</button>
+                        <button type="submit">SUBMIT</button>
                       </div>
+
+                      <!-- Message -->
+                      <div id="formMessage2" class="text-center mt-1"></div>
                     </form>
                   </div>
                 </div>
@@ -533,11 +576,12 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
-     <script>
+    <script>
       AOS.init({
         duration: 1000,
         once: false,
       });
     </script>
+    <script src="./scholar.js"></script>
   </body>
 </html>

@@ -406,6 +406,13 @@ td{
   background-color: #7e1416 !important;
   color: white !important;
 }
+small {
+  color: #ddb337;
+  display: none;
+}
+.error {
+  border: 1px solid #ddb337;
+}
 
 
 /* ================== Footer ==================== */

@@ -3,8 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>B.Com Banking & Finance
-</title>
+    <title>B.Com Banking & Finance</title>
     <!-- Icon Link -->
     <link rel="icon" href="../Images/UpdLogo.png" href="#" />
 
@@ -31,8 +30,7 @@
     />
 
     <!-- AOS Animation -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" 
-    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
   <body>
     <!-- TOPBAR -->
@@ -216,7 +214,8 @@
           <div class="row">
             <div class="col-lg-6">
               <div>
-                <img data-aos="fade-right"
+                <img
+                  data-aos="fade-right"
                   src="./images/f2.png"
                   width="100%"
                   height="600px"
@@ -245,7 +244,7 @@
                   </div>
                 </div>
                 <div class="col-12">
-                  <div data-aos="fade-left" data-aos-duration="1500" >
+                  <div data-aos="fade-left" data-aos-duration="1500">
                     <h3 class="headText">Accreditation</h3>
                     <p class="text-secondary">
                       National Institute Of Management & Science in
@@ -257,7 +256,7 @@
                   </div>
                 </div>
                 <div class="col-12">
-                  <div data-aos="fade-left" data-aos-duration="2000" >
+                  <div data-aos="fade-left" data-aos-duration="2000">
                     <h3 class="headText">Eligibility</h3>
                     <table class="w-100">
                       <thead>
@@ -286,7 +285,7 @@
         <div class="container" style="margin-top: 50px">
           <div class="row">
             <div class="col-12">
-              <div data-aos="fade-up" >
+              <div data-aos="fade-up">
                 <h3 class="textHeading">Salient Features Of The Courses</h3>
                 <div>
                   <h4 class="text-black">Industry-Relevant Curriculum :</h4>
@@ -396,58 +395,119 @@
           </div>
         </div>
       </section>
+      <!-- FORMS -->
       <section>
         <div class="container contImg position-relative">
           <div
             class="position-absolute w-100 h-100 d-flex justify-content-end align-items-center top-0 end-0 me-lg-5 me-md-3 me-2"
           >
-            <div class="formContent" data-aos="zoom-in" data-aos-duration="1500">
-              <form action="">
-                <input class="w-100" type="text" placeholder="Name" /><br />
+            <div
+              class="formContent"
+              data-aos="zoom-in"
+              data-aos-duration="1500"
+            >
+              <form id="myForm">
+                <!-- Name -->
+                <input class="w-100" type="text" id="name" placeholder="Name" />
+                <small id="nameError">Name must contain only Alphabets</small>
+
+                <!-- Mobile -->
                 <input
                   class="w-100"
                   type="text"
+                  id="mobile"
                   placeholder="Mobile Number"
-                /><br />
-                <input class="w-100" type="text" placeholder="Email" /><br />
-                <div class="d-flex gap-2">
-                  <select class="w-50" type="text" name="State" id="State">
-                    <option value="" disabled selected hidden>State</option>
-                    <option value="TamilNadu">TamilNadu</option>
-                    <option value="Kerala">Kerala</option>
-                    <option value="Karnataka">Karnataka</option>
-                    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
-                  </select>
-                  <select class="w-50" type="text" name="City" id="City">
-                    <option value="" disabled selected hidden>City</option>
-                    <option value="Madurai">Madurai</option>
-                    <option value="Coimbatore">Coimbatore</option>
-                    <option value="Trichy">Trichy</option>
-                    <option value="Chennai">Chennai</option>
-                  </select>
-                </div>
-                <select class="w-100" type="text" name="Course" id="Course">
-                  <option value="" disabled selected hidden>Course</option>
-                  <option value="BBA Airlines & Airport Management">
-                    BBA Airlines & Airport Management
-                  </option>
-                  <option value="BBA International Business">
-                    BBA International Business
-                  </option>
-                  <option value="BBA Shipping and Logistics">
-                    BBA Shipping and Logistics
-                  </option>
-                  <option value="B.Com Banking & Finance">
-                    B.Com Banking & Finance
-                  </option></select
-                ><br />
+                />
+                <small id="mobileError"
+                  >Enter valid 10-digit mobile number</small
+                >
 
-                <p class="text-white">
-                  <span><input type="checkbox" /></span> I agree to receive
+                <!-- Email -->
+                <input
+                  class="w-100"
+                  type="text"
+                  id="email"
+                  placeholder="Email"
+                />
+                <small id="emailError">Enter valid email address</small>
+
+                <!-- State & City -->
+                <div class="d-flex gap-2">
+                  <div class="w-50">
+                    <select class="w-100" id="state">
+                      <option value="">Select State</option>
+
+                      <option value="AndhraPradesh">Andhra Pradesh</option>
+                      <option value="ArunachalPradesh">
+                        Arunachal Pradesh
+                      </option>
+                      <option value="Assam">Assam</option>
+                      <option value="Bihar">Bihar</option>
+                      <option value="Chhattisgarh">Chhattisgarh</option>
+                      <option value="Goa">Goa</option>
+                      <option value="Gujarat">Gujarat</option>
+                      <option value="Haryana">Haryana</option>
+                      <option value="HimachalPradesh">Himachal Pradesh</option>
+                      <option value="JammuKashmir">Jammu Kashmir</option>
+                      <option value="Jharkhand">Jharkhand</option>
+                      <option value="Kerala">Kerala</option>
+                      <option value="Karnataka">Karnataka</option>
+                      <option value="MadhyaPradesh">Madhya Pradesh</option>
+                      <option value="Maharashtra">Maharashtra</option>
+                      <option value="Manipur">Manipur</option>
+                      <option value="Meghalaya">Meghalaya</option>
+                      <option value="Mizoram">Mizoram</option>
+                      <option value="Nagaland">Nagaland</option>
+                      <option value="Odisha">Odisha</option>
+                      <option value="Punjab">Punjab</option>
+                      <option value="Rajasthan">Rajasthan</option>
+                      <option value="Sikkim">Sikkim</option>
+                      <option value="TamilNadu">Tamil Nadu</option>
+                      <option value="Telangana">Telangana</option>
+                      <option value="Tripura">Tripura</option>
+                      <option value="UttarPradesh">Uttar Pradesh</option>
+                      <option value="Uttarakhand">Uttarakhand</option>
+                      <option value="WestBengal">West Bengal</option>
+                    </select>
+                    <small id="stateError">Please select a state</small>
+                  </div>
+
+                  <div class="w-50">
+                    <select class="w-100" id="city">
+                      <option value="">Select City</option>
+                    </select>
+                    <small id="cityError">Please select a City</small>
+                  </div>
+                </div>
+
+                <!-- Course -->
+                <select class="w-100" id="course">
+                  <option value="">Course</option>
+                  <option>BBA Airlines & Airport Management</option>
+                  <option>BBA International Business</option>
+                  <option>BBA Shipping and Logistics</option>
+                  <option>B.Com Banking & Finance</option>
+                  <option>B.Sc Fashion Design</option>
+                  <option>MBA Airlines & Airport Management</option>
+                  <option>MBA - HR | Finance | Marketing | Operations</option>
+                  <option>Airlines & Airport Management</option>
+                  <option>Banking</option>
+                  <option>Fashion Design</option>
+                  <option>Logistics</option>
+                </select>
+                <small id="courseError">Please select a course</small>
+
+                <!-- Checkbox -->
+                <div class="text-white">
+                  <input type="checkbox" id="agree" /> I agree to receive
                   information regarding my enquiry from National Institute of
                   Management and Science.
-                </p>
-                <button class="subBtn">SUBMIT</button>
+                  <small id="agreeError"
+                    >You must agree before submitting</small
+                  >
+                </div>
+
+                <button type="submit" class="subBtn mt-2">SUBMIT</button>
               </form>
             </div>
           </div>
@@ -489,7 +549,9 @@
                   </a>
                 </div>
                 <div>
-                  <a href="https://www.linkedin.com/in/national-college-madurai-b7520117b/">
+                  <a
+                    href="https://www.linkedin.com/in/national-college-madurai-b7520117b/"
+                  >
                     <i class="fa-brands fa-linkedin"></i>
                   </a>
                 </div>
@@ -580,8 +642,12 @@
                 Management and Science
               </p>
               <div class="d-flex justify-content-center gap-3 mt-3">
-                <a href="../Private & Policy/private.html"><p class="fw-bold">Privacy Policy</p></a>
-                <a href="../Teams & Conditions/teams.html"><p class="fw-bold">Terms and conditions</p></a>
+                <a href="../Private & Policy/private.html"
+                  ><p class="fw-bold">Privacy Policy</p></a
+                >
+                <a href="../Teams & Conditions/teams.html"
+                  ><p class="fw-bold">Terms and conditions</p></a
+                >
               </div>
             </div>
           </div>

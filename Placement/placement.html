@@ -476,42 +476,109 @@
           </div>
         </div>
       </section>
-      <!-- Form Section -->
-      <section>
-        <div class="container contImg position-relative">
-          <div
-            class="position-absolute w-100 h-100 d-flex justify-content-end align-items-center top-0 end-0 me-lg-5 me-md-3 me-2"
-          >
-            <div class="formContent">
-              <form action="">
-                <input class="w-100" type="text" placeholder="Name" /><br />
-                <input
-                  class="w-100"
-                  type="text"
-                  placeholder="Mobile Number"
-                /><br />
-                <input class="w-100" type="text" placeholder="Email" /><br />
-                <div class="d-flex gap-2">
-                  <input class="w-50" type="text" placeholder="State" />
-                  <input class="w-50" type="text" placeholder="City" />
-                </div>
-                <input
-                  class="w-100"
-                  type="text"
-                  placeholder="Select Course"
-                /><br />
+    <!-- FORMS -->
+    <section>
+      <div class="container contImg position-relative">
+        <div
+          class="position-absolute w-100 h-100 d-flex justify-content-end align-items-center top-0 end-0 me-lg-5 me-md-3 me-2"
+        >
+          <div class="formContent" data-aos="zoom-in" data-aos-duration="1500">
+            <form id="myForm">
+              <!-- Name -->
+              <input class="w-100" type="text" id="name" placeholder="Name" />
+              <small id="nameError">Name must contain only Alphabets</small>
 
-                <p class="text-secondary">
-                  <span><input type="checkbox" /></span> I agree to receive
-                  information regarding my enquiry from National Institute of
-                  Management and Science.
-                </p>
-                <button class="subBtn">SUBMIT</button>
-              </form>
-            </div>
+              <!-- Mobile -->
+              <input
+                class="w-100"
+                type="text"
+                id="mobile"
+                placeholder="Mobile Number"
+              />
+              <small id="mobileError">Enter valid 10-digit mobile number</small>
+
+              <!-- Email -->
+              <input class="w-100" type="text" id="email" placeholder="Email" />
+              <small id="emailError">Enter valid email address</small>
+
+              <!-- State & City -->
+              <div class="d-flex gap-2">
+                <div class="w-50">
+                  <select class="w-100" id="state">
+                    <option value="">Select State</option>
+
+                    <option value="AndhraPradesh">Andhra Pradesh</option>
+                    <option value="ArunachalPradesh">Arunachal Pradesh</option>
+                    <option value="Assam">Assam</option>
+                    <option value="Bihar">Bihar</option>
+                    <option value="Chhattisgarh">Chhattisgarh</option>
+                    <option value="Goa">Goa</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="Haryana">Haryana</option>
+                    <option value="HimachalPradesh">Himachal Pradesh</option>
+                    <option value="JammuKashmir">Jammu Kashmir</option>
+                    <option value="Jharkhand">Jharkhand</option>
+                    <option value="Kerala">Kerala</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="MadhyaPradesh">Madhya Pradesh</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Manipur">Manipur</option>
+                    <option value="Meghalaya">Meghalaya</option>
+                    <option value="Mizoram">Mizoram</option>
+                    <option value="Nagaland">Nagaland</option>
+                    <option value="Odisha">Odisha</option>
+                    <option value="Punjab">Punjab</option>
+                    <option value="Rajasthan">Rajasthan</option>
+                    <option value="Sikkim">Sikkim</option>
+                    <option value="TamilNadu">Tamil Nadu</option>
+                    <option value="Telangana">Telangana</option>
+                    <option value="Tripura">Tripura</option>
+                    <option value="UttarPradesh">Uttar Pradesh</option>
+                    <option value="Uttarakhand">Uttarakhand</option>
+                    <option value="WestBengal">West Bengal</option>
+                  </select>
+                  <small id="stateError">Please select a state</small>
+                </div>
+
+                <div class="w-50">
+                  <select class="w-100" id="city">
+                    <option value="">Select City</option>
+                  </select>
+                  <small id="cityError">Please select a City</small>
+                </div>
+              </div>
+
+              <!-- Course -->
+              <select class="w-100" id="course">
+                <option value="">Course</option>
+                <option>BBA Airlines & Airport Management</option>
+                <option>BBA International Business</option>
+                <option>BBA Shipping and Logistics</option>
+                <option>B.Com Banking & Finance</option>
+                <option>B.Sc Fashion Design</option>
+                <option>MBA Airlines & Airport Management</option>
+                <option>MBA - HR | Finance | Marketing | Operations</option>
+                <option>Airlines & Airport Management</option>
+                <option>Banking</option>
+                <option>Fashion Design</option>
+                <option>Logistics</option>
+              </select>
+              <small id="courseError">Please select a course</small>
+
+              <!-- Checkbox -->
+              <div class="text-white">
+                <input type="checkbox" id="agree" /> I agree to receive
+                information regarding my enquiry from National Institute of
+                Management and Science.
+                <small id="agreeError">You must agree before submitting</small>
+              </div>
+
+              <button type="submit" class="subBtn mt-2">SUBMIT</button>
+            </form>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
     </main>
 
     <!-- Footer -->

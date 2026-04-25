@@ -356,7 +356,13 @@ td{
   border-radius: 10px;
 }
 
-
+small {
+  color: #ddb337;
+  display: none;
+}
+.error {
+  border: 1px solid #ddb337;
+}
 
 
 /* ================== Footer ==================== */

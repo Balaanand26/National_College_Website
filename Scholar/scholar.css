@@ -361,7 +361,6 @@ textarea::placeholder {
 }
 .formBtn1 button:nth-child(2){
   cursor: not-allowed;
-  margin-left: 10px;
 }
 
 
@@ -376,6 +375,16 @@ textarea::placeholder {
 }
 .formContent{
     background-color: #7e1416;
+}
+.formTable{
+  padding: 0px 20px 0px 0px ;
+}
+small {
+  color: #7e1416;
+  display: none;
+}
+.error {
+  border: 1px solid #ddb337;
 }
 
 /* ================== Footer ==================== */
