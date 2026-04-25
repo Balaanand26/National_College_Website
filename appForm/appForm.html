@@ -63,7 +63,7 @@
       >
         <div class="container">
           <!-- Logo -->
-          <a class="navbar-brand" href="./index.html">
+          <a class="navbar-brand" href="../index.html">
             <div class="d-flex align-items-center gap-2 logoContent">
               <img src="../Images/UpdLogo.png" width="60" alt="NIMS Logo" />
               <div>
@@ -196,137 +196,164 @@
     <main>
       <section>
         <div class="container my-5">
-          <div class="text-center FormHeading">
-            <h1>National Institute of management and science</h1>
-            <h3 class="mt-3">Application Form</h3>
-          </div>
-          <div class="row">
-            <div class="col-12 FormHeadings">
-              <h4>PERSONAL INFORMATION</h4>
+          <form id="mainForm">
+            <div class="text-center FormHeading">
+              <h1>National Institute of management and science</h1>
+              <h3 class="mt-3">Application Form</h3>
             </div>
-            <div class="col-12 col-lg-6 FormInput">
-              <label for="">Name of the Applicant: </label><br />
-              <input type="text" placeholder="Mr/Ms/Mrs" />
-            </div>
-            <div class="col-12 col-lg-6 FormInput">
-              <label for="">D.O.B: </label><br />
-              <input type="date" placeholder="dd-mm-yyyy" />
-            </div>
-            <div class="col-12 col-lg-6 FormInput">
-              <label for="">Nationality : </label><br />
-              <input type="text" placeholder="" />
-            </div>
-            <div class="col-12 col-lg-6 FormInput">
-              <label for="">Marital Status : </label><br />
-              <input type="text" placeholder="Married (or) Un-Married" />
-            </div>
-            <div class="col-12 FormInput">
-              <label for="">Address : </label><br />
-              <input type="text" placeholder="" />
-            </div>
-            <div class="col-12 col-lg-3 FormInput">
-              <label for="">Sex : </label><br />
-              <div class="checkBoxInput">
-                <label class="radioItem">
-                  <input type="radio" name="gender" value="male" />
-                  Male
-                </label>
 
-                <label class="radioItem">
-                  <input type="radio" name="gender" value="female" />
-                  Female
-                </label>
+            <div class="row">
+              <div class="col-12 FormHeadings mb-2">
+                <h4>PERSONAL INFORMATION</h4>
+              </div>
+
+              <div class="col-12 col-lg-6 FormInput">
+                <label>Name of the Applicant: </label><br />
+                <input type="text" name="name" />
+              </div>
+
+              <div class="col-12 col-lg-6 FormInput">
+                <label>D.O.B: </label><br />
+                <input type="date" name="dob" />
+              </div>
+
+              <div class="col-12 col-lg-6 FormInput">
+                <label>Nationality : </label><br />
+                <input type="text" name="nationality" />
+              </div>
+
+              <div class="col-12 col-lg-6 FormInput">
+                <label>Marital Status : </label><br />
+                <input type="text" name="marital" />
+              </div>
+
+              <div class="col-12 FormInput">
+                <label>Address : </label><br />
+                <input type="text" name="address" />
+              </div>
+
+              <div class="col-12 col-lg-3 FormInput">
+                <label>Sex : </label><br />
+                <div class="checkBoxInput">
+                  <label class="radioItem">
+                    <input type="radio" name="gender" value="male" /> Male
+                  </label>
+                  <label class="radioItem">
+                    <input type="radio" name="gender" value="female" /> Female
+                  </label>
+                </div>
+              </div>
+
+              <div class="col-12 col-lg-3 FormInput">
+                <label>State : </label><br />
+                <input type="text" name="state" />
+              </div>
+
+              <div class="col-12 col-lg-3 FormInput">
+                <label>City : </label><br />
+                <input type="text" name="city" />
+              </div>
+
+              <div class="col-12 col-lg-3 FormInput">
+                <label>Pincode : </label><br />
+                <input type="text" name="pincode" />
+              </div>
+
+              <div class="col-12 col-lg-6 FormInput">
+                <label>Email : </label><br />
+                <input type="text" name="email" />
+              </div>
+
+              <div class="col-12 col-lg-3 FormInput">
+                <label>Mobile : </label><br />
+                <input type="text" name="mobile" />
+              </div>
+
+              <div class="col-12 col-lg-3 FormInput">
+                <label>Alternative Mobile : </label><br />
+                <input type="text" name="altMobile" />
               </div>
             </div>
-            <div class="col-12 col-lg-3 FormInput">
-              <label for="">State : </label><br />
-              <input type="text" placeholder="" />
+
+            <!-- EDUCATION -->
+            <div class="row">
+              <div class="col-12 FormHeadings mb-2">
+                <h4>EDUCATIONAL INFORMATION</h4>
+              </div>
+
+              <div class="col-12 col-lg-6 FormInput">
+                <label>course : </label><br />
+                <input type="text" name="course" />
+              </div>
+
+              <div class="col-12 col-lg-6 FormInput">
+                <label>Board/University: </label><br />
+                <input type="text" name="university" />
+              </div>
+
+              <div class="col-12 col-lg-6 FormInput">
+                <label>Year of Passing : </label><br />
+                <input type="text" name="year" />
+              </div>
+
+              <div class="col-12 col-lg-6 FormInput">
+                <label>Percentage of Marks : </label><br />
+                <input type="text" name="marks" />
+              </div>
             </div>
-            <div class="col-12 col-lg-3 FormInput">
-              <label for="">City : </label><br />
-              <input type="text" placeholder="" />
+
+            <!-- PARENTS -->
+            <div class="row">
+              <div class="col-12 FormHeadings mb-2">
+                <h4>EDUCATIONAL INFORMATION</h4>
+              </div>
+
+              <div class="col-12 col-lg-6 FormInput">
+                <label>Father’s Name : </label><br />
+                <input type="text" name="fatherName" />
+              </div>
+
+              <div class="col-12 col-lg-6 FormInput">
+                <label>Occupation/Title : </label><br />
+                <input type="text" name="fatherJob" />
+              </div>
+
+              <div class="col-12 col-lg-6 FormInput">
+                <label>Mobile : </label><br />
+                <input type="text" name="fatherMobile" />
+              </div>
+
+              <div class="col-12 col-lg-6 FormInput">
+                <label>Telephone : </label><br />
+                <input type="text" name="fatherPhone" />
+              </div>
+
+              <div class="col-12 col-lg-6 FormInput">
+                <label>Mother’s Name : </label><br />
+                <input type="text" name="motherName" />
+              </div>
+
+              <div class="col-12 col-lg-6 FormInput">
+                <label>Occupation/Title : </label><br />
+                <input type="text" name="motherJob" />
+              </div>
+
+              <div class="col-12 col-lg-6 FormInput">
+                <label>Mobile : </label><br />
+                <input type="text" name="motherMobile" />
+              </div>
+
+              <div class="col-12 col-lg-6 FormInput">
+                <label>Telephone : </label><br />
+                <input type="text" name="motherPhone" />
+              </div>
+
+              <div class="FormBtn text-center mt-3">
+                <button type="submit">SUBMIT</button>
+              </div>
+
             </div>
-            <div class="col-12 col-lg-3 FormInput">
-              <label for="">Pincode : </label><br />
-              <input type="text" placeholder="" />
-            </div>
-            <div class="col-12 col-lg-6 FormInput">
-              <label for="">Email : </label><br />
-              <input type="text" placeholder="" />
-            </div>
-            <div class="col-12 col-lg-3 FormInput">
-              <label for="">Mobile : </label><br />
-              <input type="text" placeholder="" />
-            </div>
-            <div class="col-12 col-lg-3 FormInput">
-              <label for="">Alternative Mobile : </label><br />
-              <input type="text" placeholder="" />
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12 FormHeadings">
-              <h4>EDUCATIONAL INFORMATION</h4>
-            </div>
-            <div class="col-12 col-lg-6 FormInput">
-              <label for="">course : </label><br />
-              <input
-                type="text"
-                placeholder="12th / Any Diploma / Any Degree"
-              />
-            </div>
-            <div class="col-12 col-lg-6 FormInput">
-              <label for="">Board/University: </label><br />
-              <input type="text" placeholder="" />
-            </div>
-            <div class="col-12 col-lg-6 FormInput">
-              <label for="">Year of Passing : </label><br />
-              <input type="text" placeholder="" />
-            </div>
-            <div class="col-12 col-lg-6 FormInput">
-              <label for="">Percentage of Marks : </label><br />
-              <input type="text" placeholder="Eg: 85%" />
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12 FormHeadings">
-              <h4>EDUCATIONAL INFORMATION</h4>
-            </div>
-            <div class="col-12 col-lg-6 FormInput">
-              <label for="">Father’s Name : </label><br />
-              <input type="text" placeholder="" />
-            </div>
-            <div class="col-12 col-lg-6 FormInput">
-              <label for="">Occupation/Title : </label><br />
-              <input type="text" placeholder="" />
-            </div>
-            <div class="col-12 col-lg-6 FormInput">
-              <label for="">Mobile : </label><br />
-              <input type="text" placeholder="" />
-            </div>
-            <div class="col-12 col-lg-6 FormInput">
-              <label for="">Telephone : </label><br />
-              <input type="text" placeholder="" />
-            </div>
-            <div class="col-12 col-lg-6 FormInput">
-              <label for="">Mother’s Name : </label><br />
-              <input type="text" placeholder="" />
-            </div>
-            <div class="col-12 col-lg-6 FormInput">
-              <label for="">Occupation/Title : </label><br />
-              <input type="text" placeholder="" />
-            </div>
-            <div class="col-12 col-lg-6 FormInput">
-              <label for="">Mobile : </label><br />
-              <input type="text" placeholder="" />
-            </div>
-            <div class="col-12 col-lg-6 FormInput">
-              <label for="">Telephone : </label><br />
-              <input type="text" placeholder="" />
-            </div>
-            <div class="FormBtn">
-              <button>SUBMIT</button>
-            </div>
-          </div>
+          </form>
         </div>
       </section>
     </main>
@@ -365,7 +392,9 @@
                   </a>
                 </div>
                 <div>
-                  <a href="https://www.linkedin.com/in/national-college-madurai-b7520117b/">
+                  <a
+                    href="https://www.linkedin.com/in/national-college-madurai-b7520117b/"
+                  >
                     <i class="fa-brands fa-linkedin"></i>
                   </a>
                 </div>
@@ -456,8 +485,12 @@
                 Management and Science
               </p>
               <div class="d-flex justify-content-center gap-3 mt-3">
-                <a href="../Private & Policy/private.html"><p class="fw-bold">Privacy Policy</p></a>
-                <a href="../Teams & Conditions/teams.html"><p class="fw-bold">Terms and conditions</p></a>
+                <a href="../Private & Policy/private.html"
+                  ><p class="fw-bold">Privacy Policy</p></a
+                >
+                <a href="../Teams & Conditions/teams.html"
+                  ><p class="fw-bold">Terms and conditions</p></a
+                >
               </div>
             </div>
           </div>

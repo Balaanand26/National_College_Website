@@ -9,14 +9,13 @@ body {
   background-color: whitesmoke;
   position: relative;
 }
-section{
+section {
   width: 100%;
   overflow: hidden;
 }
-p{
+p {
   font-size: 16px;
 }
-
 
 /* ───────── TOPBAR ───────── */
 .topbar {
@@ -183,18 +182,18 @@ header {
 /* Mobile & Tablet Fix */
 @media (max-width: 991px) {
   .mega-menu {
-    max-height: 70vh;   
-    overflow-y: auto;   
+    max-height: 70vh;
+    overflow-y: auto;
   }
 
   .navbar-collapse {
-    max-height: 80vh;   
+    max-height: 80vh;
     overflow-y: auto;
   }
 }
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
-    .dropdown-menu.mega-menu {
+  .dropdown-menu.mega-menu {
     margin-top: 5px;
     margin-left: 0px;
     width: 650px;
@@ -219,7 +218,6 @@ header {
     width: 300px;
   }
 }
-
 
 /* ===== HERO SECTION ===== */
 .heroContent {
@@ -246,40 +244,40 @@ header {
   }
 }
 
-.overlays h5{
+.overlays h5 {
   width: 100%;
   background-color: #7e1416;
   padding: 20px 0;
   color: white;
   margin: 0;
 }
-.proContainer img{
-  filter: brightness(.8);
-  transition: .5s ;
+.proContainer img {
+  filter: brightness(0.8);
+  transition: 0.5s;
 }
-.proContainer img:hover{
+.proContainer img:hover {
   filter: brightness(1);
 }
-.proContainer .overlays{
+.proContainer .overlays {
   opacity: 0;
   transform: translateY(20px);
-  transition: .5s;
+  transition: 0.5s;
 }
-.proContainer .overlays:hover{
+.proContainer .overlays:hover {
   opacity: 1;
   transform: translateY(0);
 }
 
-.headingTitle{
+.headingTitle {
   color: #7e1416;
 }
-.proImages{
+.proImages {
   width: 100%;
   height: 200px;
   object-fit: cover;
 }
 
-.imgacademic{
+.imgacademic {
   object-fit: cover;
   border-top-left-radius: 55px;
   border-bottom-right-radius: 55px;
@@ -307,7 +305,7 @@ th {
   background-color: #7e1416;
   color: white !important;
 }
-td{
+td {
   color: black !important;
   font-weight: 500;
 }
@@ -325,12 +323,12 @@ td{
   padding-left: 0;
   line-height: 30px;
 }
-.checkbox span i{
+.checkbox span i {
   color: #7e1416;
   margin-right: 5px;
 }
 
-.contImg{
+.contImg {
   background-image: url(./images/form.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -339,28 +337,41 @@ td{
   height: 600px;
   padding: 20px 40px;
   margin-top: 60px;
+  margin-bottom: 60px;
 }
 
-.formContent{
+.formContent {
   width: 400px;
   padding: 30px 25px;
   background-color: #7e1416;
   border-radius: 10px;
 }
-.formContent input{
+.formContent input {
   padding: 10px 20px;
   margin: 8px auto;
   border-radius: 7px;
   border: none;
 }
-.formContent p{
-  color: white !important;
+
+.formContent input::placeholder {
+  color: black;
 }
-.formContent input:focus{
+
+.formContent select {
+  padding: 10px 20px;
+  margin: 8px auto;
+  border-radius: 7px;
+  border: none;
+}
+.formContent select:focus {
   outline: none;
 }
 
-.subBtn{
+.formContent input:focus {
+  outline: none;
+}
+
+.subBtn {
   margin: 0 auto;
   width: 100%;
   padding: 10px 55px;
@@ -370,23 +381,6 @@ td{
   border: none;
   border-radius: 10px;
 }
-
-.ChooseBtn{
-  padding: 10px 35px;
-  border: #7e1416 solid 2px;
-  color: #7e1416 !important;
-  margin-left: 12px;
-  margin-top: 15px;
-  font-weight: 600;
-}
-.ChooseBtn:hover{
-  color: #bb3032 !important;
-}
-
-.ChooseBtn.active{
-  background-color: #7e1416 !important;
-  color: white !important;
-}
 small {
   color: #ddb337;
   display: none;
@@ -395,37 +389,54 @@ small {
   border: 1px solid #ddb337;
 }
 
+.ChooseBtn {
+  padding: 10px 35px;
+  border: #7e1416 solid 2px;
+  color: #7e1416 !important;
+  margin-left: 12px;
+  margin-top: 15px;
+  font-weight: 600;
+}
+.ChooseBtn:hover {
+  color: #bb3032 !important;
+}
+
+.ChooseBtn.active {
+  background-color: #7e1416 !important;
+  color: white !important;
+}
+
 
 /* ================== Footer ==================== */
-footer{
+footer {
   margin-top: 80px;
 }
-.footerSection{
+.footerSection {
   background-color: #7e1416;
   color: #fff;
   padding: 50px 0px;
 }
-.footerSection h3{
+.footerSection h3 {
   color: #ddb337;
   margin-bottom: 15px;
 }
-.footerSection i{
+.footerSection i {
   font-size: 20px;
   padding: 12px;
   background-color: #fff;
   color: #7e1416;
   border-radius: 28px;
 }
-.footerSection i:hover{
+.footerSection i:hover {
   background-color: #ddb337;
   color: #7e1416;
 }
-.footerSection a{
+.footerSection a {
   text-decoration: none;
   color: #fff;
   line-height: 15px;
 }
-.footerSection a:hover{
+.footerSection a:hover {
   color: #ddb337;
 }
 /* ==================== Whatsapp floating =================== */

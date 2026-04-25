@@ -11,14 +11,13 @@ body {
   background-color: whitesmoke;
   position: relative;
 }
-section{
+section {
   width: 100%;
   overflow: hidden;
 }
-p{
+p {
   font-size: 16px;
 }
-
 
 /* ───────── TOPBAR ───────── */
 .topbar {
@@ -185,18 +184,18 @@ header {
 /* Mobile & Tablet Fix */
 @media (max-width: 991px) {
   .mega-menu {
-    max-height: 70vh;   
-    overflow-y: auto;   
+    max-height: 70vh;
+    overflow-y: auto;
   }
 
   .navbar-collapse {
-    max-height: 80vh;   
+    max-height: 80vh;
     overflow-y: auto;
   }
 }
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
-    .dropdown-menu.mega-menu {
+  .dropdown-menu.mega-menu {
     margin-top: 5px;
     margin-left: 0px;
     width: 650px;
@@ -221,7 +220,6 @@ header {
     width: 300px;
   }
 }
-
 
 /* Hero Section */
 .heroContent {
@@ -325,6 +323,7 @@ textarea::placeholder {
   cursor: pointer;
 }
 
+
 .FormBtn {
   margin-top: 20px;
   text-align: center;
@@ -355,29 +354,28 @@ textarea::placeholder {
   background-color: #7e1416;
 }
 
-.formBtn1 button:nth-child(2):hover{
+.formBtn1 button:nth-child(2):hover {
   background: transparent;
   color: #7e1416;
 }
-.formBtn1 button:nth-child(2){
+.formBtn1 button:nth-child(2) {
   cursor: not-allowed;
 }
 
-
-.formContainer input:focus{
-    outline: #7e1416 solid 2px;
+.formContainer input:focus {
+  outline: #7e1416 solid 2px;
 }
-.formContainer select:focus{
-    outline: #7e1416 solid 2px;
+.formContainer select:focus {
+  outline: #7e1416 solid 2px;
 }
-.formContainer textarea:focus{
-    outline: #7e1416 solid 2px;
+.formContainer textarea:focus {
+  outline: #7e1416 solid 2px;
 }
-.formContent{
-    background-color: #7e1416;
+.formContent {
+  background-color: #7e1416;
 }
-.formTable{
-  padding: 0px 20px 0px 0px ;
+.formTable {
+  padding: 0px 20px 0px 0px;
 }
 small {
   color: #7e1416;
@@ -389,32 +387,32 @@ small {
 
 /* ================== Footer ==================== */
 
-.footerSection{
+.footerSection {
   background-color: #7e1416;
   color: #fff;
   padding: 50px 0px;
 }
-.footerSection h3{
+.footerSection h3 {
   color: #ddb337;
   margin-bottom: 15px;
 }
-.footerSection i{
+.footerSection i {
   font-size: 20px;
   padding: 12px;
   background-color: #fff;
   color: #7e1416;
   border-radius: 28px;
 }
-.footerSection i:hover{
+.footerSection i:hover {
   background-color: #ddb337;
   color: #7e1416;
 }
-.footerSection a{
+.footerSection a {
   text-decoration: none;
   color: #fff;
   line-height: 15px;
 }
-.footerSection a:hover{
+.footerSection a:hover {
   color: #ddb337;
 }
 /* ==================== Whatsapp floating =================== */

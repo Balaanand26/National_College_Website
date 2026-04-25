@@ -18,9 +18,11 @@ const emailRegex = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
 function validateName() {
   if (!nameRegex.test(name.value)) {
     nameError.style.display = "block";
+    name.classList.add("error");
     return false;
   }
   nameError.style.display = "none";
+  name.classList.remove("error");
   return true;
 }
 
@@ -39,6 +41,14 @@ function validateMobile() {
     return false;
   }
   mobileError.style.display = "none";
+  return true;
+}
+function validateParentMobile() {
+  if (!mobileRegex.test(parentMobile.value)) {
+    parentMobileError.style.display = "block";
+    return false;
+  }
+  parentMobileError.style.display = "none";
   return true;
 }
 

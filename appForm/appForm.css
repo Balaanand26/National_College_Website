@@ -234,7 +234,7 @@ header {
   padding: 10px 20px;
 }
 .FormInput label {
-  margin: 20px 10px;
+  margin: 10px 10px;
   font-weight: 600;
   font-size: 18px;
   color: #7e1416;
@@ -244,7 +244,6 @@ header {
   padding: 5px 20px;
   width: 100%;
   border: none;
-  margin-left: 10px;
   margin-bottom: 20px;
   border-bottom: 2px #7e1416 solid;
 }

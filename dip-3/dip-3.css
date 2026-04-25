@@ -348,38 +348,38 @@ td{
   padding: 20px 40px;
   margin-top: 60px;
 }
-.CourseContent{
-  background-color: #7e1416;
-  padding: 40px 20px;
-  border-radius: 20px;
-}
-.CourseContent h3{
-  color: #ddb337;
-}
-.CourseContent p{
-  color: whitesmoke;
-}
-
-.formContent{
+.formContent {
   width: 400px;
   padding: 30px 25px;
   background-color: #7e1416;
   border-radius: 10px;
 }
-.formContent input{
+.formContent input {
   padding: 10px 20px;
   margin: 8px auto;
   border-radius: 7px;
   border: none;
 }
-.formContent p{
-  color: white !important;
+
+.formContent input::placeholder {
+  color: black;
 }
-.formContent input:focus{
+
+.formContent select {
+  padding: 10px 20px;
+  margin: 8px auto;
+  border-radius: 7px;
+  border: none;
+}
+.formContent select:focus {
   outline: none;
 }
 
-.subBtn{
+.formContent input:focus {
+  outline: none;
+}
+
+.subBtn {
   margin: 0 auto;
   width: 100%;
   padding: 10px 55px;
@@ -389,23 +389,6 @@ td{
   border: none;
   border-radius: 10px;
 }
-
-.ChooseBtn{
-  padding: 10px 35px;
-  border: #7e1416 solid 2px;
-  color: #7e1416 !important;
-  margin-left: 12px;
-  margin-top: 15px;
-  font-weight: 600;
-}
-.ChooseBtn:hover{
-  color: #bb3032 !important;
-}
-
-.ChooseBtn.active{
-  background-color: #7e1416 !important;
-  color: white !important;
-}
 small {
   color: #ddb337;
   display: none;
@@ -414,6 +397,22 @@ small {
   border: 1px solid #ddb337;
 }
 
+.ChooseBtn {
+  padding: 10px 35px;
+  border: #7e1416 solid 2px;
+  color: #7e1416 !important;
+  margin-left: 12px;
+  margin-top: 15px;
+  font-weight: 600;
+}
+.ChooseBtn:hover {
+  color: #bb3032 !important;
+}
+
+.ChooseBtn.active {
+  background-color: #7e1416 !important;
+  color: white !important;
+}
 
 /* ================== Footer ==================== */
 footer{
