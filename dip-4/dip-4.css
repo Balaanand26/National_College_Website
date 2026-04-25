@@ -82,6 +82,12 @@ header {
   color: #ddb337 !important;
 }
 
+.navbar-nav .nav-link.active {
+  color: #ffcc00 !important;
+  font-weight: 600;
+  border-bottom: 2px solid #ffcc00;
+}
+
 /* NAVBAR TOGGLER */
 
 .navbar-toggler {
@@ -413,9 +419,6 @@ small {
 }
 
 /* ================== Footer ==================== */
-footer {
-  margin-top: 80px;
-}
 .footerSection {
   background-color: #7e1416;
   color: #fff;
@@ -429,13 +432,9 @@ footer {
   font-size: 20px;
   padding: 12px;
   background-color: #fff;
-  color: #7e1416;
   border-radius: 28px;
 }
-.footerSection i:hover {
-  background-color: #ddb337;
-  color: #7e1416;
-}
+
 .footerSection a {
   text-decoration: none;
   color: #fff;
@@ -443,6 +442,21 @@ footer {
 }
 .footerSection a:hover {
   color: #ddb337;
+}
+@media (max-width: 450px) {
+  .footerSection {
+    padding-bottom: 400px;
+  }
+}
+@media (max-width: 400px) {
+  .footerSection {
+    padding-bottom: 350px;
+  }
+}
+@media (max-width: 380px) {
+  .footerSection {
+    padding-bottom: 200px;
+  }
 }
 /* ==================== Whatsapp floating =================== */
 .float-image {

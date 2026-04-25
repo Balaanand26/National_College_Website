@@ -252,6 +252,13 @@ header {
   border-bottom: 2px #7e1416 solid;
   border-left: 2px #7e1416 solid;
 }
+.FormInput select{
+  border: #7e1416 solid 1px;
+  border-radius: 5px;
+}
+.FormInput select:focus{
+  border: #7e1416 solid 2px;
+}
 
 .checkBoxInput {
   display: flex;
@@ -298,33 +305,44 @@ header {
 }
 
 /* ================== Footer ==================== */
-.footerSection{
+.footerSection {
   background-color: #7e1416;
   color: #fff;
   padding: 50px 0px;
 }
-.footerSection h3{
+.footerSection h3 {
   color: #ddb337;
   margin-bottom: 15px;
 }
-.footerSection i{
+.footerSection i {
   font-size: 20px;
   padding: 12px;
   background-color: #fff;
-  color: #7e1416;
   border-radius: 28px;
 }
-.footerSection i:hover{
-  background-color: #ddb337;
-  color: #7e1416;
-}
-.footerSection a{
+
+.footerSection a {
   text-decoration: none;
   color: #fff;
   line-height: 15px;
 }
-.footerSection a:hover{
+.footerSection a:hover {
   color: #ddb337;
+}
+@media (max-width: 450px) {
+  .footerSection {
+    padding-bottom: 400px;
+  }
+}
+@media (max-width: 400px) {
+  .footerSection {
+    padding-bottom: 350px;
+  }
+}
+@media (max-width: 380px) {
+  .footerSection {
+    padding-bottom: 200px;
+  }
 }
 /* ==================== Whatsapp floating =================== */
 .float-image {

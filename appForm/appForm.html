@@ -223,8 +223,19 @@
               </div>
 
               <div class="col-12 col-lg-6 FormInput">
-                <label>Marital Status : </label><br />
-                <input type="text" name="marital" />
+                <label for="maritalStatus">Marital Status :</label><br />
+
+                <select
+                  id="maritalStatus"
+                  name="maritalStatus"
+                  class="w-100 p-2"
+                >
+                  <option value="" disabled selected hidden>
+                    Select Marital Status
+                  </option>
+                  <option value="Married">Married</option>
+                  <option value="Unmarried">Unmarried</option>
+                </select>
               </div>
 
               <div class="col-12 FormInput">
@@ -305,7 +316,7 @@
             <!-- PARENTS -->
             <div class="row">
               <div class="col-12 FormHeadings mb-2">
-                <h4>EDUCATIONAL INFORMATION</h4>
+                <h4>FAMILY INFORMATION</h4>
               </div>
 
               <div class="col-12 col-lg-6 FormInput">
@@ -351,7 +362,6 @@
               <div class="FormBtn text-center mt-3">
                 <button type="submit">SUBMIT</button>
               </div>
-
             </div>
           </form>
         </div>
@@ -378,29 +388,35 @@
               <div class="d-flex gap-2">
                 <div>
                   <a href="https://www.facebook.com/NIMSMADURAI"
-                    ><i class="fa-brands fa-facebook"></i
+                    ><i class="fa-brands fa-facebook" style="color: #0766ff"></i
                   ></a>
                 </div>
                 <div>
                   <a href="https://x.com/MaduraiNims">
-                    <i class="fa-brands fa-x-twitter"></i>
+                    <i
+                      class="fa-brands fa-x-twitter"
+                      style="color: #000000"
+                    ></i>
                   </a>
                 </div>
                 <div>
                   <a href="https://www.instagram.com/nimsmadurai/">
-                    <i class="fa-brands fa-instagram"></i>
+                    <i
+                      class="fa-brands fa-instagram"
+                      style="color: #f4418b"
+                    ></i>
                   </a>
                 </div>
                 <div>
                   <a
                     href="https://www.linkedin.com/in/national-college-madurai-b7520117b/"
                   >
-                    <i class="fa-brands fa-linkedin"></i>
+                    <i class="fa-brands fa-linkedin" style="color: #0073b2"></i>
                   </a>
                 </div>
                 <div>
                   <a href="https://www.youtube.com/@NationalCollegeMadurai">
-                    <i class="fa-brands fa-youtube"></i>
+                    <i class="fa-brands fa-youtube" style="color: #ff0033"></i>
                   </a>
                 </div>
               </div>
@@ -419,8 +435,8 @@
           <div class="col-12 col-lg-3 mt-4">
             <div>
               <h3>Courses</h3>
-              <a href="./airline/academic.html"><p>Degree Courses</p></a>
-              <a href="./dip-1/dip-1.html"><p>Diploma Courses</p></a>
+              <a href="../airline/academic.html"><p>Degree Courses</p></a>
+              <a href="../dip-1/dip-1.html"><p>Diploma Courses</p></a>
             </div>
           </div>
           <div class="col-12 col-lg-3 mt-4">
@@ -484,7 +500,9 @@
                 Copyrights © 2026 All rights reserved by National Institute of
                 Management and Science
               </p>
-              <div class="d-flex justify-content-center gap-3 mt-3">
+              <div
+                class="d-flex justify-content-center flex-column flex-lg-row flex-md-row gap-md-3 gaplg mt-3"
+              >
                 <a href="../Private & Policy/private.html"
                   ><p class="fw-bold">Privacy Policy</p></a
                 >
