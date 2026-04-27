@@ -42,33 +42,6 @@
       </video>
     </div>
 
-    <!-- TOPBAR -->
-    <div class="topbar">
-      <div class="container d-flex justify-content-between align-items-center">
-        <div class="d-flex flex-column flex-md-row flex-lg-row">
-          <div><i class="fa fa-phone me-1"></i> 0452–4520020</div>
-          <span class="divider d-none d-md-block d-lg-block">|</span>
-          <div></div>
-          <div>
-            <i class="fa fa-envelope me-1"></i>
-            <a href="mailto:info@nationalcolleges.co.in"
-              >info@nationalcolleges.co.in</a
-            >
-          </div>
-        </div>
-        <div class="d-flex flex-column flex-md-row flex-lg-row">
-          <div>
-            <a href="./Scholar/scholar.html">Online Scholarship</a>
-          </div>
-          <div>
-            <span class="divider d-none d-md-block d-lg-block">|</span>
-          </div>
-          <div>
-            <a href="../appForm/appForm.html">Apply Now</a>
-          </div>
-        </div>
-      </div>
-    </div>
     <!-- ===== NAVBAR SECTION ===== -->
     <header>
       <nav
@@ -80,10 +53,7 @@
             <div class="d-flex align-items-center gap-2 logoContent">
               <img src="./Images/UpdLogo.png" width="60" alt="NIMS Logo" />
               <div>
-                <h4 class="mb-1 text-white">National</h4>
-                <p class="m-0 text-white" style="font-size: 14px">
-                  Institute Management & Science
-                </p>
+                <h3 class="text-white navbarHeading">National College</h3>
               </div>
             </div>
           </a>
@@ -206,9 +176,91 @@
     </header>
 
     <main>
+      <!-- Hero Section -->
+      <section>
+        <div
+          id="carouselExampleRide"
+          class="carousel slide"
+          data-bs-ride="true"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="./Images/1.jpg" class="d-block w-100" alt="..." />
+              <div class="carousel-caption float-start d-none d-md-block">
+                <h5>First slide label</h5>
+                <p>
+                  Some representative placeholder content for the first slide.
+                </p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="./Images/1.jpg" class="d-block w-100" alt="..." />
+              <div class="carousel-caption d-none d-md-block">
+                <div class="container">
+                  <div class="row align-items-center">
+                    <div class="col-8">
+                      <h5>Second slide label</h5>
+                      <p>
+                        Some representative placeholder content for the first
+                        slide.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="./Images/1.jpg" class="d-block w-100" alt="..." />
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Third slide label</h5>
+                <p>
+                  Some representative placeholder content for the first slide.
+                </p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="./Images/1.jpg" class="d-block w-100" alt="..." />
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Fourth slide label</h5>
+                <p>
+                  Some representative placeholder content for the first slide.
+                </p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="./Images/1.jpg" class="d-block w-100" alt="..." />
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Fifth slide label</h5>
+                <p>
+                  Some representative placeholder content for the first slide.
+                </p>
+              </div>
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleRide"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleRide"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </section>
+
       <!-- ===== HERO SECTION ===== -->
 
-      <section class="hero">
+      <!-- <section class="hero">
         <div class="heroSection">
           <div class="container">
             <div class="row flex-lg-row flex-column align-items-center">
@@ -233,7 +285,6 @@
                     <button class="adbtn">Scholarship</button>
                     <button class="enbtn">
                       View course
-                      <!-- <span><i class="fa-solid fa-arrow-right"></i></span> -->
                     </button>
                   </div>
                 </div>
@@ -255,7 +306,7 @@
             </div>
           </div>
         </div>
-      </section>
+      </section> -->
 
       <!-- ===== ABOUT SECTION ===== -->
 
@@ -288,7 +339,7 @@
       </section>
 
       <!-- ===== ACADEMIC SECTION ===== -->
-      <section style="margin: 20px 0px">
+      <section style="margin: 20px 0px; background-color: whitesmoke">
         <div class="container">
           <div class="text-center mt-4">
             <h2 class="ac-head" data-aos="fade-right" data-aos-duration="1000">
@@ -351,14 +402,18 @@
                 >
                   <div class="col-12 col-lg-4 col-xl-3 col-md-6">
                     <div class="academicCard">
-                      <img src="./svg1/airplane (1).png" alt="" />
+                      <div>
+                        <img src="./Images/1.jpg" alt="" />
+                      </div>
+
                       <div class="academicContent">
                         <h2 class="card-title">
                           BBA Airlines & <br />Airport Management
                         </h2>
                         <p class="card-text">
                           Embedded with Alagappa University, Airlines & Airport
-                          Management Skill Indi Council Certification.
+                          Management Skill Indi Council
+                          <span class="d-lg-none">Certification.</span>
                         </p>
                         <button>Learn More</button>
                       </div>
@@ -366,7 +421,7 @@
                   </div>
                   <div class="col-12 col-lg-4 col-xl-3 col-md-6">
                     <div class="academicCard">
-                      <img src="./svg1/international.png" alt="" />
+                      <img src="" alt="" />
                       <div class="academicContent">
                         <h2 class="card-title">
                           BBA International <br />
@@ -382,7 +437,7 @@
                   </div>
                   <div class="col-12 col-lg-4 col-xl-3 col-md-6">
                     <div class="academicCard">
-                      <img src="./svg1/transport.png" alt="" />
+                      <img src="" alt="" />
                       <div class="academicContent">
                         <h2 class="card-title">
                           BBA Shipping <br />
@@ -398,7 +453,7 @@
                   </div>
                   <div class="col-12 col-lg-4 col-xl-3 col-md-6">
                     <div class="academicCard">
-                      <img src="./svg1/bank.png" alt="" />
+                      <img src="" alt="" />
                       <div class="academicContent">
                         <h2 class="card-title">
                           B.Com Banking <br />
@@ -414,7 +469,7 @@
                   </div>
                   <div class="col-12 col-lg-4 col-xl-3 col-md-6">
                     <div class="academicCard">
-                      <img src="./svg1/fashion.png" alt="" />
+                      <img src="" alt="" />
                       <div class="academicContent">
                         <h2 class="card-title">
                           B.Sc Fashion <br />
@@ -430,7 +485,7 @@
                   </div>
                   <div class="col-12 col-lg-4 col-xl-3 col-md-6">
                     <div class="academicCard">
-                      <img src="./svg1/airplane (1).png" alt="" />
+                      <img src="." alt="" />
                       <div class="academicContent">
                         <h2 class="card-title">
                           MBA Airlines & <br />
@@ -446,7 +501,7 @@
                   </div>
                   <div class="col-12 col-lg-4 col-xl-3 col-md-6">
                     <div class="academicCard">
-                      <img src="./svg1/hr.png" alt="" />
+                      <img src="" alt="" />
                       <div class="academicContent">
                         <h2 class="card-title">
                           MBA - HR | Finance | <br />
@@ -510,7 +565,7 @@
                         <h2>Fashion Design</h2>
                         <p>
                           Embedded with Alagappa University & Apparel Made-Ups &
-                          Home Furnishing Skill Council.
+                          Home Furnishing Skill Council Certification.
                         </p>
                         <button>Learn More</button>
                       </div>
@@ -522,8 +577,9 @@
                       <div class="academicContent">
                         <h2>Logistics</h2>
                         <p>
-                          Embedded with Alagappa University & Logistics Skill
-                          Council — Skill India Certification.
+                          Embedded with Alagappa University & Shipping and
+                          Logistics Skill Council — Skill India Council
+                          Certification.
                         </p>
                         <button>Learn More</button>
                       </div>
@@ -555,7 +611,7 @@
                     class="campus-btn active"
                     onclick="showCampus('madurai')"
                   >
-                    Madurai - Campus
+                    Madurai Main Campus
                   </button>
                 </div>
                 <div class="mt-3 mt-lg-0 mt-md-0">
@@ -563,7 +619,7 @@
                     class="campus-btn"
                     onclick="showCampus('tirunelveli')"
                   >
-                    Tirunelveli - Campus
+                    Tirunelveli Main Campus
                   </button>
                 </div>
               </div>
@@ -1091,8 +1147,7 @@
                   <img src="./Images/UpdLogo.png" alt="" style="width: 150px" />
                 </div>
                 <div>
-                  <h3>NATIONAL</h3>
-                  <p>Institute of Management & Science</p>
+                  <h3>NATIONAL COLLEGE</h3>
                 </div>
               </div>
             </div>
@@ -1112,17 +1167,26 @@
                   ></i
                 ></span>
                 Madurai, Main Campus No 17, Near Income Tax Office, BB Kulam,
-                Madurai, Tamilnadu-625002
+                Madurai, <br />Tamilnadu-625002
               </p>
             </div>
             <div class="col-12 col-md-6 col-lg-4 mt-4 mt-lg-0">
-              <h3>Tirunelveli Campus</h3>
-              <p>
-                <span
-                  ><i class="fa-solid fa-phone" style="color: #ddb337"></i
-                ></span>
-                +91 9791 586 555
-              </p>
+              <h3>Tirunelveli Main Campus</h3>
+              <div class="d-flex gap-3">
+                <p>
+                  <span
+                    ><i class="fa-solid fa-mobile" style="color: #ddb337"></i
+                  ></span>
+                  +91 9791 586 555
+                </p>
+                <p>
+                  <span
+                    ><i class="fa-solid fa-phone" style="color: #ddb337"></i
+                  ></span>
+                  04635-256343
+                </p>
+              </div>
+
               <p>
                 <span
                   ><i
@@ -1130,8 +1194,8 @@
                     style="color: #ddb337"
                   ></i
                 ></span>
-                Vinayaga Avenue , Tiruchendur Main Rd, Near Income Tax Office,
-                Palayamkottai, Tirunelveli, Tamil Nadu 627011
+                Vinayaga Avenue , Near Income Tax Office, Palayamkottai,
+                Tirunelveli, <br />Tamil Nadu 627011
               </p>
             </div>
           </div>
@@ -1158,11 +1222,11 @@
             </div>
             <div class="col-12 col-lg-6 text-center">
               <p class="fs-2 fw-bolder txt-color" style="color: #7e1416">
-                Tirunelveli Campus
+                Tirunelveli Main Campus
               </p>
               <iframe
                 class="rounded-4 border border-3 mapSection"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.0718536772956!2d77.82971647478216!3d9.147983390918208!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b06ae08c6794e85%3A0xea30f98dcb16c4f5!2sNational%20Engineering%20College!5e0!3m2!1sen!2sin!4v1776072670052!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3943.7224193854754!2d77.76079925514783!3d8.717887160001425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b04132bb8bc13e3%3A0xef400439169d10a3!2sNational%20College%20Tirunelveli!5e0!3m2!1sen!2sin!4v1777266144291!5m2!1sen!2sin%22"
                 width="450"
                 height="300"
                 style="border: 0"
@@ -1185,8 +1249,8 @@
               <div>
                 <img src="./Images/UpdLogo.png" alt="" style="width: 80px" />
               </div>
-              <div>
-                <h3>About NIMS</h3>
+              <div class="mt-2">
+                <h3>NATIONAL COLLEGE</h3>
                 <p>
                   National Institute of Management and Science offers quality
                   education in Aviation, Banking, Logistics and Fashion Design
@@ -1211,7 +1275,7 @@
                   <a href="https://www.instagram.com/nimsmadurai/">
                     <i
                       class="fa-brands fa-instagram"
-                      style="color: #F4418B"
+                      style="color: #f4418b"
                     ></i>
                   </a>
                 </div>
@@ -1243,8 +1307,9 @@
           <div class="col-12 col-lg-3 mt-4">
             <div>
               <h3>Courses</h3>
-              <a href="./airline/academic.html"><p>Degree Courses</p></a>
-              <a href="./dip-1/dip-1.html"><p>Diploma Courses</p></a>
+              <a href="./airline/academic.html"><p>UG Degree</p></a>
+              <a href="./airport/airport.html"><p>PG Degree</p></a>
+              <a href="./dip-1/dip-1.html"><p>Diploma</p></a>
             </div>
           </div>
           <div class="col-12 col-lg-3 mt-4">
@@ -1337,6 +1402,23 @@
         </div>
       </a>
     </div>
+
+    <!-- Scholarship PopUp -->
+    <div id="applyPopup" class="apply-popup">
+      <a href="./Scholar/scholar.html" class="text-decoration-none text-black">
+        <div class="d-flex justify-content-center align-items-center">
+          <div class="popup-logo">
+            <img src="./Images/UpdLogo.png" loading="lazy" alt="Logo" />
+          </div>
+          <div class="popup-text">
+            <strong>Online Scholarship</strong><br />
+            Upto 1 Lakhs Benefits
+          </div>
+        </div>
+      </a>
+      <button class="popup-close" aria-label="Close popup">&times;</button>
+    </div>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"

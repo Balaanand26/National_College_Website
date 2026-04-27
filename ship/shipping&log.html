@@ -33,33 +33,6 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
   <body>
-    <!-- TOPBAR -->
-    <div class="topbar">
-      <div class="container d-flex justify-content-between align-items-center">
-        <div class="d-flex flex-column flex-md-row flex-lg-row">
-          <div><i class="fa fa-phone me-1"></i> 0452–4520020</div>
-          <span class="divider d-none d-md-block d-lg-block">|</span>
-          <div></div>
-          <div>
-            <i class="fa fa-envelope me-1"></i>
-            <a href="mailto:info@nationalcolleges.co.in"
-              >info@nationalcolleges.co.in</a
-            >
-          </div>
-        </div>
-        <div class="d-flex flex-column flex-md-row flex-lg-row">
-          <div>
-            <a href="../Scholar/scholar.html">Online Scholarship</a>
-          </div>
-          <div>
-            <span class="divider d-none d-md-block d-lg-block">|</span>
-          </div>
-          <div>
-            <a href="../appForm/appForm.html">Apply Now</a>
-          </div>
-        </div>
-      </div>
-    </div>
     <!-- ===== NAVBAR SECTION ===== -->
     <header>
       <nav
@@ -67,14 +40,11 @@
       >
         <div class="container">
           <!-- Logo -->
-          <a class="navbar-brand" href="../index.html">
+          <a class="navbar-brand" href="./index.html">
             <div class="d-flex align-items-center gap-2 logoContent">
               <img src="../Images/UpdLogo.png" width="60" alt="NIMS Logo" />
               <div>
-                <h4 class="mb-1 text-white">National</h4>
-                <p class="m-0 text-white" style="font-size: 14px">
-                  Institute Management & Science
-                </p>
+                <h3 class="text-white navbarHeading">National College</h3>
               </div>
             </div>
           </a>
@@ -93,7 +63,7 @@
               class="navbar-nav ms-auto d-lg-flex align-items-lg-center align-"
             >
               <li class="nav-item">
-                <a class="nav-link" href="../index.html">Home</a>
+                <a class="nav-link " href="../index.html">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="../about/about.html">About</a>
@@ -525,8 +495,8 @@
               <div>
                 <img src="../Images/UpdLogo.png" alt="" style="width: 80px" />
               </div>
-              <div>
-                <h3>About NIMS</h3>
+              <div class="mt-2">
+                <h3>NATIONAL COLLEGE</h3>
                 <p>
                   National Institute of Management and Science offers quality
                   education in Aviation, Banking, Logistics and Fashion Design
@@ -583,8 +553,9 @@
           <div class="col-12 col-lg-3 mt-4">
             <div>
               <h3>Courses</h3>
-              <a href="../airline/academic.html"><p>Degree Courses</p></a>
-              <a href="../dip-1/dip-1.html"><p>Diploma Courses</p></a>
+              <a href="../airline/academic.html"><p>UG Degree</p></a>
+              <a href="../airport/airport.html"><p>PG Degree</p></a>
+              <a href="../dip-1/dip-1.html"><p>Diploma</p></a>
             </div>
           </div>
           <div class="col-12 col-lg-3 mt-4">
@@ -676,6 +647,21 @@
           <span class="d-none d-lg-block"> Chat with us</span>
         </div>
       </a>
+    </div>
+    <!-- Scholarship PopUp -->
+    <div id="applyPopup" class="apply-popup">
+      <a href="../Scholar/scholar.html" class="text-decoration-none text-black">
+        <div class="d-flex justify-content-center align-items-center">
+          <div class="popup-logo">
+            <img src="../Images/UpdLogo.png" loading="lazy" alt="Logo" />
+          </div>
+          <div class="popup-text">
+            <strong>Online Scholarship</strong><br />
+            Upto 1 Lakhs Benefits
+          </div>
+        </div>
+      </a>
+      <button class="popup-close" aria-label="Close popup">&times;</button>
     </div>
 
     <script

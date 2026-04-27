@@ -42,75 +42,47 @@
 
 
 
-
-// Counter
-
-document.addEventListener("DOMContentLoaded", () => {
-  function counter(id, start, end, duration) {
-    let obj = document.getElementById(id),
-      current = start,
-      range = end - start,
-      increment = end > start ? 1 : -1,
-      step = Math.abs(Math.floor(duration / range)),
-      timer = setInterval(() => {
-        current += increment;
-        obj.textContent = current;
-        if (current == end) {
-          clearInterval(timer);
-        }
-      }, step);
-  }
-  counter("count1", 0, 10, 3000);
-  counter("count2", 0, 50, 3000);
-  counter("count3", 0, 800, 3000);
-  counter("count4", 0, 100, 3000);
-});
-
 // Loading page
 
-window.onload = function() {
-    const preloader = document.getElementById('preloader');
+window.onload = function () {
+  const preloader = document.getElementById("preloader");
 
-    // 🔒 Lock scroll initially
-    document.body.classList.add("no-scroll");
+  // 🔒 Lock scroll initially
+  document.body.classList.add("no-scroll");
 
-    // Check if loader already shown in this session
-    if (sessionStorage.getItem("loaderShown")) {
-        preloader.style.display = "none";
+  // Check if loader already shown in this session
+  if (sessionStorage.getItem("loaderShown")) {
+    preloader.style.display = "none";
 
-        // 🔓 Unlock scroll
-        document.body.classList.remove("no-scroll");
-        return;
-    }
+    // 🔓 Unlock scroll
+    document.body.classList.remove("no-scroll");
+    return;
+  }
 
-    setTimeout(function() {
+  setTimeout(function () {
+    preloader.style.opacity = "0";
+    preloader.style.visibility = "hidden";
 
-        preloader.style.opacity = '0';
-        preloader.style.visibility = 'hidden';
+    sessionStorage.setItem("loaderShown", "true");
 
-        sessionStorage.setItem("loaderShown", "true");
+    setTimeout(() => {
+      preloader.style.display = "none";
 
-        setTimeout(() => {
-            preloader.style.display = 'none';
-
-            // 🔓 Unlock scroll after loader gone
-            document.body.classList.remove("no-scroll");
-
-        }, 1000);
-
-    }, 2300);
+      // 🔓 Unlock scroll after loader gone
+      document.body.classList.remove("no-scroll");
+    }, 1000);
+  }, 2300);
 };
 
-
-// Buttons 
+// Buttons
 
 function showCampus(campus) {
   // hide all
-  document.querySelectorAll(".campus-content").forEach(el => {
+  document.querySelectorAll(".campus-content").forEach((el) => {
     el.classList.remove("active");
   });
 
-  document.querySelectorAll(".campus-btn").forEach(btn => {
+  document.querySelectorAll(".campus-btn").forEach((btn) => {
     btn.classList.remove("active");
   });
 
@@ -120,3 +92,36 @@ function showCampus(campus) {
   // highlight button
   event.target.classList.add("active");
 }
+
+
+// PopUp Script js
+
+document.addEventListener("DOMContentLoaded", () => {
+  const popup = document.getElementById("applyPopup");
+  const closeBtn = popup.querySelector(".popup-close");
+
+
+  function showPopup() {
+    popup.classList.add("show");
+    setTimeout(() => popup.classList.remove("show"), 8000); // Hide after 8s
+  }
+
+  // Initial show after 10s
+  setTimeout(showPopup, 500);
+  // Repeat every 30s
+  setInterval(showPopup, 10000);
+
+  // Click opens modal
+  popup.addEventListener("click", (e) => {
+    if (!e.target.classList.contains("popup-close")) {
+      popup.classList.remove("show");
+      applyModal.show();
+    }
+  });
+
+  // Close button
+  closeBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    popup.classList.remove("show");
+  });
+});
