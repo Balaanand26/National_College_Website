@@ -217,6 +217,9 @@ header {
 .pr-para{
     font-size: 18px;
 }
+.paraPoint{
+  margin-left: 30px;
+}
 
 /* icons color */
 
@@ -356,3 +359,4 @@ header {
 .apply-popup:hover {
   box-shadow: 0 6px 25px #7e1416;
 }
+
