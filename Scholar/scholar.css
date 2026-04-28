@@ -348,6 +348,32 @@ small {
   border: 1px solid #ddb337;
 }
 
+
+
+.quiz-scroll-box{
+    max-height:500px;  
+    overflow-y:auto;
+    overflow-x:hidden;
+    padding-right:10px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    padding:20px;
+    background:#fff;
+}
+ 
+ 
+.quiz-scroll-box::-webkit-scrollbar{
+    width:8px;
+}
+ 
+.quiz-scroll-box::-webkit-scrollbar-thumb{
+    background:#7e1416;
+    border-radius:10px;
+}
+ 
+.quiz-scroll-box::-webkit-scrollbar-track{
+    background:#eee;
+}
 /* ================== Footer ==================== */
 .footerSection {
   background-color: #7e1416;

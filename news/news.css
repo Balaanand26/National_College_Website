@@ -187,7 +187,12 @@ header {
 
 /* HERO */
 .admission-hero {
-  background: linear-gradient(to right, #f5f5f5, #ffffff);
+  /* background: linear-gradient(to right, #f5f5f5, #ffffff); */
+  margin-bottom: 50px;
+}
+
+.adm-pg{
+  text-align: justify;
 }
 
 .main-title {
@@ -309,6 +314,16 @@ header {
   line-height: 1.7;
 }
 
+
+/* HERO */
+.admission-hero {
+  /* background: linear-gradient(to right, #f5f5f5, #ffffff); */
+  margin-bottom: 50px;
+}
+
+.adm-pg{
+  text-align: justify;
+}
 
 /* ================== Footer ==================== */
 .footerSection {

@@ -252,11 +252,11 @@ header {
   object-fit: cover;
   filter: brightness(0.79);
 }
-.firstContent{
+.firstContent {
   top: 45%;
   text-align: start;
 }
-.firstContent button{
+.firstContent button {
   margin-top: 20px;
   padding: 12px 32px;
   color: #fff;
@@ -264,157 +264,189 @@ header {
   border-radius: 12px;
   background-color: #7e1416;
 }
-.firstContent h1{
+.firstContent h1 {
   font-weight: 700;
   margin-bottom: 20px;
 }
-.firstContent p{
+.firstContent p {
   font-size: 20px;
+  width: 70%;
 }
 
-@media (max-width: 1025px){
-  .firstContent{
-  top: 30%;
-  text-align: start;
-}
+@media screen and (min-width: 480px) and (max-width: 768px) {
+  .carousel-item {
+    width: 100%;
+    height: 90vh;
+  }
 
-.firstContent h1{
-  font-weight: 700;
-  margin-bottom: 15px;
-  font-size: 30px;
+  .carousel-item img {
+    width: 100%;
+    height: 90vh;
+    object-fit: cover;
+    filter: brightness(0.79);
+  }
+  .firstContent {
+    top: 15%;
+    text-align: start;
+  }
+  .firstContent button {
+    margin-top: 8px;
+    font-size: 16px;
+    background-color: #7e1416;
+  }
+  .firstContent h1 {
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .firstContent p {
+    font-size: 16px;
+    width: 100%;
+  }
 }
-.firstContent p{
-  font-size: 18px;
-}
-.firstContent button{
-  margin-top: 10px;
-}
-}
+@media screen and (min-width: 318px) and (max-width: 479px) {
+  .carousel-item {
+    width: 100%;
+    height: 90vh;
+  }
 
-@media (max-width: 769px) {
+  .carousel-item img {
+    width: 100%;
+    height: 90vh;
+    object-fit: cover;
+    filter: brightness(0.79);
+  }
+  .firstContent {
+    top: 15%;
+    text-align: start;
+  }
+  .firstContent button {
+    margin-top: 8px;
+    font-size: 14px;
+    background-color: #7e1416;
+  }
+  .firstContent h1 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .firstContent p {
+    font-size: 14px;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 767px) and (max-width: 1024px) {
   .carousel-item {
     width: 100%;
     height: 80vh;
   }
-    .carousel-item img {
-  width: 100%;
-  height: 80vh;
-  object-fit: cover;
-  filter: brightness(0.5);
-}
 
-  .firstContent{
-  top: 25%;
-  text-align: start;
+  .carousel-item img {
+    width: 100%;
+    height: 80vh;
+    object-fit: cover;
+    filter: brightness(0.79);
+  }
+  .firstContent {
+    top: 15%;
+    text-align: start;
+  }
+  .firstContent button {
+    margin-top: 8px;
+    font-size: 18px;
+    background-color: #7e1416;
+  }
+  .firstContent h1 {
+    font-size: 35px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .firstContent p {
+    font-size: 18px;
+    width: 100%;
+  }
 }
-
-.firstContent h1{
-  font-weight: 700;
-  margin-bottom: 15px;
-  font-size: 25px;
-}
-.firstContent p{
-  font-size: 16px;
-}
-.firstContent button{
-  margin-top: 10px;
-  font-size: 16px;
-}
-}
-@media (max-width: 426px) {
+@media screen and (min-width: 1025px) and (max-width: 1442px) {
   .carousel-item {
     width: 100%;
-    height: 65vh;
+    height: 80vh;
   }
-  .carousel-item img {
-  width: 100%;
-  height: 65vh;
-  object-fit: cover;
-  filter: brightness(0.5);
-}
-  .firstContent{
-  top: 15%;
-  text-align: start;
-}
 
-.firstContent h1{
-  font-weight: 700;
-  margin-bottom: 10px;
-  font-size: 20px;
-}
-.firstContent p{
-  font-size: 12px;
-}
-.firstContent button{
-  margin-top: 10px;
-  font-size: 16px;
-  padding: 10px 25px;
-}
-}
-@media (max-width: 376px) {
-  .carousel-item {
+  .carousel-item img {
     width: 100%;
-    height: 55vh;
+    height: 80vh;
+    object-fit: cover;
+    filter: brightness(0.79);
   }
-  .carousel-item img {
-  width: 100%;
-  height: 55vh;
-  object-fit: cover;
-  filter: brightness(0.5);
-}
-  .firstContent{
-  top: 5%;
-  text-align: start;
-}
-
-.firstContent h1{
-  font-weight: 700;
-  margin-bottom: 10px;
-  font-size: 20px;
-}
-.firstContent p{
-  font-size: 12px;
-}
-.firstContent button{
-  margin-top: 0px;
-  font-size: 16px;
-  padding: 10px 25px;
-  font-size: 12px;
-}
-}
-@media (max-width: 321px) {
-  .carousel-item {
+  .firstContent {
+    top: 15%;
+    text-align: start;
+  }
+  .firstContent button {
+    margin-top: 8px;
+    font-size: 18px;
+    background-color: #7e1416;
+  }
+  .firstContent h1 {
+    font-size: 35px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .firstContent p {
+    font-size: 18px;
     width: 100%;
-    height: 55vh;
   }
-  .carousel-item img {
+}
+
+/* Form Content Style */
+.formContent {
+  width: 400px;
+  padding: 30px 25px;
+  background-color: #7e1416;
+  border-radius: 10px;
+}
+.formContent input {
+  padding: 10px 20px;
+  margin: 8px auto;
+  border-radius: 7px;
+  border: none;
+}
+
+.formContent input::placeholder {
+  color: black;
+}
+
+.formContent select {
+  padding: 10px 20px;
+  margin: 8px auto;
+  border-radius: 7px;
+  border: none;
+}
+.formContent select:focus {
+  outline: none;
+}
+
+.formContent input:focus {
+  outline: none;
+}
+
+.subBtn {
+  margin: 0 auto;
   width: 100%;
-  height: 55vh;
-  object-fit: cover;
-  filter: brightness(0.5);
+  padding: 10px 55px;
+  background-color: #ddb337;
+  color: #7e1416;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
 }
-  .firstContent{
-  top: 0%;
-  text-align: start;
+small {
+  color: #ddb337;
+  display: none;
 }
-
-.firstContent h1{
-  font-weight: 700;
-  margin-bottom: 10px;
-  font-size: 20px;
+.error {
+  border: 1px solid #ddb337;
 }
-.firstContent p{
-  font-size: 12px;
-}
-.firstContent button{
-  margin-top: 0px;
-  font-size: 16px;
-  padding: 10px 25px;
-  font-size: 12px;
-}
-}
-
-
 /* =============================================
    HERO SECTION
    ============================================= */
@@ -769,7 +801,7 @@ header {
 
 .counter-section {
   background-color: #7e1416;
-  padding: 2.5rem 0;
+  padding: 3.8rem 0;
 }
 .counter-section h2 {
   color: #fff;

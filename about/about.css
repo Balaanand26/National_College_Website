@@ -369,8 +369,13 @@ header {
     align-items: center;
     margin-top: 30px;
     padding: 0 15px;
+    margin-bottom: 50px;
 }
-
+.founderImg{
+  background-color: #7e1416;
+  border-top-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
 .found-img img {
     width: 100%;
     max-width: 400px;
