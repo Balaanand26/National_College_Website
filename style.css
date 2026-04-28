@@ -75,45 +75,6 @@ section {
   }
 }
 
-/* ───────── TOPBAR ───────── */
-.topbar {
-  background: #7e1416;
-  color: #fff;
-  font-size: 12.5px;
-  padding: 6px 0;
-  letter-spacing: 0.02em;
-}
-.topbar a {
-  color: #fff;
-  text-decoration: none;
-}
-.topbar a:hover {
-  color: #ddb337;
-}
-.topbar .divider {
-  margin: 0 12px;
-  opacity: 0.3;
-}
-
-/* ───────── TOPBAR ───────── */
-.topbar {
-  background: #7e1416;
-  color: #fff;
-  font-size: 12.5px;
-  padding: 6px 0;
-  letter-spacing: 0.02em;
-}
-.topbar a {
-  color: #fff;
-  text-decoration: none;
-}
-.topbar a:hover {
-  color: #ddb337;
-}
-.topbar .divider {
-  margin: 0 12px;
-  opacity: 0.3;
-}
 
 /* =============================================
    NAVBAR
