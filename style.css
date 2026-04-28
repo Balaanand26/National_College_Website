@@ -244,13 +244,51 @@ header {
 
 .carousel-item {
   width: 100%;
-  height: 100vh;
+  height: 90vh;
 }
 
 .carousel-item img {
   width: 100%;
   object-fit: cover;
-  filter: brightness(0.5);
+  filter: brightness(0.79);
+}
+.firstContent{
+  top: 45%;
+  text-align: start;
+}
+.firstContent button{
+  margin-top: 20px;
+  padding: 12px 32px;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 12px;
+  background-color: #7e1416;
+}
+.firstContent h1{
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.firstContent p{
+  font-size: 20px;
+}
+
+@media (max-width: 1025px){
+  .firstContent{
+  top: 30%;
+  text-align: start;
+}
+
+.firstContent h1{
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 30px;
+}
+.firstContent p{
+  font-size: 18px;
+}
+.firstContent button{
+  margin-top: 10px;
+}
 }
 
 @media (max-width: 769px) {
@@ -264,6 +302,24 @@ header {
   object-fit: cover;
   filter: brightness(0.5);
 }
+
+  .firstContent{
+  top: 25%;
+  text-align: start;
+}
+
+.firstContent h1{
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 25px;
+}
+.firstContent p{
+  font-size: 16px;
+}
+.firstContent button{
+  margin-top: 10px;
+  font-size: 16px;
+}
 }
 @media (max-width: 426px) {
   .carousel-item {
@@ -276,6 +332,24 @@ header {
   object-fit: cover;
   filter: brightness(0.5);
 }
+  .firstContent{
+  top: 15%;
+  text-align: start;
+}
+
+.firstContent h1{
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+.firstContent p{
+  font-size: 12px;
+}
+.firstContent button{
+  margin-top: 10px;
+  font-size: 16px;
+  padding: 10px 25px;
+}
 }
 @media (max-width: 376px) {
   .carousel-item {
@@ -287,6 +361,56 @@ header {
   height: 55vh;
   object-fit: cover;
   filter: brightness(0.5);
+}
+  .firstContent{
+  top: 5%;
+  text-align: start;
+}
+
+.firstContent h1{
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+.firstContent p{
+  font-size: 12px;
+}
+.firstContent button{
+  margin-top: 0px;
+  font-size: 16px;
+  padding: 10px 25px;
+  font-size: 12px;
+}
+}
+@media (max-width: 321px) {
+  .carousel-item {
+    width: 100%;
+    height: 55vh;
+  }
+  .carousel-item img {
+  width: 100%;
+  height: 55vh;
+  object-fit: cover;
+  filter: brightness(0.5);
+}
+  .firstContent{
+  top: 0%;
+  text-align: start;
+}
+
+.firstContent h1{
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+.firstContent p{
+  font-size: 12px;
+}
+.firstContent button{
+  margin-top: 0px;
+  font-size: 16px;
+  padding: 10px 25px;
+  font-size: 12px;
 }
 }
 
