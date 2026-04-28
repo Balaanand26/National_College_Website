@@ -375,10 +375,12 @@ header {
 @media screen and (min-width: 1025px) and (max-width: 1442px) {
   .carousel-item {
     width: 100%;
+    height: 150vh;
   }
 
   .carousel-item img {
     width: 100%;
+    height: 150vh;
     object-fit: cover;
     filter: brightness(0.79);
   }
