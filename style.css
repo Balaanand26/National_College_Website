@@ -286,7 +286,7 @@ header {
     filter: brightness(0.79);
   }
   .firstContent {
-    top: 15%;
+    top: 35%;
     text-align: start;
   }
   .firstContent button {
@@ -338,17 +338,17 @@ header {
 @media screen and (min-width: 767px) and (max-width: 1024px) {
   .carousel-item {
     width: 100%;
-    height: 80vh;
+    height: 90vh;
   }
 
   .carousel-item img {
     width: 100%;
-    height: 80vh;
+    height: 90vh;
     object-fit: cover;
     filter: brightness(0.79);
   }
   .firstContent {
-    top: 15%;
+    top: 35%;
     text-align: start;
   }
   .firstContent button {
