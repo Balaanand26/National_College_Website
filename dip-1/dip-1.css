@@ -293,7 +293,7 @@ td {
 }
 
 .contImg {
-  background-image: url(./images/form.jpg);
+  background-image: url(./images/form.png);
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 25px;
@@ -372,6 +372,7 @@ small {
 
 
 /* ================== Footer ==================== */
+
 .footerSection {
   background-color: #7e1416;
   color: #fff;

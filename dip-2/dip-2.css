@@ -376,6 +376,10 @@ small {
 }
 
 /* ================== Footer ==================== */
+footer{
+  margin-top: 80px;
+}
+
 .footerSection {
   background-color: #7e1416;
   color: #fff;
