@@ -1,79 +1,33 @@
-(function () {
-  const plane = document.getElementById("campusPlane");
-  const track = document.querySelector(".campus-scroll-track");
-  if (!plane || !track) return;
-
-  let lastScrollY = window.scrollY;
-  let isFacingRight = true;
-
-  function onScroll() {
-    const trackTop = track.getBoundingClientRect().top + window.scrollY;
-    const trackHeight = track.offsetHeight - window.innerHeight;
-
-    const raw = (window.scrollY - trackTop) / trackHeight;
-    const progress = Math.min(Math.max(raw, 0), 1);
-
-    const stageW = track.offsetWidth + 200;
-    const planeW = plane.offsetWidth;
-    const left = -planeW + progress * (stageW + planeW);
-
-    plane.style.left = left - 100 + "px";
-
-    if (window.scrollY > lastScrollY) {
-      if (!isFacingRight) {
-        plane.style.transition = "transform 0.5s ease";
-        plane.style.transform = "translateY(-50%) rotateY(0deg)";
-        isFacingRight = true;
-      }
-    } else {
-      if (isFacingRight) {
-        plane.style.transition = "transform 0.5s ease";
-        plane.style.transform = "translateY(-50%) rotateY(180deg)";
-        isFacingRight = false;
-      }
-    }
-
-    lastScrollY = window.scrollY;
-  }
-  window.addEventListener("scroll", onScroll, { passive: true });
-  window.addEventListener("resize", onScroll, { passive: true });
-  onScroll();
-})();
-
-
-
-// Loading page
-
 window.onload = function () {
   const preloader = document.getElementById("preloader");
-
+ 
   // 🔒 Lock scroll initially
   document.body.classList.add("no-scroll");
-
-  // Check if loader already shown in this session
-  if (sessionStorage.getItem("loaderShown")) {
+ 
+  // Check if loader already shown before (persistent)
+  if (localStorage.getItem("loaderShown")) {
     preloader.style.display = "none";
-
+ 
     // 🔓 Unlock scroll
     document.body.classList.remove("no-scroll");
     return;
   }
-
+ 
   setTimeout(function () {
     preloader.style.opacity = "0";
     preloader.style.visibility = "hidden";
-
-    sessionStorage.setItem("loaderShown", "true");
-
+ 
+    // Save permanently
+    localStorage.setItem("loaderShown", "true");
+ 
     setTimeout(() => {
       preloader.style.display = "none";
-
-      // 🔓 Unlock scroll after loader gone
+ 
+      // 🔓 Unlock scroll
       document.body.classList.remove("no-scroll");
     }, 1000);
   }, 2300);
 };
-
 // Buttons
 
 function showCampus(campus) {
@@ -93,13 +47,11 @@ function showCampus(campus) {
   event.target.classList.add("active");
 }
 
-
 // PopUp Script js
 
 document.addEventListener("DOMContentLoaded", () => {
   const popup = document.getElementById("applyPopup");
   const closeBtn = popup.querySelector(".popup-close");
-
 
   function showPopup() {
     popup.classList.add("show");
@@ -126,31 +78,44 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// Counter
 
-// Counter 
+let started = false;
 
-document.addEventListener("DOMContentLoaded", () => {
-  function counter(id, start, end, duration) {
-    let obj = document.getElementById(id),
-      current = start,
-      range = end - start,
-      increment = end > start ? 1 : -1,
-      step = Math.abs(Math.floor(duration / range)),
-      timer = setInterval(() => {
-        current += increment;
-        obj.textContent = current;
-        if (current == end) {
-          clearInterval(timer);
-        }
-      }, step);
-  }
-  counter("count1", 0, 10, 3000);
-  counter("count2", 0, 50, 3000);
-  counter("count3", 0, 600, 3000);
-  counter("count4", 0, 100, 3000);
-});
+function counter(id, start, end, duration) {
+  let obj = document.getElementById(id),
+    current = start,
+    range = end - start,
+    increment = end > start ? 1 : -1,
+    step = Math.abs(Math.floor(duration / range)),
+    timer = setInterval(() => {
+      current += increment;
+      obj.textContent = current;
+      if (current == end) {
+        clearInterval(timer);
+      }
+    }, step);
+}
 
+// Counter Section
+const section = document.getElementById("counterSection");
 
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting && !started) {
+        counter("count1", 0, 10, 3000);
+        counter("count2", 0, 50, 3000);
+        counter("count3", 0, 600, 3000);
+        counter("count4", 0, 100, 3000);
+        started = true; // run only once
+      }
+    });
+  },
+  { threshold: 0.5 },
+);
+
+observer.observe(section);
 
 // form Script
 
@@ -1022,3 +987,4 @@ state.addEventListener("change", function () {
     });
   }
 });
+

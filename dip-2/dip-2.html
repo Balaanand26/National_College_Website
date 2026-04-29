@@ -63,7 +63,7 @@
               class="navbar-nav ms-auto d-lg-flex align-items-lg-center align-"
             >
               <li class="nav-item">
-                <a class="nav-link " href="../index.html">Home</a>
+                <a class="nav-link" href="../index.html">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="../about/about.html">About</a>
@@ -90,9 +90,7 @@
                           >
                         </li>
                         <li>
-                          <a href="../InBus/academic.html"
-                            >B.Sc Aviation</a
-                          >
+                          <a href="../InBus/academic.html">B.Sc Aviation</a>
                         </li>
                         <li>
                           <a href="../ship/shipping&log.html"
@@ -142,7 +140,11 @@
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="../Campus/campus.html">Campus</a>
+                <a
+                  class="nav-link mt-2 mt-md-0 mt-lg-0"
+                  href="../Campus/campus.html"
+                  >Campus</a
+                >
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="../Placement/placement.html"
@@ -171,7 +173,7 @@
       <section>
         <div class="container heroContent">
           <div class="imgContent position-relative">
-            <img src="./images/bank.jpg" class="img-fluid rounded-4" alt="" />
+            <img src="./images/bank.jpeg" class="img-fluid rounded-4" alt="" />
             <div
               class="overlay position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center text-center"
             >
@@ -195,7 +197,7 @@
                   data-aos="fade-up"
                   data-aos-duration="1000"
                 >
-                  <img src="./images/airline.jpg" class="proImages" alt="" />
+                  <img src="./images/airline.jpeg" class="proImages" alt="" />
                   <div
                     class="overlays position-absolute d-flex justify-content-end align-items-end text-center bottom-0 start-0 h-100 w-100"
                   >
@@ -211,7 +213,7 @@
                   data-aos="fade-up"
                   data-aos-duration="1300"
                 >
-                  <img src="./images/bank.jpg" class="proImages" alt="" />
+                  <img src="./images/bank.jpeg" class="proImages" alt="" />
                   <div
                     class="overlays position-absolute d-flex justify-content-end align-items-end text-center bottom-0 start-0 h-100 w-100"
                   >
@@ -227,7 +229,7 @@
                   data-aos="fade-up"
                   data-aos-duration="1600"
                 >
-                  <img src="./images/fas.jpeg" class="proImages" alt="" />
+                  <img src="./images/fashion.jpeg" class="proImages" alt="" />
                   <div
                     class="overlays position-absolute d-flex justify-content-end align-items-end text-center bottom-0 start-0 h-100 w-100"
                   >
@@ -243,7 +245,7 @@
                   data-aos="fade-up"
                   data-aos-duration="1900"
                 >
-                  <img src="./images/log.jpg" class="proImages" alt="" />
+                  <img src="./images/logistics.png" class="proImages" alt="" />
                   <div
                     class="overlays position-absolute d-flex justify-content-end align-items-end text-center bottom-0 start-0 h-100 w-100"
                   >
@@ -258,7 +260,7 @@
       <!-- Banking courses Section -->
       <section>
         <div class="container mb-5">
-          <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+          <ul class="nav nav-pills mb-3 d-flex justify-content-center" id="pills-tab" role="tablist">
             <li class="nav-item" role="presentation">
               <button
                 class="nav-link active ChooseBtn"
@@ -294,7 +296,7 @@
                   <div class="col-lg-6">
                     <div data-aos="fade-right" data-aos-duration="1000">
                       <img
-                        src="./images/f2.png"
+                        src="./images/bank_main.png"
                         width="100%"
                         height="600px"
                         alt=""
@@ -433,7 +435,7 @@
                   <div class="col-lg-6">
                     <div>
                       <img
-                        src="./images/db1.jpeg"
+                        src="./images/bank2_main.png"
                         width="100%"
                         height="600px"
                         alt=""
@@ -555,111 +557,145 @@
           </div>
         </div>
       </section>
-    <!-- FORMS -->
-    <section>
-      <div class="container contImg position-relative">
-        <div
-          class="position-absolute w-100 h-100 d-flex justify-content-center justify-content-lg-end align-items-center top-0 end-0 me-lg-5"
-        >
-          <div class="formContent" data-aos="zoom-in" data-aos-duration="1500">
-            <form id="myForm">
-              <!-- Name -->
-              <input class="w-100" type="text" id="name" placeholder="Name" />
-              <small id="nameError">Name must contain only Alphabets</small>
+      <!-- FORMS -->
+      <section>
+        <div class="container contImg position-relative">
+          <div
+            class="position-absolute w-100 h-100 d-flex justify-content-center justify-content-lg-end align-items-center top-0 end-0 me-lg-5"
+          >
+            <div
+              class="formContent"
+              data-aos="zoom-in"
+              data-aos-duration="1500"
+            >
+                <form
+                  id="myForm"
+                  action="https://api.web3forms.com/submit"
+                  method="POST"
+                >
+                  <!-- Replace with your Access Key -->
+                  <input
+                    type="hidden"
+                    name="access_key"
+                    value="8328d9ae-273c-491f-b60f-03e4deef2618"
+                  />
+                  <!-- Name -->
+                  <input
+                    class="w-100"
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Name"
+                  />
+                  <small id="nameError">Name must contain only Alphabets</small>
 
-              <!-- Mobile -->
-              <input
-                class="w-100"
-                type="text"
-                id="mobile"
-                placeholder="Mobile Number"
-              />
-              <small id="mobileError">Enter valid 10-digit mobile number</small>
+                  <!-- Mobile -->
+                  <input
+                    class="w-100"
+                    type="text"
+                    id="mobile"
+                    name="mobile"
+                    placeholder="Mobile Number"
+                  />
+                  <small id="mobileError"
+                    >Enter valid 10-digit mobile number</small
+                  >
 
-              <!-- Email -->
-              <input class="w-100" type="text" id="email" placeholder="Email" />
-              <small id="emailError">Enter valid email address</small>
+                  <!-- Email -->
+                  <input
+                    class="w-100"
+                    type="text"
+                    id="email"
+                    name="email"
+                    placeholder="Email"
+                  />
+                  <small id="emailError">Enter valid email address</small>
 
-              <!-- State & City -->
-              <div class="d-flex gap-2">
-                <div class="w-50">
-                  <select class="w-100" id="state">
-                    <option value="">Select State</option>
+                  <!-- State & City -->
+                  <div class="d-flex gap-2">
+                    <div class="w-50">
+                      <select class="w-100" id="state" name="state">
+                        <option value="">Select State</option>
 
-                    <option value="AndhraPradesh">Andhra Pradesh</option>
-                    <option value="ArunachalPradesh">Arunachal Pradesh</option>
-                    <option value="Assam">Assam</option>
-                    <option value="Bihar">Bihar</option>
-                    <option value="Chhattisgarh">Chhattisgarh</option>
-                    <option value="Goa">Goa</option>
-                    <option value="Gujarat">Gujarat</option>
-                    <option value="Haryana">Haryana</option>
-                    <option value="HimachalPradesh">Himachal Pradesh</option>
-                    <option value="JammuKashmir">Jammu Kashmir</option>
-                    <option value="Jharkhand">Jharkhand</option>
-                    <option value="Kerala">Kerala</option>
-                    <option value="Karnataka">Karnataka</option>
-                    <option value="MadhyaPradesh">Madhya Pradesh</option>
-                    <option value="Maharashtra">Maharashtra</option>
-                    <option value="Manipur">Manipur</option>
-                    <option value="Meghalaya">Meghalaya</option>
-                    <option value="Mizoram">Mizoram</option>
-                    <option value="Nagaland">Nagaland</option>
-                    <option value="Odisha">Odisha</option>
-                    <option value="Punjab">Punjab</option>
-                    <option value="Rajasthan">Rajasthan</option>
-                    <option value="Sikkim">Sikkim</option>
-                    <option value="TamilNadu">Tamil Nadu</option>
-                    <option value="Telangana">Telangana</option>
-                    <option value="Tripura">Tripura</option>
-                    <option value="UttarPradesh">Uttar Pradesh</option>
-                    <option value="Uttarakhand">Uttarakhand</option>
-                    <option value="WestBengal">West Bengal</option>
+                        <option value="AndhraPradesh">Andhra Pradesh</option>
+                        <option value="ArunachalPradesh">
+                          Arunachal Pradesh
+                        </option>
+                        <option value="Assam">Assam</option>
+                        <option value="Bihar">Bihar</option>
+                        <option value="Chhattisgarh">Chhattisgarh</option>
+                        <option value="Goa">Goa</option>
+                        <option value="Gujarat">Gujarat</option>
+                        <option value="Haryana">Haryana</option>
+                        <option value="HimachalPradesh">
+                          Himachal Pradesh
+                        </option>
+                        <option value="JammuKashmir">Jammu Kashmir</option>
+                        <option value="Jharkhand">Jharkhand</option>
+                        <option value="Kerala">Kerala</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="MadhyaPradesh">Madhya Pradesh</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Manipur">Manipur</option>
+                        <option value="Meghalaya">Meghalaya</option>
+                        <option value="Mizoram">Mizoram</option>
+                        <option value="Nagaland">Nagaland</option>
+                        <option value="Odisha">Odisha</option>
+                        <option value="Punjab">Punjab</option>
+                        <option value="Rajasthan">Rajasthan</option>
+                        <option value="Sikkim">Sikkim</option>
+                        <option value="TamilNadu">Tamil Nadu</option>
+                        <option value="Telangana">Telangana</option>
+                        <option value="Tripura">Tripura</option>
+                        <option value="UttarPradesh">Uttar Pradesh</option>
+                        <option value="Uttarakhand">Uttarakhand</option>
+                        <option value="WestBengal">West Bengal</option>
+                      </select>
+                      <small id="stateError">Please select a state</small>
+                    </div>
+
+                    <div class="w-50">
+                      <select class="w-100" id="city" name="city">
+                        <option value="">Select City</option>
+                      </select>
+                      <small id="cityError">Please select a City</small>
+                    </div>
+                  </div>
+
+                  <!-- Course -->
+                  <select class="w-100" id="course" name="course">
+                    <option value="">Course</option>
+                    <option>BBA Airlines & Airport Management</option>
+                    <option>B.Sc Aviation</option>
+                    <option>BBA Shipping and Logistics</option>
+                    <option>B.Com Banking & Finance</option>
+                    <option>B.Sc Fashion Design</option>
+                    <option>MBA Airlines & Airport Management</option>
+                    <option>MBA - HR | Finance | Marketing | Operations</option>
+                    <option>Airlines & Airport Management</option>
+                    <option>Banking</option>
+                    <option>Fashion Design</option>
+                    <option>Logistics</option>
                   </select>
-                  <small id="stateError">Please select a state</small>
-                </div>
+                  <small id="courseError">Please select a course</small>
 
-                <div class="w-50">
-                  <select class="w-100" id="city">
-                    <option value="">Select City</option>
-                  </select>
-                  <small id="cityError">Please select a City</small>
-                </div>
-              </div>
-
-              <!-- Course -->
-              <select class="w-100" id="course">
-                <option value="">Course</option>
-                <option>BBA Airlines & Airport Management</option>
-                <option>BBA International Business</option>
-                <option>BBA Shipping and Logistics</option>
-                <option>B.Com Banking & Finance</option>
-                <option>B.Sc Fashion Design</option>
-                <option>MBA Airlines & Airport Management</option>
-                <option>MBA - HR | Finance | Marketing | Operations</option>
-                <option>Airlines & Airport Management</option>
-                <option>Banking</option>
-                <option>Fashion Design</option>
-                <option>Logistics</option>
-              </select>
-              <small id="courseError">Please select a course</small>
-
-              <!-- Checkbox -->
-              <div class="text-white">
-                <input type="checkbox" id="agree" /> I agree to receive
-                information regarding my enquiry from National Institute of
-                Management and Science.
-                <small id="agreeError">You must agree before submitting</small>
-              </div>
-
-              <button type="submit" class="subBtn mt-2">SUBMIT</button>
-            </form>
+                  <!-- Checkbox -->
+                  <div class="text-white">
+                    <input type="checkbox" id="agree" /> I agree to receive
+                    information regarding my enquiry from National Institute of
+                    Management and Science.
+                    <small id="agreeError"
+                      >You must agree before submitting</small
+                    >
+                  </div>
+                  <button type="submit" class="subBtn mt-2">SUBMIT</button>
+                </form>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
     </main>
-    
+
     <!-- Footer -->
     <footer class="footerSection">
       <div class="container">
@@ -838,6 +874,8 @@
       <button class="popup-close" aria-label="Close popup">&times;</button>
     </div>
 
+    
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
@@ -850,6 +888,6 @@
         once: false,
       });
     </script>
-        <script src="dip-2.js"></script>
+    <script src="dip-2.js"></script>
   </body>
 </html>

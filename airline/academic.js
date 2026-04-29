@@ -900,3 +900,13 @@ document.addEventListener("DOMContentLoaded", () => {
     popup.classList.remove("show");
   });
 });
+
+
+
+$(document).ready(function () {
+  $('.custom-select').select2({
+    width: '100%',
+    dropdownCssClass: "limit-height",
+    minimumResultsForSearch: Infinity // remove search box if you want
+  });
+});

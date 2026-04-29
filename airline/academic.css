@@ -181,7 +181,6 @@ header {
   }
 }
 
-
 /* ===== HERO SECTION ===== */
 .heroContent {
   margin-top: 50px;
@@ -322,6 +321,13 @@ small {
   border: 1px solid #ddb337;
 }
 
+
+/* Select Section  */
+
+.limit-height .select2-results__options {
+  max-height: 220px; /* ~6 items */
+  overflow-y: auto;
+}
 /* ================== Footer ==================== */
 .footerSection {
   background-color: #7e1416;
@@ -350,21 +356,7 @@ small {
 .footerSection a:hover {
   color: #ddb337;
 }
-@media (max-width: 450px) {
-  .footerSection {
-    padding-bottom: 400px;
-  }
-}
-@media (max-width: 400px) {
-  .footerSection {
-    padding-bottom: 350px;
-  }
-}
-@media (max-width: 380px) {
-  .footerSection {
-    padding-bottom: 200px;
-  }
-}
+
 /* ==================== Whatsapp floating =================== */
 .float-image {
   position: fixed;
@@ -449,3 +441,23 @@ small {
   box-shadow: 0 6px 25px #7e1416;
 }
 
+/* Modal Section */
+
+.modalContainer {
+  background-color: #7e1416 !important;
+}
+.EnrollFormContent {
+  position: fixed;
+  top: 150px;
+  right: -49px;
+  padding: 10px 30px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #7e1416;
+  transform: rotate(270deg);
+  z-index: 1000;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  box-shadow: 3px 3px 12px #7e1416;
+  border: #fff 1px solid;
+}

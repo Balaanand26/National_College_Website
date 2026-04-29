@@ -139,6 +139,7 @@ header {
   margin-top: 25px;
   margin-left: -200px;
   width: 700px;
+  scrollbar-width: none;
   padding: 20px;
   border-radius: 10px;
   background-color: #7e1416;
@@ -237,6 +238,18 @@ header {
     margin-top: 5px;
     margin-left: 0px;
     width: 300px;
+    overflow-x: hidden;
+  }
+}
+@media (max-width: 320px) {
+  .logoContent h3 {
+    font-size: 20px !important;
+  }
+  .dropdown-menu.mega-menu {
+    margin-top: 5px;
+    margin-left: 0px;
+    width: 280px;
+    padding: 10px;
   }
 }
 
@@ -261,8 +274,15 @@ header {
   padding: 12px 32px;
   color: #fff;
   font-weight: 600;
+  border: #7e1416 2px solid;
   border-radius: 12px;
   background-color: #7e1416;
+  transition: 0.5s;
+}
+.firstContent button:hover {
+  color: #fff;
+  border: #fff solid 2px;
+  background-color: transparent;
 }
 .firstContent h1 {
   font-weight: 700;
@@ -272,7 +292,6 @@ header {
   font-size: 20px;
   width: 70%;
 }
-
 
 @media screen and (min-width: 318px) and (max-width: 479px) {
   .carousel-item {
@@ -346,6 +365,9 @@ header {
     width: 100%;
     height: 100vh;
   }
+  .extraContent {
+    display: none;
+  }
 
   .carousel-item img {
     width: 100%;
@@ -406,7 +428,7 @@ header {
 
 /* Form Content Style */
 .formContent {
-  width: 400px;
+  width: 100%;
   padding: 30px 25px;
   background-color: #7e1416;
   border-radius: 10px;
@@ -1430,21 +1452,7 @@ small {
 .footerSection a:hover {
   color: #ddb337;
 }
-@media (max-width: 450px) {
-  .footerSection {
-    padding-bottom: 400px;
-  }
-}
-@media (max-width: 400px) {
-  .footerSection {
-    padding-bottom: 350px;
-  }
-}
-@media (max-width: 380px) {
-  .footerSection {
-    padding-bottom: 200px;
-  }
-}
+
 /* ==================== Whatsapp floating =================== */
 .float-image {
   position: fixed;
@@ -1528,3 +1536,25 @@ small {
 .apply-popup:hover {
   box-shadow: 0 6px 25px #7e1416;
 }
+
+/* Modal Section */
+
+.modalContainer {
+  background-color: #7e1416 !important;
+}
+.EnrollFormContent {
+  position: fixed;
+  top: 150px;
+  right: -49px;
+  padding: 10px 30px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #7e1416;
+  transform: rotate(270deg);
+  z-index: 1000;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  box-shadow: 3px 3px 12px #7e1416;
+  border: #fff 1px solid;
+}
+

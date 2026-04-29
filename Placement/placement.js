@@ -867,13 +867,11 @@ state.addEventListener("change", function () {
   }
 });
 
-
 // PopUp Script js
 
 document.addEventListener("DOMContentLoaded", () => {
   const popup = document.getElementById("applyPopup");
   const closeBtn = popup.querySelector(".popup-close");
-
 
   function showPopup() {
     popup.classList.add("show");
@@ -899,3 +897,5 @@ document.addEventListener("DOMContentLoaded", () => {
     popup.classList.remove("show");
   });
 });
+
+

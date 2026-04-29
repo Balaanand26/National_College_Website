@@ -144,7 +144,11 @@
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../news/news.html">News</a>
+                <a
+                  class="nav-link mt-2 mt-md-0 mt-lg-0"
+                  href="../news/news.html"
+                  >News</a
+                >
               </li>
               <li class="ApplyBtn mt-2 mt-lg-0 ps-0 ps-lg-4">
                 <a href="../appForm/appForm.html">
@@ -214,7 +218,6 @@
           </div>
         </div>
       </section>
-
 
       <!-- Company logos -->
       <section>
@@ -456,9 +459,25 @@
               data-aos="zoom-in"
               data-aos-duration="1500"
             >
-              <form id="myForm">
+              <form
+                id="myForm"
+                action="https://api.web3forms.com/submit"
+                method="POST"
+              >
+                <!-- Replace with your Access Key -->
+                <input
+                  type="hidden"
+                  name="access_key"
+                  value="8328d9ae-273c-491f-b60f-03e4deef2618"
+                />
                 <!-- Name -->
-                <input class="w-100" type="text" id="name" placeholder="Name" />
+                <input
+                  class="w-100"
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Name"
+                />
                 <small id="nameError">Name must contain only Alphabets</small>
 
                 <!-- Mobile -->
@@ -466,6 +485,7 @@
                   class="w-100"
                   type="text"
                   id="mobile"
+                  name="mobile"
                   placeholder="Mobile Number"
                 />
                 <small id="mobileError"
@@ -477,6 +497,7 @@
                   class="w-100"
                   type="text"
                   id="email"
+                  name="email"
                   placeholder="Email"
                 />
                 <small id="emailError">Enter valid email address</small>
@@ -484,7 +505,11 @@
                 <!-- State & City -->
                 <div class="d-flex gap-2">
                   <div class="w-50">
-                    <select class="w-100" id="state">
+                    <select
+                      class="w-100 form-select custom-select"
+                      id="state"
+                      name="state"
+                    >
                       <option value="">Select State</option>
 
                       <option value="AndhraPradesh">Andhra Pradesh</option>
@@ -523,7 +548,7 @@
                   </div>
 
                   <div class="w-50">
-                    <select class="w-100" id="city">
+                    <select class="w-100" id="city" name="city">
                       <option value="">Select City</option>
                     </select>
                     <small id="cityError">Please select a City</small>
@@ -531,10 +556,10 @@
                 </div>
 
                 <!-- Course -->
-                <select class="w-100" id="course">
+                <select class="w-100" id="course" name="course">
                   <option value="">Course</option>
                   <option>BBA Airlines & Airport Management</option>
-                  <option>BBA International Business</option>
+                  <option>B.Sc Aviation</option>
                   <option>BBA Shipping and Logistics</option>
                   <option>B.Com Banking & Finance</option>
                   <option>B.Sc Fashion Design</option>
@@ -556,7 +581,6 @@
                     >You must agree before submitting</small
                   >
                 </div>
-
                 <button type="submit" class="subBtn mt-2">SUBMIT</button>
               </form>
             </div>
@@ -743,11 +767,15 @@
       <button class="popup-close" aria-label="Close popup">&times;</button>
     </div>
 
+    
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
+
+    <!-- Script file -->
     <script src="placement.js"></script>
     <script>
       AOS.init({
