@@ -16,6 +16,18 @@ function radio(name) {
   return r ? r.value : null;
 }
 
+document.getElementById("name").addEventListener("input", function () {
+  this.value = this.value.replace(/[^A-Za-z ]/g, "");
+});
+
+document.getElementById("mobile").addEventListener("input", function () {
+  this.value = this.value.replace(/[^0-9]/g, "").slice(0, 10);
+});
+
+document.getElementById("parentMobile").addEventListener("input", function () {
+  this.value = this.value.replace(/[^0-9]/g, "").slice(0, 10);
+});
+
 function validateStep1() {
   let ok = true;
   if (!nameRegex.test(val("name"))) {
@@ -56,6 +68,55 @@ function validateStep1() {
   } else hideErr("addressError");
   return ok;
 }
+
+const btn1 = document.getElementById("btn1");
+const btn2 = document.getElementById("btn2");
+const step1 = document.getElementById("step1");
+const step2 = document.getElementById("step2");
+
+// NEXT BUTTON (FORM SUBMIT)
+document.getElementById("myForm2").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  if (!validateStep1()) return;
+
+  // Show step 2
+  step1.style.display = "none";
+  step2.style.display = "block";
+
+  // Button styles
+  btn1.classList.remove("active");
+  btn1.classList.add("inactive");
+
+  btn2.classList.remove("inactive");
+  btn2.classList.add("active");
+});
+
+// CLICK → PERSONAL INFO
+btn1.addEventListener("click", function () {
+  step1.style.display = "block";
+  step2.style.display = "none";
+
+  btn1.classList.add("active");
+  btn1.classList.remove("inactive");
+
+  btn2.classList.remove("active");
+  btn2.classList.add("inactive");
+});
+
+// CLICK → QUESTION PAPER
+btn2.addEventListener("click", function () {
+  if (!validateStep1()) return;
+
+  step1.style.display = "none";
+  step2.style.display = "block";
+
+  btn2.classList.add("active");
+  btn2.classList.remove("inactive");
+
+  btn1.classList.remove("active");
+  btn1.classList.add("inactive");
+});
 
 // Questions
 const questions = [
@@ -472,7 +533,7 @@ ${answersText}`;
         },
         body: JSON.stringify({
           access_key: "8328d9ae-273c-491f-b60f-03e4deef2618",
-          subject: `Scholarship Test - ${val("name")} | Score: ${score}/10`,
+          subject: `Scholarship Test - ${val("name")} | Score: ${score}/40`,
           from_name: val("name"),
           email: val("email"),
           message: messageBody,

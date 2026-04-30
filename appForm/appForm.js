@@ -1,3 +1,60 @@
+// ===============================
+// SELECT ALL INPUTS
+// ===============================
+const form = document.getElementById("mainForm");
+
+// ===============================
+// INPUT FILTER FUNCTION
+// ===============================
+form.addEventListener("input", function (e) {
+  const field = e.target;
+
+  // ===== ALPHABET ONLY FIELDS =====
+  const alphaFields = [
+    "name",
+    "nationality",
+    "state",
+    "city",
+    "fatherName",
+    "motherName",
+    "fatherJob",
+    "motherJob",
+    "course",
+    "university"
+  ];
+
+  // ===== NUMBER ONLY FIELDS =====
+  const numberFields = [
+    "mobile",
+    "altMobile",
+    "fatherMobile",
+    "motherMobile",
+    "fatherPhone",
+    "motherPhone",
+    "pincode",
+    "year",
+    "marks"
+  ];
+
+  // ===============================
+  // APPLY FILTERS
+  // ===============================
+
+  // Alphabets only
+  if (alphaFields.includes(field.name)) {
+    field.value = field.value.replace(/[^A-Za-z ]/g, "");
+  }
+
+  // Numbers only
+  if (numberFields.includes(field.name)) {
+    field.value = field.value.replace(/[^0-9]/g, "");
+  }
+});
+
+
+
+
+
 // PopUp Script js
 
 document.addEventListener("DOMContentLoaded", () => {

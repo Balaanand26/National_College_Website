@@ -41,7 +41,7 @@ header {
 }
 
 .nav-link:hover {
-  color: #ddb337 !important;
+  color: #F6EC74 !important;
 }
 .navbar-nav .nav-link.active {
   color: #ffcc00 !important;
@@ -67,8 +67,8 @@ header {
   border-radius: 24px;
   font-weight: 600;
   color: #7e1416;
-  background-color: #ddb337;
-  border: #ddb337 solid 2px;
+  background-color: #F6EC74;
+  border: #F6EC74 solid 2px;
 }
 .ApplyBtn button:hover {
   padding: 5px 20px;
@@ -87,7 +87,7 @@ header {
   border-radius: 10px;
   background-color: #7e1416;
   color: white;
-  border: 1px solid #ddb33740;
+  border: 1px solid #F6EC7440;
 }
 
 .mega-menu ul {
@@ -108,11 +108,11 @@ header {
 }
 
 .mega-menu li a:hover {
-  color: #ddb337;
+  color: #F6EC74;
 }
 
 .mega-menu strong {
-  color: #ddb337;
+  color: #F6EC74;
 }
 
 .mega-menu {
@@ -134,8 +134,8 @@ header {
     border-radius: 24px;
     font-weight: 600;
     color: #7e1416;
-    background-color: #ddb337;
-    border: #ddb337 solid 2px;
+    background-color: #F6EC74;
+    border: #F6EC74 solid 2px;
   }
   .nav-link {
     margin-left: 0px;
@@ -273,11 +273,11 @@ header {
   padding: 50px 0px;
 }
 .footerSection h3 {
-  color: #ddb337;
+  color: #F6EC74;
   margin-bottom: 15px;
 }
 .footerSection h5 {
-  color: #ddb337;
+  color: #F6EC74;
 }
 .footerSection i {
   font-size: 20px;
@@ -292,7 +292,7 @@ header {
   line-height: 15px;
 }
 .footerSection a:hover {
-  color: #ddb337;
+  color: #F6EC74;
 }
 
 /* ==================== Whatsapp floating =================== */
@@ -387,16 +387,72 @@ header {
 }
 .EnrollFormContent {
   position: fixed;
-  top: 150px;
+  top: 170px;
   right: -49px;
   padding: 10px 30px;
   font-weight: 600;
-  color: #fff;
-  background-color: #7e1416;
+  color: #7e1416;
+  background-color: #ddb337;
   transform: rotate(270deg);
   z-index: 1000;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
   box-shadow: 3px 3px 12px #7e1416;
-  border: #fff 1px solid;
+  border: #7e1416 1px solid;
+  transition: 0.5s;
+}
+.EnrollFormContent:hover {
+  background-color: #fff;
+  color: #7e1416;
+  border: #7e1416 1px solid;
+}
+
+/* Form Content Style */
+.formContent1 {
+  width: 100%;
+  padding: 30px 25px;
+  background-color: #7e1416;
+  border-radius: 10px;
+}
+.formContent1 input {
+  padding: 10px 20px;
+  margin: 8px auto;
+  border-radius: 7px;
+  border: none;
+}
+
+.formContent1 input::placeholder {
+  color: black;
+}
+
+.formContent1 select {
+  padding: 10px 20px;
+  margin: 8px auto;
+  border-radius: 7px;
+  border: none;
+}
+.formContent1 select:focus {
+  outline: none;
+}
+
+.formContent1 input:focus {
+  outline: none;
+}
+
+.subBtn1 {
+  margin: 0 auto;
+  width: 100%;
+  padding: 10px 55px;
+  background-color: #F6EC74;
+  color: #7e1416;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+}
+small {
+  color: #F6EC74;
+  display: none;
+}
+.error1 {
+  border: 1px solid #F6EC74;
 }

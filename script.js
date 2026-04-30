@@ -104,10 +104,9 @@ const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting && !started) {
-        counter("count1", 0, 10, 3000);
-        counter("count2", 0, 50, 3000);
-        counter("count3", 0, 600, 3000);
-        counter("count4", 0, 100, 3000);
+        counter("count1", 0, 5000, 3000);
+        counter("count2", 0, 150, 3000);
+        counter("count3", 0, 100, 3000);
         started = true; // run only once
       }
     });

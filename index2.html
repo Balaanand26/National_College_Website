@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scroll Driven Animation (Exact Style)</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: black;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* SECTION */
+.section {
+  height: 300vh; /* long scroll */
+  position: relative;
+}
+
+/* STICKY AREA */
+.sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* IMAGE */
+.image {
+  position: absolute;
+  width: 60%;
+  border-radius: 20px;
+  transform: scale(0.7);
+  opacity: 0.3;
+}
+
+/* TEXT */
+.text {
+  position: absolute;
+  text-align: center;
+  transform: translateY(100px);
+  opacity: 0;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+p {
+  color: #aaa;
+  margin-top: 10px;
+}
+
+/* NEXT SECTION */
+.next {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #020617;
+}
+</style>
+
+</head>
+<body>
+
+<section class="section">
+  <div class="sticky">
+
+    <img class="image" 
+    src="https://images.unsplash.com/photo-1492724441997-5dc865305da7">
+
+    <div class="text">
+      <h1>Scroll Animation</h1>
+      <p>Image zoom + text reveal</p>
+    </div>
+
+  </div>
+</section>
+<section class="section">
+  <div class="sticky">
+
+    <img class="image" 
+    src="https://images.unsplash.com/photo-1492724441997-5dc865305da7">
+
+    <div class="text">
+      <h1>Scroll Animation</h1>
+      <p>Image zoom + text reveal</p>
+    </div>
+
+  </div>
+</section>
+<section class="section">
+  <div class="sticky">
+
+    <img class="image" 
+    src="https://images.unsplash.com/photo-1492724441997-5dc865305da7">
+
+    <div class="text">
+      <h1>Scroll Animation</h1>
+      <p>Image zoom + text reveal</p>
+    </div>
+
+  </div>
+</section>
+
+<div class="next">
+  <h1>Next Section 🚀</h1>
+</div>
+
+<script>
+const section = document.querySelector(".section");
+const image = document.querySelector(".image");
+const text = document.querySelector(".text");
+
+window.addEventListener("scroll", () => {
+  const rect = section.getBoundingClientRect();
+  const windowHeight = window.innerHeight;
+
+  // progress (0 to 1)
+  let progress = 1 - (rect.bottom / (windowHeight + rect.height));
+  progress = Math.max(0, Math.min(progress, 1));
+
+  /* IMAGE ANIMATION */
+  const scale = 0.7 + progress * 0.3;
+  const opacity = 0.3 + progress * 0.7;
+
+  image.style.transform = `scale(${scale})`;
+  image.style.opacity = opacity;
+
+  /* TEXT ANIMATION */
+  const textY = 100 - progress * 100;
+  const textOpacity = progress;
+
+  text.style.transform = `translateY(${textY}px)`;
+  text.style.opacity = textOpacity;
+});
+</script>
+
+</body>
+</html>

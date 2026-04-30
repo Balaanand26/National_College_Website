@@ -1,8 +1,8 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
@@ -12,9 +12,12 @@ body {
   position: relative;
   height: 100vh;
 }
-section{
+section {
   width: 100%;
   overflow: hidden;
+}
+p {
+  font-size: 16px !important;
 }
 
 /* =============================================
@@ -81,6 +84,7 @@ header {
   margin-top: 25px;
   margin-left: -200px;
   width: 700px;
+  scrollbar-width: none;
   padding: 20px;
   border-radius: 10px;
   background-color: #7e1416;
@@ -173,319 +177,65 @@ header {
 }
 @media (max-width: 376px) {
   .logoContent h3 {
-    font-size: 20px !important;
+    font-size: 18px !important;
   }
   .dropdown-menu.mega-menu {
     margin-top: 5px;
     margin-left: 0px;
     width: 300px;
+    overflow-x: hidden;
+  }
+}
+@media (max-width: 320px) {
+  .logoContent h3 {
+    font-size: 20px !important;
+  }
+  .dropdown-menu.mega-menu {
+    margin-top: 5px;
+    margin-left: 0px;
+    width: 280px;
+    padding: 10px;
   }
 }
 
-
-/* * */
-.txt-color {
-  color: #7e1416;
+/* Hero Section */
+/* ===== HERO SECTION ===== */
+.heroContent {
+  margin-top: 50px;
+}
+.imgContent img {
+  width: 100%;
+  height: 50vh;
+  object-fit: cover;
+  filter: brightness(0.7);
+}
+.overlay {
+  animation-name: animateText;
+  animation-duration: 1s;
 }
 
-
-/* About Section */
-.about-hero {
-    background: linear-gradient(135deg, #7e1416 0%, #8e494a 100%);
-    padding: 5rem 5%;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    margin-top: 80px;
+@keyframes animateText {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
-.about-hero::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('https://images.unsplash.com/photo-1542296332-2e4473faf563?w=600&auto=format');
-    background-size: cover;
-    background-position: center;
-    opacity: 0.1;
-    pointer-events: none;
+/* Founder Section */
+.FounderImg{
+  border-top-left-radius: 35px;
+  border-bottom-right-radius: 35px;
 }
-
-.about-hero .about-title {
-    color: #DDB337;
-    font-size: clamp(28px, 5vw, 40px);
-    font-weight: 700;
-}
-
-.about-hero .about-content {
-    max-width: 1200px;
-    color: white;
-    margin: 1rem auto 0;
-    font-size: clamp(14px, 3vw, 18px);
-    opacity: 0.9;
-    padding: 0 15px;
-}
-
-/* About paragraph Section */
-.para-section {
-    position: relative;
-    background: whitesmoke;
-    color: white;
-    padding: 40px 30px;
-    overflow: hidden;
-    max-width: 100%;
-}
-
-.watermark-img {
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0.3;
-    z-index: 0;
-    pointer-events: none;
-}
-
-.watermark-img img {
-    width: auto;
-    height: auto;
-    max-width: 80%;
-    max-height: 400px;
-    display: block;
-}
-
-.about-text {
-    position: relative;
-    z-index: 1;
-}
-
-.para-title {
-    font-size: clamp(28px, 5vw, 40px);
-    color: #7e1416;
-    margin: 0 0 20px 0;
-    font-weight: 700;
-}
-
-.para-content {
-    font-size: clamp(14px, 3vw, 18px);
-    line-height: 1.7;
-    color: black;
-    margin: 0 0 15px 0;
-    text-align: justify;
-}
-
-.para-content p {
-    margin-bottom: 15px;
-}
-
-/* vision and mission */
-.left-vision {
-    background: #7e1416;
-    min-height: 400px;
-    height: auto;
-    padding: 40px 20px;
-}
-
-.right-vision {
-    min-height: 400px;
-    height: 500px;
-}
-
-.right-vision img, .left-mission img {
-    width: 100%;
-    height: 100%;
-    min-height: 300px;
-    object-fit: contain;
-}
-
-.left-vision .vision-title {
-    color: #DDB337;
-    font-size: clamp(28px, 5vw, 40px);
-    font-weight: 700;
-}
-
-.left-vision .vision-para {
-    font-size: clamp(14px, 3vw, 18px);
-    max-width: 550px;
-    text-align: justify;
-    font-weight: 600;
-}
-
-/* Mission */
-.right-mission {
-    background: #7e1416;
-    min-height: 400px;
-    height: auto;
-    padding: 40px 20px;
-}
-
-.left-mission {
-    min-height: 400px;
-    height: auto;
-}
-
-.mission-title {
-    color: #ddb337;
-    font-size: clamp(28px, 5vw, 40px);
-    font-weight: 700;
-}
-
-.right-mission .mission-para {
-    font-size: clamp(13px, 3vw, 18px);
-    max-width: 550px;
-    text-align: justify;
-    font-weight: 600;
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    margin-bottom: 15px;
-}
-
-.right-mission .mission-para span {
-    flex-shrink: 0;
-}
-
-.mission-title, .mission-para .bi-check-circle-fill {
-    color: #DDB337;
-}
-
-/* Founder section */
-.found-title h1 {
-    color: #7e1416;
-    margin: 70px 0 0;
-    text-align: center;
-    font-size: clamp(24px, 5vw, 40px);
-    font-weight: 700;
-    padding: 0 15px;
-}
-
-.found-img {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
-    align-items: center;
-    margin-top: 30px;
-    padding: 0 15px;
-    margin-bottom: 50px;
-}
-.founderImg{
-  background-color: #7e1416;
-  border-top-left-radius: 25px;
-  border-bottom-right-radius: 25px;
-}
-.found-img img {
-    width: 100%;
-    max-width: 400px;
-    height: auto;
-    margin-top: 20px;
-}
-
-.found-img .found-content {
-    flex: 1;
-    min-width: 280px;
-    color: gray;
-    font-size: clamp(14px, 3vw, 18px);
-    text-align: justify;
-}
-
-.found-img .found-content li {
-    margin-bottom: 15px;
-    gap: 10px;
-
-}
-
-.found-img .found-content .bi-asterisk {
-    color: #7e1416;
-
-}
-
-/* Responsive Fixes */
-@media (max-width: 992px) {
-    .left-vision, .right-mission {
-        min-height: auto;
-        padding: 40px 20px;
-    }
-    
-    .right-vision, .left-mission {
-        min-height: 300px;
-    }
-    
-    .watermark-img {
-        opacity: 0.05;
-    }
-}
-
-@media (max-width: 768px) {
-    .para-section {
-        padding: 30px 20px;
-    }
-    
-    .watermark-img img {
-        max-width: 90%;
-        max-height: 250px;
-    }
-    
-    .found-img {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .found-img .found-content p {
-        justify-content: flex-start;
-        text-align: left;
-    }
-    
-    .right-mission .mission-para {
-        flex-direction: column;
-        gap: 5px;
-    }
-}
-
-@media (max-width: 576px) {
-    .about-hero {
-        padding: 3rem 5%;
-    }
-    
-    .left-vision .vision-para, 
-    .right-mission .mission-para {
-        max-width: 100%;
-    }
-    
-    .watermark-img {
-        opacity: 0.04;
-    }
-    
-    .container {
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-}
-
-/* Container fluid fix */
-.container-fluid {
-    padding: 0;
-}
-
-/* Row margin fix */
-.row {
-    margin: 0;
-}
-
-/* Image responsive */
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-
-
-
 
 
 /* ================== Footer ==================== */
+footer {
+  margin-top: 50px;
+}
 .footerSection {
   background-color: #7e1416;
   color: #fff;
@@ -534,9 +284,6 @@ img {
   margin-left: 15px;
   color: #fff;
   font-weight: 600;
-}
-.float-image i {
-  font-size: 25px;
 }
 
 /* PopUPs Section */
@@ -605,18 +352,72 @@ img {
 }
 .EnrollFormContent {
   position: fixed;
-  top: 150px;
+  top: 170px;
   right: -49px;
   padding: 10px 30px;
   font-weight: 600;
-  color: #fff;
-  background-color: #7e1416;
+  color: #7e1416;
+  background-color: #ddb337;
   transform: rotate(270deg);
   z-index: 1000;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
   box-shadow: 3px 3px 12px #7e1416;
-  border: #fff 1px solid;
+  border: #7e1416 1px solid;
+  transition: 0.5s;
+}
+.EnrollFormContent:hover {
+  background-color: #fff;
+  color: #7e1416;
+  border: #7e1416 1px solid;
 }
 
+/* Form Content Style */
+.formContent1 {
+  width: 100%;
+  padding: 30px 25px;
+  background-color: #7e1416;
+  border-radius: 10px;
+}
+.formContent1 input {
+  padding: 10px 20px;
+  margin: 8px auto;
+  border-radius: 7px;
+  border: none;
+}
 
+.formContent1 input::placeholder {
+  color: black;
+}
+
+.formContent1 select {
+  padding: 10px 20px;
+  margin: 8px auto;
+  border-radius: 7px;
+  border: none;
+}
+.formContent1 select:focus {
+  outline: none;
+}
+
+.formContent1 input:focus {
+  outline: none;
+}
+
+.subBtn1 {
+  margin: 0 auto;
+  width: 100%;
+  padding: 10px 55px;
+  background-color: #ddb337;
+  color: #7e1416;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+}
+small {
+  color: #ddb337;
+  display: none;
+}
+.error1 {
+  border: 1px solid #ddb337;
+}

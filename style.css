@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -10,6 +13,7 @@ body {
   width: 100%;
   background-color: whitesmoke;
   position: relative;
+  font-family: "Poppins", sans-serif;
 }
 
 body.no-scroll {
@@ -254,10 +258,50 @@ header {
 }
 
 /* Hero Section */
+.phraseSection {
+  margin: 50px 0px;
+}
 
+.titlePhrase h2 {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 700;
+  font-size: 55px;
+}
+.titlePhrase span {
+  font-family: "DM Sans", sans-serif;
+  color: #7e1416;
+  font-weight: 700;
+  font-size: 55px;
+}
+@media (max-width: 426px) {
+  .titlePhrase h2 {
+    font-size: 35px;
+  }
+  .titlePhrase span {
+    font-size: 35px;
+  }
+}
+@media (max-width: 769px) {
+  .titlePhrase h2 {
+    font-size: 45px;
+  }
+  .titlePhrase span {
+    font-size: 45px;
+  }
+}
+.titlePara p {
+  font-weight: 500;
+}
+
+.carouselContent {
+  margin-bottom: 100px;
+}
+.carouselImage {
+  border-radius: 35px;
+}
 .carousel-item {
   width: 100%;
-  height: 90vh;
+  height: 80vh;
 }
 
 .carousel-item img {
@@ -266,7 +310,7 @@ header {
   filter: brightness(0.79);
 }
 .firstContent {
-  top: 45%;
+  top: 40%;
   text-align: start;
 }
 .firstContent button {
@@ -296,7 +340,7 @@ header {
 @media screen and (min-width: 318px) and (max-width: 479px) {
   .carousel-item {
     width: 100%;
-    height: 90vh;
+    height: 60vh;
   }
   .extraContent {
     display: none;
@@ -314,22 +358,24 @@ header {
   .firstContent button {
     margin-top: 8px;
     font-size: 14px;
+    padding: 8px 22px;
     background-color: #7e1416;
   }
   .firstContent h1 {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 700;
     margin-bottom: 10px;
   }
   .firstContent p {
-    font-size: 14px;
+    font-size: 12px;
+    margin: 0;
     width: 100%;
   }
 }
 @media screen and (min-width: 480px) and (max-width: 768px) {
   .carousel-item {
     width: 100%;
-    height: 90vh;
+    height: 70vh;
   }
 
   .extraContent {
@@ -337,7 +383,7 @@ header {
   }
   .carousel-item img {
     width: 100%;
-    height: 90vh;
+    height: 70vh;
     object-fit: cover;
     filter: brightness(0.79);
   }
@@ -363,7 +409,7 @@ header {
 @media screen and (min-width: 767px) and (max-width: 1024px) {
   .carousel-item {
     width: 100%;
-    height: 100vh;
+    height: 80vh;
   }
   .extraContent {
     display: none;
@@ -371,7 +417,7 @@ header {
 
   .carousel-item img {
     width: 100%;
-    height: 100vh;
+    height: 80vh;
     object-fit: cover;
     filter: brightness(0.79);
   }
@@ -397,18 +443,14 @@ header {
 @media screen and (min-width: 1025px) and (max-width: 1442px) {
   .carousel-item {
     width: 100%;
-    height: 150vh;
+    height: 90vh;
   }
 
   .carousel-item img {
     width: 100%;
-    height: 150vh;
+    height: 90vh;
     object-fit: cover;
     filter: brightness(0.79);
-  }
-  .firstContent {
-    top: 45%;
-    text-align: start;
   }
   .firstContent button {
     margin-top: 8px;
@@ -426,55 +468,10 @@ header {
   }
 }
 
-/* Form Content Style */
-.formContent {
-  width: 100%;
-  padding: 30px 25px;
-  background-color: #7e1416;
-  border-radius: 10px;
-}
-.formContent input {
-  padding: 10px 20px;
-  margin: 8px auto;
-  border-radius: 7px;
-  border: none;
+/* Hero section Carousel */
+.carouselContent {
 }
 
-.formContent input::placeholder {
-  color: black;
-}
-
-.formContent select {
-  padding: 10px 20px;
-  margin: 8px auto;
-  border-radius: 7px;
-  border: none;
-}
-.formContent select:focus {
-  outline: none;
-}
-
-.formContent input:focus {
-  outline: none;
-}
-
-.subBtn {
-  margin: 0 auto;
-  width: 100%;
-  padding: 10px 55px;
-  background-color: #ddb337;
-  color: #7e1416;
-  font-weight: 600;
-  border: none;
-  border-radius: 10px;
-}
-small {
-  color: #ddb337;
-  display: none;
-}
-.error {
-  border: 1px solid #ddb337;
-}
 /* =============================================
    HERO SECTION
    ============================================= */
@@ -1179,6 +1176,8 @@ small {
 }
 
 /* ======================== Placement Carousel ===================== */
+
+
 /* Carousel section1 */
 .carousels {
   margin: 0 auto;
@@ -1234,6 +1233,8 @@ small {
     transform: translateX(0%);
   }
 }
+
+
 
 /* latest news */
 
@@ -1544,17 +1545,72 @@ small {
 }
 .EnrollFormContent {
   position: fixed;
-  top: 150px;
+  top: 170px;
   right: -49px;
   padding: 10px 30px;
   font-weight: 600;
-  color: #fff;
-  background-color: #7e1416;
+  color: #7e1416;
+  background-color: #ddb337;
   transform: rotate(270deg);
   z-index: 1000;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
   box-shadow: 3px 3px 12px #7e1416;
-  border: #fff 1px solid;
+  border: #7e1416 1px solid;
+  transition: 0.5s;
+}
+.EnrollFormContent:hover {
+  background-color: #fff;
+  color: #7e1416;
+  border: #7e1416 1px solid;
 }
 
+/* Form Content Style */
+.formContent1 {
+  width: 100%;
+  padding: 30px 25px;
+  background-color: #7e1416;
+  border-radius: 10px;
+}
+.formContent1 input {
+  padding: 10px 20px;
+  margin: 8px auto;
+  border-radius: 7px;
+  border: none;
+}
+
+.formContent1 input::placeholder {
+  color: black;
+}
+
+.formContent1 select {
+  padding: 10px 20px;
+  margin: 8px auto;
+  border-radius: 7px;
+  border: none;
+}
+.formContent1 select:focus {
+  outline: none;
+}
+
+.formContent1 input:focus {
+  outline: none;
+}
+
+.subBtn1 {
+  margin: 0 auto;
+  width: 100%;
+  padding: 10px 55px;
+  background-color: #ddb337;
+  color: #7e1416;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+}
+small {
+  color: #ddb337;
+  display: none;
+}
+.error1 {
+  border: 1px solid #ddb337;
+}
