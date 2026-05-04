@@ -1,32 +1,33 @@
+// Loading page
+
 window.onload = function () {
   const preloader = document.getElementById("preloader");
- 
+
   // 🔒 Lock scroll initially
   document.body.classList.add("no-scroll");
- 
-  // Check if loader already shown before (persistent)
-  if (localStorage.getItem("loaderShown")) {
+
+  // Check if loader already shown in this session
+  if (sessionStorage.getItem("loaderShown")) {
     preloader.style.display = "none";
- 
+
     // 🔓 Unlock scroll
     document.body.classList.remove("no-scroll");
     return;
   }
- 
+
   setTimeout(function () {
     preloader.style.opacity = "0";
     preloader.style.visibility = "hidden";
- 
-    // Save permanently
-    localStorage.setItem("loaderShown", "true");
- 
+
+    sessionStorage.setItem("loaderShown", "true");
+
     setTimeout(() => {
       preloader.style.display = "none";
- 
-      // 🔓 Unlock scroll
+
+      // 🔓 Unlock scroll after loader gone
       document.body.classList.remove("no-scroll");
     }, 1000);
-  }, 2300);
+  }, 3500);
 };
 // Buttons
 
@@ -104,7 +105,7 @@ const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting && !started) {
-        counter("count1", 0, 5000, 3000);
+        counter("count1", 0, 5, 3000);
         counter("count2", 0, 150, 3000);
         counter("count3", 0, 100, 3000);
         started = true; // run only once

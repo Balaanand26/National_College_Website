@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>National College</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="../Images/UpdLogo.png" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <style>
+    /* ============ HERO CAROUSEL WITH OVERLAY TEXT ============ */
+    .hero-wrapper {
+      position: relative;
+      margin-bottom: 80px;
+    }
+    .hero-carousel-inner .carousel-item {
+      height: 80vh;
+    }
+    .hero-carousel-inner .carousel-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.55);
+      border-radius: 35px;
+    }
+    .hero-text-overlay {
+      position: absolute;
+      bottom: 60px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      z-index: 10;
+      text-align: center;
+    }
+    .hero-text-overlay h2 {
+      color: #fff;
+      font-size: clamp(20px, 3vw, 32px);
+      font-weight: 700;
+      text-shadow: 1px 2px 6px rgba(0,0,0,0.7);
+      margin-bottom: 8px;
+    }
+    .hero-text-overlay p {
+      color: #ddb337;
+      font-size: clamp(13px, 1.8vw, 18px);
+      font-weight: 600;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+    }
+    .hero-text-slide {
+      display: none;
+      animation: fadeSlide 0.6s ease;
+    }
+    .hero-text-slide.active {
+      display: block;
+    }
+    @keyframes fadeSlide {
+      from { opacity: 0; transform: translateY(15px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ============ PROGRAMS SLIDER ============ */
+    .programs-slider-wrapper {
+      position: relative;
+      overflow: hidden;
+      padding: 0 50px;
+    }
+    .programs-track {
+      display: flex;
+      gap: 20px;
+      transition: transform 0.45s cubic-bezier(.4,0,.2,1);
+    }
+    .prog-card {
+      flex: 0 0 calc(25% - 15px);
+      min-width: 220px;
+      background: white;
+      border: 1px solid #8b0000;
+      border-radius: 15px;
+      padding: 15px 10px;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.12);
+      text-align: center;
+    }
+    .prog-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 12px;
+      transition: 0.3s;
+    }
+    .prog-card:hover img { filter: brightness(0.9); transform: scale(0.99); }
+    .prog-card h2 { font-size: 17px; color: #1a1a1a; margin-bottom: 8px; }
+    .prog-card p { font-size: 13px; color: gray; margin-bottom: 10px; }
+    .prog-card button {
+      width: 85%;
+      padding: 10px;
+      background: transparent;
+      color: #7e1416;
+      border: 2px solid #7e1416;
+      font-weight: 600;
+      border-radius: 8px;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+    .prog-card button:hover { background: #7e1416; color: #fff; }
+    .slider-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #7e1416;
+      color: white;
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+      z-index: 5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.3s;
+    }
+    .slider-arrow:hover { background: #ddb337; }
+    .slider-arrow.prev { left: 4px; }
+    .slider-arrow.next { right: 4px; }
+    .slider-arrow:disabled { opacity: 0.3; cursor: default; }
+    .prog-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 20px;
+    }
+    .prog-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: #ccc;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .prog-dot.active { background: #7e1416; transform: scale(1.2); }
+    @media(max-width:992px){
+      .prog-card { flex: 0 0 calc(50% - 10px); }
+    }
+    @media(max-width:576px){
+      .prog-card { flex: 0 0 calc(100% - 10px); }
+    }
+
+    /* ============ AIRPORT RUNWAY CAMPUS ============ */
+    .runway-section {
+      background: linear-gradient(180deg, #e8f4fd 0%, #c8dff0 40%, #a8c8e0 100%);
+      padding: 60px 0;
+      position: relative;
+      overflow: hidden;
+      min-height: 900px;
+    }
+    .runway-section h2 {
+      color: #7e1416;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 30px;
+      position: relative;
+      z-index: 10;
+    }
+
+    /* Sky clouds */
+    .cloud {
+      position: absolute;
+      border-radius: 50px;
+      background: rgba(255,255,255,0.6);
+      z-index: 1;
+      animation: cloudDrift linear infinite;
+    }
+    @keyframes cloudDrift {
+      from { transform: translateX(-200px); }
+      to   { transform: translateX(110vw); }
+    }
+
+    /* Campus buttons */
+    .campus-btn-row {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 40px;
+      position: relative;
+      z-index: 10;
+    }
+
+    /* Runway container */
+    .runway-container {
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      min-height: 750px;
+    }
+
+    /* Runway road */
+    .runway-road {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 100px;
+      transform: translateX(-50%);
+      background: #2c2c2c;
+      border-left: 5px solid #ffcc00;
+      border-right: 5px solid #ffcc00;
+      z-index: 2;
+    }
+    /* dashed center line */
+    .runway-road::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0; bottom: 0;
+      width: 4px;
+      margin-left: -2px;
+      background: repeating-linear-gradient(
+        to bottom,
+        #fff 0, #fff 30px, transparent 30px, transparent 55px
+      );
+    }
+
+    /* Runway chevrons (distance markers) */
+    .runway-marker {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      text-align: center;
+      z-index: 3;
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+    }
+    .runway-marker span {
+      display: block;
+      width: 22px;
+      height: 8px;
+      background: #fff;
+      border-radius: 2px;
+    }
+
+    /* Airplane */
+    .airplane-wrapper {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 20;
+      width: 80px;
+      transition: top 0.15s linear;
+      filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));
+    }
+    .airplane-wrapper svg {
+      width: 80px;
+      height: auto;
+    }
+
+    /* Campus stop cards */
+    .runway-stop {
+      position: absolute;
+      width: 260px;
+      z-index: 10;
+      opacity: 0;
+      transform: translateY(20px) scale(0.95);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .runway-stop.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    .runway-stop.left  { right: calc(50% + 80px); text-align: right; }
+    .runway-stop.right { left:  calc(50% + 80px); text-align: left; }
+    .runway-stop-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      border: 2px solid #7e1416;
+    }
+    .runway-stop-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+    }
+    .runway-stop-card-body {
+      padding: 12px 16px;
+    }
+    .runway-stop-card-body h4 {
+      color: #7e1416;
+      font-size: 15px;
+      font-weight: 700;
+      margin: 0;
+    }
+    .runway-stop-card-body p {
+      font-size: 12px;
+      color: #666;
+      margin: 4px 0 0;
+    }
+    /* connector line from card to runway */
+    .runway-connector {
+      position: absolute;
+      top: 70px;
+      height: 2px;
+      background: #7e1416;
+      z-index: 5;
+    }
+    .runway-stop.left  .runway-connector { right: -50px; width: 50px; }
+    .runway-stop.right .runway-connector { left: -50px; width: 50px; }
+    /* dot on runway edge */
+    .runway-dot {
+      position: absolute;
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      background: #ddb337;
+      border: 2px solid #7e1416;
+      top: 64px;
+      z-index: 8;
+    }
+    .runway-stop.left  .runway-dot { right: -56px; }
+    .runway-stop.right .runway-dot { left: -56px; }
+
+    @media(max-width:768px){
+      .runway-stop { width: 160px; }
+      .runway-stop.left  { right: calc(50% + 60px); }
+      .runway-stop.right { left:  calc(50% + 60px); }
+    }
+    @media(max-width:480px){
+      .runway-stop { width: 130px; font-size: 11px; }
+      .runway-road { width: 70px; }
+      .airplane-wrapper { width: 60px; }
+      .runway-stop.left  { right: calc(50% + 44px); }
+      .runway-stop.right { left:  calc(50% + 44px); }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Loading Video Overlay -->
+  <div id="preloader">
+    <video autoplay muted loop playsinline id="loader-video">
+      <source src="./Images/Scene-1.mp4" type="video/mp4" />
+    </video>
+  </div>
+
+  <!-- NAVBAR -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbarStyle shadow-sm sticky-top w-100">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html">
+          <div class="d-flex align-items-center gap-2 logoContent">
+            <img src="./Images/UpdLogo.png" width="68" alt="NIMS Logo" />
+            <div><h3 class="text-white fw-bold navbarHeading">National College</h3></div>
+          </div>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <i class="fas fa-stream text-white"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto d-lg-flex align-items-lg-center">
+            <li class="nav-item"><a class="nav-link active" href="../index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link mt-2 mt-md-0 mt-lg-0" href="../about/about.html">About Us</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Academic</a>
+              <div class="dropdown-menu mega-menu">
+                <div class="row">
+                  <div class="col-md-6">
+                    <p><strong>Degree Courses</strong></p>
+                    <ul>
+                      <li><a href="../airline/academic.html">BBA Airlines & Airport Management</a></li>
+                      <li><a href="../InBus/academic.html">B.Sc Aviation</a></li>
+                      <li><a href="../ship/shipping&log.html">BBA Shipping and Logistics</a></li>
+                      <li><a href="../Bank/bank.html">B.Com Banking & Finance</a></li>
+                      <li><a href="../fashion/fashion.html">B.Sc Fashion Design</a></li>
+                      <li><a href="../airport/airport.html">MBA Airlines & Airport Management</a></li>
+                      <li><a href="../hr/hr.html">MBA - HR | Finance | Marketing | Operations</a></li>
+                    </ul>
+                  </div>
+                  <div class="col-md-6">
+                    <p><strong>Diploma</strong></p>
+                    <ul>
+                      <li><a href="../dip-1/dip-1.html">Airline and Airport Management</a></li>
+                      <li><a href="../dip-2/dip-2.html">Banking</a></li>
+                      <li><a href="../dip-3/dip-3.html">Fashion Design</a></li>
+                      <li><a href="../dip-4/dip-4.html">Logistics</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="../Campus/campus.html">Campus</a></li>
+            <li class="nav-item"><a class="nav-link" href="../Placement/placement.html">Placement</a></li>
+            <li class="nav-item"><a class="nav-link" href="../news/news.html">News</a></li>
+            <li class="ApplyBtn mt-2 mt-lg-0 ps-0 ps-lg-4">
+              <a href="../appForm/appForm.html"><button>Apply Now <span><i class="fa-solid fa-arrow-right"></i></span></button></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Slogan Section -->
+    <section class="phraseSection">
+      <div class="container">
+        <div class="row d-flex justify-content-center align-items-center">
+          <div class="col-12 col-lg-5">
+            <div class="titlePhrase">
+              <h2>Launch Your Career to New Heights with <span>National College</span></h2>
+            </div>
+          </div>
+          <div class="col-12 col-lg-7">
+            <div class="titlePara ms-lg-5 mt-4 m-lg-0 m-md-0">
+              <p class="fs-5 fw-semibold text-center">Join the Future of Professional Education & Build Your Career with Industry-Focused Degrees</p>
+              <p>National College offers Future career-driven programs. Launch your future in Aviation, Banking, Logistics, and Fashion Designing with hands-on training, industry partnerships, and strong placement support.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== HERO SECTION — Image Carousel + Overlay Text ===== -->
+    <section class="position-relative">
+      <div class="container hero-wrapper">
+
+        <!-- Image Carousel -->
+        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+          <div class="carousel-inner hero-carousel-inner carouselImage">
+            <div class="carousel-item active">
+              <img src="./Images/hero.png" class="d-block w-100" alt="BBA Airlines" />
+            </div>
+            <div class="carousel-item">
+              <img src="./Images/hero2.png" class="d-block w-100" alt="Aviation" />
+            </div>
+            <div class="carousel-item">
+              <img src="./Images/hero3.png" class="d-block w-100" alt="Shipping Logistics" />
+            </div>
+            <div class="carousel-item">
+              <img src="./Images/hero4.png" class="d-block w-100" alt="Banking Finance" />
+            </div>
+            <div class="carousel-item">
+              <img src="./Images/hero5.png" class="d-block w-100" alt="Fashion Design" />
+            </div>
+            <div class="carousel-item">
+              <img src="./Images/hero6.png" class="d-block w-100" alt="MBA Programs" />
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span><span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span><span class="visually-hidden">Next</span>
+          </button>
+        </div>
+
+        <!-- Overlay Text (synced with image carousel) -->
+        <div class="hero-text-overlay">
+          <div class="hero-text-slide active" data-slide="0">
+            <h2>BBA Airlines &amp; Airport Management</h2>
+            <p>Take off your career with India's top-rated aviation management degree</p>
+          </div>
+          <div class="hero-text-slide" data-slide="1">
+            <h2>B.Sc Aviation</h2>
+            <p>Explore the skies — hands-on training with Skill India Council certification</p>
+          </div>
+          <div class="hero-text-slide" data-slide="2">
+            <h2>BBA Shipping &amp; Logistics</h2>
+            <p>Navigate global trade with our industry-focused logistics program</p>
+          </div>
+          <div class="hero-text-slide" data-slide="3">
+            <h2>B.Com Banking &amp; Finance</h2>
+            <p>Build a career in India's fastest-growing BFSI sector</p>
+          </div>
+          <div class="hero-text-slide" data-slide="4">
+            <h2>B.Sc Fashion Design</h2>
+            <p>Express your creativity — Alagappa University approved with industry placements</p>
+          </div>
+          <div class="hero-text-slide" data-slide="5">
+            <h2>MBA Programs — HR | Finance | Marketing | Operations</h2>
+            <p>Lead tomorrow's businesses with our comprehensive MBA specialisations</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Counter Section -->
+    <section id="counterSection">
+      <section class="counter-section">
+        <div class="container">
+          <div class="row text-center">
+            <div class="col-md-3 mb-lg-0 mb-5">
+              <h2><span id="count1"></span>K+</h2>
+              <p class="fw-semibold">Students Trained</p>
+            </div>
+            <div class="col-md-3 mb-lg-0 mb-5">
+              <h2><span id="count2"></span>+</h2>
+              <p class="fw-semibold">Hiring Partners</p>
+            </div>
+            <div class="col-md-3 mb-lg-0 mb-5">
+              <h2><span id="count3"></span>%</h2>
+              <p class="fw-semibold">Placement Assurance</p>
+            </div>
+            <div class="col-md-3 mb-lg-0 mb-5">
+              <p class="text-white fw-bold">Industry-Focused Programs with International Career Opportunities</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- About Section -->
+    <section>
+      <div class="about">
+        <div class="left-image">
+          <img src="../Campus/College campus/clg-4.jpg" alt="" />
+          <div class="about-content">
+            <h1 data-aos="fade-right" data-aos-duration="500">About Us</h1>
+            <p data-aos="fade-" data-aos-duration="700">National Institute of Management &amp; Science (NIMS) is a leading institution offering career-focused programs in Aviation, Banking, Fashion Designing, and Logistics. With campuses in Madurai &amp; Tirunelveli, we are committed to delivering practical, industry-oriented education that prepares students for real-world careers.</p>
+            <p data-aos="fade-" data-aos-duration="1000">Our programs combine classroom learning with hands-on training, internships, and dedicated placement support—preparing students for successful careers.</p>
+          </div>
+        </div>
+        <div class="right-image">
+          <img src="Images/right.png" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROGRAMS SECTION — Card Slider (4 visible) ===== -->
+    <section style="margin: 20px 0px; background-color: whitesmoke; padding-bottom: 40px;">
+      <div class="container">
+        <div class="text-center mt-4 mb-2">
+          <h2 class="ac-head" data-aos="fade-right" data-aos-duration="1000">Our Programs</h2>
+        </div>
+      </div>
+
+      <!-- Tab Buttons -->
+      <div class="container">
+        <div class="AcademicBtn">
+          <ul class="nav nav-pills mb-3 d-flex justify-content-center gap-1 gap-md-5" id="programTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active ChooseBtn" id="tab-degree" onclick="showPrograms('degree')" type="button">Degree</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link ChooseBtn" id="tab-diploma" onclick="showPrograms('diploma')" type="button">Diploma</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Degree Slider -->
+      <div id="slider-degree" class="slider-section">
+        <div class="container-fluid px-4">
+          <div class="programs-slider-wrapper" id="degreeWrapper">
+            <button class="slider-arrow prev" onclick="slidePrograms('degree',-1)" id="degreePrev" disabled>
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <div class="programs-track" id="degreeTrack">
+              <div class="prog-card">
+                <img src="./Images/bba.png" alt="BBA Airlines">
+                <h2>BBA Airlines &amp; Airport Management</h2>
+                <p>Approved by Alagappa University with Aviation &amp; Aerospace Skill India Council Certification.</p>
+                <a href="./airline/academic.html"><button>Apply Now</button></a>
+              </div>
+              <div class="prog-card">
+                <img src="./Images/mbaair.png" alt="MBA Airlines">
+                <h2>MBA Airlines &amp; Airport Management</h2>
+                <p>Approved by Alagappa University with Aviation &amp; Aerospace Skill India Council Certification.</p>
+                <a href="./airport/airport.html"><button>Apply Now</button></a>
+              </div>
+              <div class="prog-card">
+                <img src="./Images/mbaHr.png" alt="MBA HR">
+                <h2>MBA — HR | Finance | Marketing | Operations</h2>
+                <p>Approved by Alagappa University with Industry Skill India Council Certification.</p>
+                <a href="./hr/hr.html"><button>Apply Now</button></a>
+              </div>
+              <div class="prog-card">
+                <img src="./Images/bscAvi.png" alt="BSc Aviation">
+                <h2>BSc Aviation</h2>
+                <p>Approved by Alagappa University with Aviation &amp; Aerospace Skill India Council Certification.</p>
+                <a href="./InBus/academic.html"><button>Apply Now</button></a>
+              </div>
+              <div class="prog-card">
+                <img src="./Images/bsc_Fas.png" alt="BSc Fashion">
+                <h2>B.Sc Fashion Design</h2>
+                <p>Approved by Alagappa University with Apparel Design Skill India Council Certification.</p>
+                <a href="./fashion/fashion.html"><button>Apply Now</button></a>
+              </div>
+              <div class="prog-card">
+                <img src="./Images/bcomBank.png" alt="BCom Banking">
+                <h2>B.Com Banking &amp; Finance</h2>
+                <p>Approved by Alagappa University with BFSI Skill Council Certification.</p>
+                <a href="./Bank/bank.html"><button>Apply Now</button></a>
+              </div>
+              <div class="prog-card">
+                <img src="./Images/bbaShip.png" alt="BBA Shipping">
+                <h2>BBA Shipping and Logistics</h2>
+                <p>Approved by Alagappa University with Logistics Skill India Council Certification.</p>
+                <a href="./ship/shipping&log.html"><button>Apply Now</button></a>
+              </div>
+            </div>
+            <button class="slider-arrow next" onclick="slidePrograms('degree',1)" id="degreeNext">
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+          <div class="prog-dots" id="degreeDots"></div>
+        </div>
+      </div>
+
+      <!-- Diploma Slider -->
+      <div id="slider-diploma" class="slider-section" style="display:none;">
+        <div class="container-fluid px-4">
+          <div class="programs-slider-wrapper" id="diplomaWrapper">
+            <button class="slider-arrow prev" onclick="slidePrograms('diploma',-1)" id="diplomaPrev" disabled>
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <div class="programs-track" id="diplomaTrack">
+              <div class="prog-card">
+                <img src="./Images/dp1.png" alt="Diploma Airlines">
+                <h2>Airlines &amp; Airport Management</h2>
+                <p>Approved by Alagappa University with Aviation &amp; Aerospace Skill India Council Certification.</p>
+                <a href="./dip-1/dip-1.html"><button>Apply Now</button></a>
+              </div>
+              <div class="prog-card">
+                <img src="./Images/dp2.png" alt="Diploma Banking">
+                <h2>Banking</h2>
+                <p>Approved by Alagappa University with BFSI Skill Council Certification.</p>
+                <a href="./dip-2/dip-2.html"><button>Apply Now</button></a>
+              </div>
+              <div class="prog-card">
+                <img src="./Images/dp3.png" alt="Diploma Fashion">
+                <h2>Fashion Design</h2>
+                <p>Approved by Alagappa University with Apparel Design Skill India Council Certification.</p>
+                <a href="./dip-3/dip-3.html"><button>Apply Now</button></a>
+              </div>
+              <div class="prog-card">
+                <img src="./Images/dp4.png" alt="Diploma Logistics">
+                <h2>Logistics</h2>
+                <p>Approved by Alagappa University with Logistics Skill India Council Certification.</p>
+                <a href="./dip-4/dip-4.html"><button>Apply Now</button></a>
+              </div>
+            </div>
+            <button class="slider-arrow next" onclick="slidePrograms('diploma',1)" id="diplomaNext" disabled>
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+          <div class="prog-dots" id="diplomaDots"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== NIMS CAMPUS — Airport Runway Section ===== -->
+    <section class="runway-section" id="campusSection">
+      <!-- Clouds -->
+      <div class="cloud" style="width:120px;height:40px;top:8%;animation-duration:28s;animation-delay:-5s;"></div>
+      <div class="cloud" style="width:80px;height:28px;top:14%;animation-duration:22s;animation-delay:-12s;"></div>
+      <div class="cloud" style="width:160px;height:50px;top:5%;animation-duration:35s;animation-delay:-20s;"></div>
+      <div class="cloud" style="width:90px;height:32px;top:20%;animation-duration:25s;animation-delay:-8s;"></div>
+
+      <div class="container position-relative" style="z-index:5;">
+        <h2 data-aos="fade-up">NIMS Campus</h2>
+
+        <!-- Campus Toggle Buttons -->
+        <div class="campus-btn-row">
+          <button class="campus-btn active" id="btnMadurai" onclick="switchCampus('madurai')">Madurai Main Campus</button>
+          <button class="campus-btn" id="btnTirunelveli" onclick="switchCampus('tirunelveli')">Tirunelveli Main Campus</button>
+        </div>
+      </div>
+
+      <!-- Runway + Airplane + Stop Cards -->
+      <div class="runway-container" id="runwayContainer">
+        <!-- Runway road -->
+        <div class="runway-road" id="runwayRoad">
+          <div class="runway-marker" style="top:5%"><span></span><span></span><span></span></div>
+          <div class="runway-marker" style="top:28%"><span></span><span></span><span></span></div>
+          <div class="runway-marker" style="top:51%"><span></span><span></span><span></span></div>
+          <div class="runway-marker" style="top:74%"><span></span><span></span><span></span></div>
+          <div class="runway-marker" style="top:94%"><span></span><span></span><span></span></div>
+        </div>
+
+        <!-- Airplane SVG -->
+        <div class="airplane-wrapper" id="airplane" style="top:30px;">
+          <svg viewBox="0 0 80 100" xmlns="http://www.w3.org/2000/svg">
+            <!-- Body -->
+            <ellipse cx="40" cy="50" rx="10" ry="42" fill="#e8e8e8" stroke="#bbb" stroke-width="1"/>
+            <!-- Nose -->
+            <ellipse cx="40" cy="12" rx="8" ry="14" fill="#ddb337"/>
+            <!-- Wings -->
+            <polygon points="40,42 6,68 14,72 40,55" fill="#c8c8c8" stroke="#aaa" stroke-width="0.5"/>
+            <polygon points="40,42 74,68 66,72 40,55" fill="#c8c8c8" stroke="#aaa" stroke-width="0.5"/>
+            <!-- Tail wings -->
+            <polygon points="40,80 22,94 28,96 40,85" fill="#bbb"/>
+            <polygon points="40,80 58,94 52,96 40,85" fill="#bbb"/>
+            <!-- Window row -->
+            <circle cx="40" cy="36" r="3" fill="#87CEEB" stroke="#999" stroke-width="0.5"/>
+            <circle cx="40" cy="46" r="3" fill="#87CEEB" stroke="#999" stroke-width="0.5"/>
+            <circle cx="40" cy="56" r="3" fill="#87CEEB" stroke="#999" stroke-width="0.5"/>
+            <!-- NIMS stripe -->
+            <rect x="32" y="20" width="16" height="4" rx="2" fill="#7e1416"/>
+          </svg>
+        </div>
+
+        <!-- MADURAI stops (data-campus="madurai") -->
+        <div class="runway-stop left" id="stop-madurai-0" data-campus="madurai" style="top:40px;">
+          <div class="runway-connector"></div>
+          <div class="runway-dot"></div>
+          <div class="runway-stop-card">
+            <img src="../Campus/Environment click/ev-8.jpeg" alt="Environment" onerror="this.src='./Images/hero.png'"/>
+            <div class="runway-stop-card-body">
+              <h4><i class="fa-solid fa-tree" style="color:#7e1416;margin-right:6px;"></i>Environment</h4>
+              <p>Lush green campus environment at Madurai</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="runway-stop right" id="stop-madurai-1" data-campus="madurai" style="top:200px;">
+          <div class="runway-connector"></div>
+          <div class="runway-dot"></div>
+          <div class="runway-stop-card">
+            <img src="../Campus/Event click/event-1.jpeg" alt="Events" onerror="this.src='./Images/hero2.png'"/>
+            <div class="runway-stop-card-body">
+              <h4><i class="fa-solid fa-camera" style="color:#7e1416;margin-right:6px;"></i>Events</h4>
+              <p>Vibrant events and cultural programs</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="runway-stop left" id="stop-madurai-2" data-campus="madurai" style="top:360px;">
+          <div class="runway-connector"></div>
+          <div class="runway-dot"></div>
+          <div class="runway-stop-card">
+            <img src="../Campus/College campus/clg-7.jpg" alt="Campus" onerror="this.src='./Images/hero3.png'"/>
+            <div class="runway-stop-card-body">
+              <h4><i class="fa-solid fa-building-columns" style="color:#7e1416;margin-right:6px;"></i>College Campus</h4>
+              <p>State-of-the-art campus facilities</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="runway-stop right" id="stop-madurai-3" data-campus="madurai" style="top:520px;">
+          <div class="runway-connector"></div>
+          <div class="runway-dot"></div>
+          <div class="runway-stop-card">
+            <img src="../Campus/College infrastructure/campus-3.jpg" alt="Indoor" onerror="this.src='./Images/hero4.png'"/>
+            <div class="runway-stop-card-body">
+              <h4><i class="fa-solid fa-person-shelter" style="color:#7e1416;margin-right:6px;"></i>College Indoor</h4>
+              <p>Modern classrooms &amp; infrastructure</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- TIRUNELVELI stops (data-campus="tirunelveli") — initially hidden -->
+        <div class="runway-stop left" id="stop-tirunelveli-0" data-campus="tirunelveli" style="top:40px;display:none;">
+          <div class="runway-connector"></div>
+          <div class="runway-dot"></div>
+          <div class="runway-stop-card">
+            <img src="../Campus/Environment click/ev-8.jpeg" alt="Environment" onerror="this.src='./Images/hero.png'"/>
+            <div class="runway-stop-card-body">
+              <h4><i class="fa-solid fa-tree" style="color:#7e1416;margin-right:6px;"></i>Environment</h4>
+              <p>Beautiful campus surroundings in Tirunelveli</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="runway-stop right" id="stop-tirunelveli-1" data-campus="tirunelveli" style="top:200px;display:none;">
+          <div class="runway-connector"></div>
+          <div class="runway-dot"></div>
+          <div class="runway-stop-card">
+            <img src="../Campus/Event click/event-1.jpeg" alt="Events" onerror="this.src='./Images/hero2.png'"/>
+            <div class="runway-stop-card-body">
+              <h4><i class="fa-solid fa-camera" style="color:#7e1416;margin-right:6px;"></i>Events</h4>
+              <p>Cultural &amp; academic events</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="runway-stop left" id="stop-tirunelveli-2" data-campus="tirunelveli" style="top:360px;display:none;">
+          <div class="runway-connector"></div>
+          <div class="runway-dot"></div>
+          <div class="runway-stop-card">
+            <img src="../Campus/College campus/clg-7.jpg" alt="Campus" onerror="this.src='./Images/hero3.png'"/>
+            <div class="runway-stop-card-body">
+              <h4><i class="fa-solid fa-building-columns" style="color:#7e1416;margin-right:6px;"></i>College Campus</h4>
+              <p>Modern campus in the heart of Tirunelveli</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="runway-stop right" id="stop-tirunelveli-3" data-campus="tirunelveli" style="top:520px;display:none;">
+          <div class="runway-connector"></div>
+          <div class="runway-dot"></div>
+          <div class="runway-stop-card">
+            <img src="../Campus/College infrastructure/campus-3.jpg" alt="Indoor" onerror="this.src='./Images/hero4.png'"/>
+            <div class="runway-stop-card-body">
+              <h4><i class="fa-solid fa-person-shelter" style="color:#7e1416;margin-right:6px;"></i>College Indoor</h4>
+              <p>Fully equipped labs &amp; lecture halls</p>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /runway-container -->
+    </section>
+
+    <!-- Hiring Partners -->
+    <section>
+      <div class="container py-5">
+        <div class="text-center">
+          <h2 class="txt-color" style="color: #7e1416; font-size: 32px; font-weight: 700;">Hiring Partner's</h2>
+        </div>
+        <div class="carousels mt-5">
+          <div class="group">
+            <div class="carouselImg"><img src="./svg2/1/air_asia.svg" alt=""/></div>
+            <div class="carouselImg"><img src="./svg2/1/air_india.svg" alt=""/></div>
+            <div class="carouselImg"><img src="./svg2/1/ethihad_airways.svg" alt=""/></div>
+            <div class="carouselImg"><img src="./svg2/1/indigo.svg" alt=""/></div>
+            <div class="carouselImg"><img src="./svg2/1/lufthansa.svg" alt=""/></div>
+            <div class="carouselImg"><img src="./svg2/1/malaysia_airlines.svg" alt=""/></div>
+            <div class="carouselImg"><img src="./svg2/1/qatar_airways.svg" alt=""/></div>
+            <div class="carouselImg"><img src="./svg2/1/singapore_airlines.svg" alt=""/></div>
+            <div class="carouselImg"><img src="./svg2/1/spicejet.svg" alt=""/></div>
+            <div class="carouselImg"><img src="./svg2/2/axis_bank.svg" alt=""/></div>
+            <div class="carouselImg"><img src="./svg2/2/dbs.svg" alt=""/></div>
+            <div class="carouselImg"><img src="./svg2/2/hdfc-mutual-fund.svg" alt=""/></div>
+          </div>
+          <div class="group">
+            <div class="carouselImg"><img src="./svg2/1/air_asia.svg" alt=""/></div>
+            <div class="carouselImg"><img src="./svg2/1/air_india.svg" alt=""/></div>
+            <div class="carouselImg"><img src="./svg2/1/ethihad_airways.svg" alt=""/></div>
+            <div class="carouselImg"><img src="./svg2/1/indigo.svg" alt=""/></div>
+            <div class="carouselImg"><img src="./svg2/1/lufthansa.svg" alt=""/></div>
+            <div class="carouselImg"><img src="./svg2/1/malaysia_airlines.svg" alt=""/></div>
+            <div class="carouselImg"><img src="./svg2/1/qatar_airways.svg" alt=""/></div>
+            <div class="carouselImg"><img src="./svg2/1/singapore_airlines.svg" alt=""/></div>
+            <div class="carouselImg"><img src="./svg2/1/spicejet.svg" alt=""/></div>
+            <div class="carouselImg"><img src="./svg2/2/axis_bank.svg" alt=""/></div>
+            <div class="carouselImg"><img src="./svg2/2/dbs.svg" alt=""/></div>
+            <div class="carouselImg"><img src="./svg2/2/hdfc-mutual-fund.svg" alt=""/></div>
+          </div>
+        </div>
+        <div class="carousels1">
+          <div class="group1">
+            <div class="carouselImg"><img src="./svg2/2/hdfc_bank.svg" alt=""/></div>
+            <div class="carouselImg"><img src="./svg2/2/icici_bank.svg" alt=""/></div>
+            <div class="carouselImg"><img src="./svg2/2/icici_mutual_fund.svg" alt=""/></div>
+            <div class="carouselImg"><img src="./svg2/2/ICICIPrudentialLifeInsurance.svg" alt=""/></div>
+            <div class="carouselImg"><img src="./svg2/2/kotak.svg" alt=""/></div>
+            <div class="carouselImg"><img src="./svg2/3/amazon.svg" alt=""/></div>
+            <div class="carouselImg"><img src="./svg2/3/apl.svg" alt=""/></div>
+            <div class="carouselImg"><img src="./svg2/3/falcon.svg" alt=""/></div>
+            <div class="carouselImg"><img src="./svg2/3/flipkart.svg" alt=""/></div>
+            <div class="carouselImg"><img src="./svg2/3/maersk.svg" alt=""/></div>
+            <div class="carouselImg"><img src="./svg2/3/om_logistics.svg" alt=""/></div>
+          </div>
+          <div class="group1">
+            <div class="carouselImg"><img src="./svg2/2/hdfc_bank.svg" alt=""/></div>
+            <div class="carouselImg"><img src="./svg2/2/icici_bank.svg" alt=""/></div>
+            <div class="carouselImg"><img src="./svg2/2/icici_mutual_fund.svg" alt=""/></div>
+            <div class="carouselImg"><img src="./svg2/2/ICICIPrudentialLifeInsurance.svg" alt=""/></div>
+            <div class="carouselImg"><img src="./svg2/2/kotak.svg" alt=""/></div>
+            <div class="carouselImg"><img src="./svg2/3/amazon.svg" alt=""/></div>
+            <div class="carouselImg"><img src="./svg2/3/apl.svg" alt=""/></div>
+            <div class="carouselImg"><img src="./svg2/3/falcon.svg" alt=""/></div>
+            <div class="carouselImg"><img src="./svg2/3/flipkart.svg" alt=""/></div>
+            <div class="carouselImg"><img src="./svg2/3/maersk.svg" alt=""/></div>
+            <div class="carouselImg"><img src="./svg2/3/om_logistics.svg" alt=""/></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- News -->
+    <section>
+      <div class="container">
+        <h2 class="news-title mb-4">News</h2>
+        <div class="row g-3 d-flex justify-content-center">
+          <div class="col-12 col-md-6 col-lg-4">
+            <a href="./news/news.html">
+              <div class="position-relative card-container">
+                <img src="Images/a-1.jpg" alt="" width="100%" height="100%" class="img2 rounded-4"/>
+                <div class="overlay position-absolute top-0 start-0 h-100 w-100 d-flex justify-content-center align-items-center text-center">
+                  <h3 class="text-white">Admission News</h3>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <a href="./news/news.html">
+              <div class="position-relative card-container">
+                <img src="Images/a-2.jpg" alt="" width="100%" height="100%" class="img2 rounded-4"/>
+                <div class="overlay position-absolute top-0 start-0 h-100 w-100 d-flex justify-content-center align-items-center text-center">
+                  <h3 class="text-white">Placement News</h3>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <a href="./news/news.html">
+              <div class="position-relative card-container">
+                <img src="Images/a-3.jpg" alt="" width="100%" height="100%" class="img2 rounded-4"/>
+                <div class="overlay position-absolute top-0 start-0 h-100 w-100 d-flex justify-content-center align-items-center text-center">
+                  <h3 class="text-white">Scholarship News</h3>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="ContactSection">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-lg-4">
+            <div class="d-flex align-items-center gap-2">
+              <div><img src="./Images/UpdLogo.png" alt="" style="width: 120px"/></div>
+              <div><h3 class="m-0">NATIONAL COLLEGE</h3></div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 mt-4 mt-lg-0">
+            <h3>Madurai Main Campus</h3>
+            <div class="d-flex gap-3">
+              <p><span><i class="fa-solid fa-mobile" style="color:#ddb337"></i></span> +91 9791 786 800</p>
+              <p><span><i class="fa-solid fa-phone" style="color:#ddb337"></i></span> 0452 - 4919555</p>
+            </div>
+            <p><span><i class="fa-solid fa-location-dot" style="color:#ddb337"></i></span> No 17, Near Income Tax Office, BB Kulam, Madurai, Tamilnadu-625002</p>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 mt-4 mt-lg-0">
+            <h3>Tirunelveli Main Campus</h3>
+            <div class="d-flex gap-3">
+              <p><span><i class="fa-solid fa-mobile" style="color:#ddb337"></i></span> +91 9791 786 800</p>
+              <p><span><i class="fa-solid fa-phone" style="color:#ddb337"></i></span> 0452 - 7969679</p>
+            </div>
+            <p><span><i class="fa-solid fa-location-dot" style="color:#ddb337"></i></span> Vinayaga Avenue, Near Income Tax Office, Palayamkottai, Tirunelveli, Tamil Nadu 627011</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Maps -->
+    <section>
+      <div class="container pb-5">
+        <div class="row">
+          <div class="col-12 col-lg-6 text-center">
+            <p class="fs-2 fw-bolder" style="color:#7e1416">Madurai Main Campus</p>
+            <iframe class="rounded-4 border border-3 mapSection" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.8654970369735!2d78.128474!3d9.9451473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b00c54742be17b5%3A0x2f49c73dc9202334!2sNational%20College%20Madurai!5e0!3m2!1sen!2sin!4v1776072524576!5m2!1sen!2sin" width="450" height="300" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          <div class="col-12 col-lg-6 text-center">
+            <p class="fs-2 fw-bolder" style="color:#7e1416">Tirunelveli Main Campus</p>
+            <iframe class="rounded-4 border border-3 mapSection" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3943.7224193854754!2d77.76079925514783!3d8.717887160001425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b04132bb8bc13e3%3A0xef400439169d10a3!2sNational%20College%20Tirunelveli!5e0!3m2!1sen!2sin!4v1777266144291!5m2!1sen!2sin" width="450" height="300" style="border:0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footerSection">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-lg-3">
+          <div class="d-flex flex-column align-items-center">
+            <div class="me-5"><img src="./Images/UpdLogo.png" alt="" style="width:120px"/></div>
+            <div class="mt-2">
+              <h3>NATIONAL COLLEGE</h3>
+              <p>National Institute of Management and Science offers quality education in Aviation, Banking, Logistics and Fashion Design with excellent placement record.</p>
+            </div>
+          </div>
+          <div class="d-flex gap-2">
+            <div><a href="https://www.facebook.com/NIMSMADURAI"><i class="fa-brands fa-facebook" style="color:#0766ff"></i></a></div>
+            <div><a href="https://x.com/MaduraiNims"><i class="fa-brands fa-x-twitter" style="color:#000000"></i></a></div>
+            <div><a href="https://www.instagram.com/nimsmadurai/"><i class="fa-brands fa-instagram" style="color:#f4418b"></i></a></div>
+            <div><a href="https://www.linkedin.com/in/national-college-madurai-b7520117b/"><i class="fa-brands fa-linkedin" style="color:#0073b2"></i></a></div>
+            <div><a href="https://www.youtube.com/@NationalCollegeMadurai"><i class="fa-brands fa-youtube" style="color:#ff0033"></i></a></div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-3 mt-5">
+          <h3>Quick Links</h3>
+          <a href="./index.html"><p>Home</p></a>
+          <a href="./about/about.html"><p>About</p></a>
+          <a href="./Campus/campus.html"><p>Campus</p></a>
+          <a href="./Placement/placement.html"><p>Placement</p></a>
+          <a href="./news/news.html"><p>News</p></a>
+        </div>
+        <div class="col-12 col-lg-3 mt-5">
+          <h3>Courses</h3>
+          <a href="./airline/academic.html"><p>UG Degree</p></a>
+          <a href="./airport/airport.html"><p>PG Degree</p></a>
+          <a href="./dip-1/dip-1.html"><p>Diploma</p></a>
+        </div>
+        <div class="col-12 col-lg-3 mt-5">
+          <h3>Contact</h3>
+          <a href=""><p><span class="me-1"><i class="fa-solid fa-phone" style="color:#ddb337;padding:0;background-color:transparent;font-size:15px;"></i></span>+91 9791 586 555</p></a>
+          <a href=""><p><span class="me-1"><i class="fa-solid fa-envelope" style="color:#ddb337;padding:0;background-color:transparent;font-size:15px;"></i></span>nationalcollege@gmail.com</p></a>
+          <a href=""><p><span class="me-1"><i class="fa-solid fa-location-dot" style="color:#ddb337;padding:0;background-color:transparent;font-size:15px;"></i></span>Madurai | Tirunelveli</p></a>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-12">
+          <div class="text-center">
+            <p>Copyrights &copy; 2026 All rights reserved by National Institute of Management and Science</p>
+            <div class="d-flex justify-content-center flex-column flex-lg-row flex-md-row gap-md-3 mt-3">
+              <a href="./Private & Policy/private.html"><p class="fw-bold">Privacy Policy</p></a>
+              <a href="./Teams & Conditions/teams.html"><p class="fw-bold">Terms and conditions</p></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp -->
+  <div class="w-100">
+    <a href="https://api.whatsapp.com/send/?phone=919791586555&text&type=phone_number&app_absent=0">
+      <div class="float-image">
+        <i class="fa-brands fa-whatsapp" style="color:rgb(255,255,255)"></i>
+        <span class="d-none d-lg-block"> Chat with us</span>
+      </div>
+    </a>
+  </div>
+
+  <!-- Scholarship Popup -->
+  <div id="applyPopup" class="apply-popup">
+    <a href="./Scholar/scholar.html" class="text-decoration-none text-black">
+      <div class="d-flex justify-content-center align-items-center">
+        <div class="popup-logo"><img src="./Images/UpdLogo.png" loading="lazy" alt="Logo"/></div>
+        <div class="popup-text"><strong>Online Scholarship</strong><br/>Upto 1 Lakhs Benefits</div>
+      </div>
+    </a>
+    <button class="popup-close" aria-label="Close popup">&times;</button>
+  </div>
+
+  <!-- Enroll Button + Modal -->
+  <button type="button" class="EnrollFormContent" data-bs-toggle="modal" data-bs-target="#exampleModal">Enroll Now</button>
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content modalContainer">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5 text-white" id="exampleModalLabel">Enrollment Form</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="formContent1">
+            <form id="myForm" action="https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="access_key" value="8328d9ae-273c-491f-b60f-03e4deef2618"/>
+              <input class="w-100" type="text" id="name" name="name" placeholder="Name"/>
+              <small id="nameError">Name must contain only Alphabets</small>
+              <input class="w-100" type="text" id="mobile" name="mobile" placeholder="Mobile Number" maxlength="10"/>
+              <small id="mobileError">Enter valid 10-digit mobile number</small>
+              <input class="w-100" type="text" id="email" name="email" placeholder="Email"/>
+              <small id="emailError">Enter valid email address</small>
+              <div class="d-flex gap-2">
+                <div class="w-50">
+                  <select class="w-100 form-select custom-select" id="state" name="state">
+                    <option value="">Select State</option>
+                    <option value="TamilNadu">Tamil Nadu</option>
+                    <option value="Kerala">Kerala</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="AndhraPradesh">Andhra Pradesh</option>
+                    <option value="Telangana">Telangana</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                  </select>
+                  <small id="stateError">Please select a state</small>
+                </div>
+                <div class="w-50">
+                  <select class="w-100" id="city" name="city">
+                    <option value="">Select City</option>
+                  </select>
+                  <small id="cityError">Please select a City</small>
+                </div>
+              </div>
+              <select class="w-100" id="course" name="course">
+                <option value="">Course</option>
+                <option>BBA Airlines & Airport Management</option>
+                <option>B.Sc Aviation</option>
+                <option>BBA Shipping and Logistics</option>
+                <option>B.Com Banking & Finance</option>
+                <option>B.Sc Fashion Design</option>
+                <option>MBA Airlines & Airport Management</option>
+                <option>MBA - HR | Finance | Marketing | Operations</option>
+                <option>Airlines & Airport Management (Diploma)</option>
+                <option>Banking (Diploma)</option>
+                <option>Fashion Design (Diploma)</option>
+                <option>Logistics (Diploma)</option>
+              </select>
+              <small id="courseError">Please select a course</small>
+              <div class="text-white">
+                <input type="checkbox" id="agree"/> I agree to receive information regarding my enquiry from National Institute of Management and Science.
+                <small id="agreeError">You must agree before submitting</small>
+              </div>
+              <button type="submit" class="subBtn1 mt-2">SUBMIT</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: false });
+  </script>
+
+  <script>
+  /* ===================================================
+     1. HERO CAROUSEL — sync text with image slide
+  =================================================== */
+  (function(){
+    const heroEl = document.getElementById('heroCarousel');
+    if(!heroEl) return;
+    heroEl.addEventListener('slide.bs.carousel', function(e){
+      document.querySelectorAll('.hero-text-slide').forEach(s => s.classList.remove('active'));
+      const target = document.querySelector('.hero-text-slide[data-slide="'+e.to+'"]');
+      if(target) target.classList.add('active');
+    });
+  })();
+
+
+  /* ===================================================
+     2. PROGRAMS CARD SLIDER
+  =================================================== */
+  const sliderState = {
+    degree:  { index: 0, visibleCount: 4 },
+    diploma: { index: 0, visibleCount: 4 }
+  };
+
+  function getVisibleCount(type) {
+    const w = window.innerWidth;
+    if(w <= 576) return 1;
+    if(w <= 992) return 2;
+    return 4;
+  }
+
+  function initSlider(type) {
+    const track  = document.getElementById(type + 'Track');
+    const cards  = track.querySelectorAll('.prog-card');
+    const dotsEl = document.getElementById(type + 'Dots');
+    const vc     = getVisibleCount(type);
+    sliderState[type].visibleCount = vc;
+
+    const total = cards.length;
+    const pages = Math.ceil(total / vc);
+
+    dotsEl.innerHTML = '';
+    for(let i = 0; i < pages; i++){
+      const d = document.createElement('button');
+      d.className = 'prog-dot' + (i === 0 ? ' active' : '');
+      d.setAttribute('data-page', i);
+      d.onclick = () => goToPage(type, i);
+      dotsEl.appendChild(d);
+    }
+    updateSlider(type);
+  }
+
+  function updateSlider(type) {
+    const track   = document.getElementById(type + 'Track');
+    const cards   = track.querySelectorAll('.prog-card');
+    const vc      = sliderState[type].visibleCount;
+    const idx     = sliderState[type].index;
+    const total   = cards.length;
+
+    // Card width = (100% / vc) - gap
+    const cardW   = (100 / vc);
+    const gapPx   = 20;
+    // translateX by card index
+    const translatePct = -(idx * cardW);
+    track.style.transform = `translateX(calc(${translatePct}% - ${idx * gapPx / vc}px))`;
+
+    // dots
+    const page = Math.floor(idx / vc);
+    document.querySelectorAll('#' + type + 'Dots .prog-dot').forEach((d,i) => {
+      d.classList.toggle('active', i === page);
+    });
+
+    // arrow state
+    document.getElementById(type + 'Prev').disabled = (idx === 0);
+    document.getElementById(type + 'Next').disabled = (idx + vc >= total);
+  }
+
+  function slidePrograms(type, dir) {
+    const track  = document.getElementById(type + 'Track');
+    const cards  = track.querySelectorAll('.prog-card');
+    const vc     = sliderState[type].visibleCount;
+    const total  = cards.length;
+    let idx      = sliderState[type].index;
+
+    idx += dir * vc;
+    idx  = Math.max(0, Math.min(idx, total - vc));
+    sliderState[type].index = idx;
+    updateSlider(type);
+  }
+
+  function goToPage(type, page) {
+    const vc = sliderState[type].visibleCount;
+    sliderState[type].index = page * vc;
+    updateSlider(type);
+  }
+
+  function showPrograms(type) {
+    document.getElementById('slider-degree').style.display  = (type === 'degree')  ? '' : 'none';
+    document.getElementById('slider-diploma').style.display = (type === 'diploma') ? '' : 'none';
+    document.getElementById('tab-degree').classList.toggle('active',  type === 'degree');
+    document.getElementById('tab-diploma').classList.toggle('active', type === 'diploma');
+    sliderState[type].index = 0;
+    initSlider(type);
+  }
+
+  window.addEventListener('resize', () => {
+    ['degree','diploma'].forEach(t => {
+      sliderState[t].visibleCount = getVisibleCount(t);
+      sliderState[t].index = 0;
+      initSlider(t);
+    });
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    initSlider('degree');
+    initSlider('diploma');
+  });
+
+
+  /* ===================================================
+     3. AIRPORT RUNWAY — scroll-driven airplane + card reveal
+  =================================================== */
+  (function(){
+    let activeCampus = 'madurai';
+
+    // Stops config: top position (px) in runway container, appear threshold
+    const stopTops = [40, 200, 360, 520];
+
+    function getRunwayBounds() {
+      const section = document.getElementById('campusSection');
+      const container = document.getElementById('runwayContainer');
+      const road = document.getElementById('runwayRoad');
+      return {
+        sectionTop:    section.getBoundingClientRect().top + window.scrollY,
+        sectionHeight: section.offsetHeight,
+        runwayHeight:  road.offsetHeight,
+        containerTop:  container.getBoundingClientRect().top + window.scrollY
+      };
+    }
+
+    function updateAirplane() {
+      const airplane    = document.getElementById('airplane');
+      const section     = document.getElementById('campusSection');
+      const road        = document.getElementById('runwayRoad');
+      const container   = document.getElementById('runwayContainer');
+
+      const sectionRect  = section.getBoundingClientRect();
+      const sectionH     = section.offsetHeight;
+      const runwayH      = road.offsetHeight;
+      const viewH        = window.innerHeight;
+
+      // Progress 0 (section just entered viewport) → 1 (section about to leave)
+      let progress = 0;
+      if(sectionRect.top <= viewH && sectionRect.bottom >= 0) {
+        const scrolled = viewH - sectionRect.top;
+        const totalTravel = sectionH + viewH;
+        progress = Math.max(0, Math.min(1, scrolled / totalTravel));
+      }
+
+      const minTop = 20;
+      const maxTop = runwayH - 110;
+      const newTop = minTop + progress * (maxTop - minTop);
+      airplane.style.top = Math.round(newTop) + 'px';
+
+      // Reveal stop cards
+      stopTops.forEach((stopTop, i) => {
+        const stopEl = document.getElementById('stop-' + activeCampus + '-' + i);
+        if(!stopEl) return;
+        // reveal when airplane passes halfway of the stop
+        if(newTop >= stopTop - 30) {
+          stopEl.classList.add('visible');
+        } else {
+          stopEl.classList.remove('visible');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', updateAirplane, { passive: true });
+    window.addEventListener('resize', updateAirplane);
+    updateAirplane();
+
+    // Campus switch
+    window.switchCampus = function(campus) {
+      activeCampus = campus;
+
+      // Toggle buttons
+      document.getElementById('btnMadurai').classList.toggle('active', campus === 'madurai');
+      document.getElementById('btnTirunelveli').classList.toggle('active', campus === 'tirunelveli');
+
+      // Show/hide stops
+      ['madurai','tirunelveli'].forEach(c => {
+        stopTops.forEach((_, i) => {
+          const el = document.getElementById('stop-' + c + '-' + i);
+          if(!el) return;
+          el.style.display = (c === campus) ? '' : 'none';
+          el.classList.remove('visible');
+        });
+      });
+
+      // Reset airplane
+      document.getElementById('airplane').style.top = '30px';
+      updateAirplane();
+    };
+  })();
+  </script>
+
+</body>
+</html>

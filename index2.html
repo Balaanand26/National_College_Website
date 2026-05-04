@@ -1,152 +1,194 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Scroll Driven Animation (Exact Style)</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carousel Slider</title>
 
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-body {
-  font-family: Arial, sans-serif;
-  background: black;
-  color: white;
-  overflow-x: hidden;
-}
+      body {
+        font-family: Arial, sans-serif;
+        background: white;
+        color: white;
+      }
 
-/* SECTION */
-.section {
-  height: 300vh; /* long scroll */
-  position: relative;
-}
+      /* CAROUSEL */
+      .carousel {
+        margin: 100px auto;
+        background-color: black;
+        position: relative;
+        width: 50%;
+        height: 150px;
+        overflow: hidden;
+        border-radius: 150px;
+      }
 
-/* STICKY AREA */
-.sticky {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+      /* SLIDES CONTAINER */
+      .slides {
+        display: flex;
+        width: 300%;
+        height: 100%;
+        transition: transform 0.6s ease-in-out;
+      }
 
-/* IMAGE */
-.image {
-  position: absolute;
-  width: 60%;
-  border-radius: 20px;
-  transform: scale(0.7);
-  opacity: 0.3;
-}
+      /* EACH SLIDE */
+      .slide {
+        width: 100%;
+        height: 100%;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 80px;
+      }
 
-/* TEXT */
-.text {
-  position: absolute;
-  text-align: center;
-  transform: translateY(100px);
-  opacity: 0;
-}
+      /* IMAGE */
+      .slide img {
+        width: 45%;
+        border-radius: 12px;
+      }
 
-h1 {
-  font-size: 4rem;
-}
+      /* CONTENT */
+      .content {
+        width: 45%;
+        
+      }
 
-p {
-  color: #aaa;
-  margin-top: 10px;
-}
 
-/* NEXT SECTION */
-.next {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #020617;
-}
-</style>
+      /* NAV BUTTONS */
+      .nav-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 2rem;
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+        color: white;
+        padding: 10px;
+        cursor: pointer;
+      }
 
-</head>
-<body>
+      .prev {
+        left: 20px;
+      }
+      .next {
+        right: 20px;
+      }
 
-<section class="section">
-  <div class="sticky">
+      /* DOTS */
+      .dots {
+        position: absolute;
+        bottom: 20px;
+        width: 100%;
+        text-align: center;
+      }
 
-    <img class="image" 
-    src="https://images.unsplash.com/photo-1492724441997-5dc865305da7">
+      .dot {
+        height: 10px;
+        width: 10px;
+        margin: 5px;
+        display: inline-block;
+        background: #555;
+        border-radius: 50%;
+        cursor: pointer;
+      }
 
-    <div class="text">
-      <h1>Scroll Animation</h1>
-      <p>Image zoom + text reveal</p>
+      .active {
+        background: #38bdf8;
+      }
+
+      /* MOBILE */
+      @media (max-width: 768px) {
+        .slide {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .slide img,
+        .content {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="carousel">
+      <div class="slides" id="slides">
+        <!-- SLIDE 1 -->
+        <div class="slide">
+          <div class="content">
+            <h1>Explore Nature</h1>
+            <p>Discover beautiful landscapes and peaceful environments.</p>
+            <button>Learn More</button>
+          </div>
+        </div>
+
+        <!-- SLIDE 2 -->
+        <div class="slide">
+          <div class="content">
+            <h1>Creative Design</h1>
+            <p>Build modern UI with smooth animations and layouts.</p>
+            <button>View Work</button>
+          </div>
+        </div>
+
+        <!-- SLIDE 3 -->
+        <div class="slide">
+          <div class="content">
+            <h1>Professional Growth</h1>
+            <p>Upgrade your skills and build real-world projects.</p>
+            <button>Get Started</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- NAVIGATION -->
+      <button class="nav-btn prev" onclick="prevSlide()">❮</button>
+      <button class="nav-btn next" onclick="nextSlide()">❯</button>
+
+      <!-- DOTS -->
+      <div class="dots">
+        <span class="dot active" onclick="goToSlide(0)"></span>
+        <span class="dot" onclick="goToSlide(1)"></span>
+        <span class="dot" onclick="goToSlide(2)"></span>
+      </div>
     </div>
 
-  </div>
-</section>
-<section class="section">
-  <div class="sticky">
+    <script>
+      let index = 0;
+      const slides = document.getElementById("slides");
+      const dots = document.querySelectorAll(".dot");
 
-    <img class="image" 
-    src="https://images.unsplash.com/photo-1492724441997-5dc865305da7">
+      function updateSlide() {
+        slides.style.transform = `translateX(-${index * 100}%)`;
 
-    <div class="text">
-      <h1>Scroll Animation</h1>
-      <p>Image zoom + text reveal</p>
-    </div>
+        dots.forEach((dot) => dot.classList.remove("active"));
+        dots[index].classList.add("active");
+      }
 
-  </div>
-</section>
-<section class="section">
-  <div class="sticky">
+      function nextSlide() {
+        index = (index + 1) % 3;
+        updateSlide();
+      }
 
-    <img class="image" 
-    src="https://images.unsplash.com/photo-1492724441997-5dc865305da7">
+      function prevSlide() {
+        index = (index - 1 + 3) % 3;
+        updateSlide();
+      }
 
-    <div class="text">
-      <h1>Scroll Animation</h1>
-      <p>Image zoom + text reveal</p>
-    </div>
+      function goToSlide(i) {
+        index = i;
+        updateSlide();
+      }
 
-  </div>
-</section>
-
-<div class="next">
-  <h1>Next Section 🚀</h1>
-</div>
-
-<script>
-const section = document.querySelector(".section");
-const image = document.querySelector(".image");
-const text = document.querySelector(".text");
-
-window.addEventListener("scroll", () => {
-  const rect = section.getBoundingClientRect();
-  const windowHeight = window.innerHeight;
-
-  // progress (0 to 1)
-  let progress = 1 - (rect.bottom / (windowHeight + rect.height));
-  progress = Math.max(0, Math.min(progress, 1));
-
-  /* IMAGE ANIMATION */
-  const scale = 0.7 + progress * 0.3;
-  const opacity = 0.3 + progress * 0.7;
-
-  image.style.transform = `scale(${scale})`;
-  image.style.opacity = opacity;
-
-  /* TEXT ANIMATION */
-  const textY = 100 - progress * 100;
-  const textOpacity = progress;
-
-  text.style.transform = `translateY(${textY}px)`;
-  text.style.opacity = textOpacity;
-});
-</script>
-
-</body>
+      /* AUTO SLIDE */
+      setInterval(nextSlide, 4000);
+    </script>
+  </body>
 </html>
