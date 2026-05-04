@@ -203,7 +203,9 @@ header {
 }
 
 
-
+.otherContent{
+  margin-top: 140px;
+}
 /* Form */
 .FormHeading {
   color: #7e1416;
