@@ -237,13 +237,14 @@ header {
     font-size: 14px;
   }
 }
-@media (max-width: 426px) {
+@media screen and (min-width: 480px) and (max-width: 768px) {
   .dropdown-menu.mega-menu {
     margin-left: 00px;
-    width: 400px;
+    width: 450px;
   }
 }
-@media (max-width: 376px) {
+
+@media screen and (min-width: 302px) and (max-width: 479px) {
   .logoContent h3 {
     font-size: 20px !important;
   }
@@ -251,24 +252,14 @@ header {
     margin-top: 5px;
     margin-left: 0px;
     width: 300px;
-    overflow-x: hidden;
-  }
-}
-@media (max-width: 320px) {
-  .logoContent h3 {
-    font-size: 20px !important;
-  }
-  .dropdown-menu.mega-menu {
-    margin-top: 5px;
-    margin-left: 0px;
-    width: 280px;
     padding: 10px;
   }
 }
 
 /* Hero Section */
 .phraseSection {
-  margin: 50px 0px;
+  margin-top: 150px;
+  margin-bottom: 50px;
 }
 
 .titlePhrase h2 {
