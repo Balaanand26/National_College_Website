@@ -80,6 +80,7 @@ header {
   margin-top: 25px;
   margin-left: -200px;
   width: 700px;
+  scrollbar-width: none;
   padding: 20px;
   border-radius: 10px;
   background-color: #7e1416;
@@ -136,6 +137,7 @@ header {
   }
   .nav-link {
     margin-left: 0px;
+    font-size: 14px;
   }
 }
 @media (max-width: 992px) {
@@ -163,6 +165,10 @@ header {
     margin-left: 0px;
     width: 650px;
   }
+  .nav-link {
+    margin-left: 0px;
+    font-size: 14px;
+  }
 }
 @media (max-width: 426px) {
   .dropdown-menu.mega-menu {
@@ -178,6 +184,18 @@ header {
     margin-top: 5px;
     margin-left: 0px;
     width: 300px;
+    overflow-x: hidden;
+  }
+}
+@media (max-width: 320px) {
+  .logoContent h3 {
+    font-size: 20px !important;
+  }
+  .dropdown-menu.mega-menu {
+    margin-top: 5px;
+    margin-left: 0px;
+    width: 280px;
+    padding: 10px;
   }
 }
 

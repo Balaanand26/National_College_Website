@@ -25,7 +25,7 @@ p {
    ============================================= */
 
 header {
-  position: fixed;
+  position: sticky;
   top: 0px;
   width: 100%;
   z-index: 1000;
@@ -141,6 +141,7 @@ header {
   }
   .nav-link {
     margin-left: 0px;
+    font-size: 14px;
   }
 }
 @media (max-width: 992px) {
@@ -168,6 +169,10 @@ header {
     margin-left: 0px;
     width: 650px;
   }
+  .nav-link {
+    margin-left: 0px;
+    font-size: 14px;
+  }
 }
 @media (max-width: 426px) {
   .dropdown-menu.mega-menu {
@@ -177,7 +182,7 @@ header {
 }
 @media (max-width: 376px) {
   .logoContent h3 {
-    font-size: 18px !important;
+    font-size: 20px !important;
   }
   .dropdown-menu.mega-menu {
     margin-top: 5px;
@@ -197,6 +202,7 @@ header {
     padding: 10px;
   }
 }
+
 
 /* Hero Section */
 /* ===== HERO SECTION ===== */
@@ -284,6 +290,9 @@ footer {
   margin-left: 15px;
   color: #fff;
   font-weight: 600;
+}
+.float-image i {
+  font-size: 25px;
 }
 
 /* PopUPs Section */
@@ -376,7 +385,7 @@ footer {
 .formContent1 {
   width: 100%;
   padding: 30px 25px;
-  background-color: #7e1416;
+  background-color: #7e1416b9;
   border-radius: 10px;
 }
 .formContent1 input {
