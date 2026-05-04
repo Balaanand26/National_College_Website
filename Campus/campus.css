@@ -265,6 +265,11 @@ header {
   object-fit: cover;
   border-radius: 5px;
 }
+@media (max-width:1440px){
+    .item img {
+  width: 295px;
+}
+}
 
 @media (max-width:1025px){
   .item img {
