@@ -229,7 +229,7 @@ header {
     margin-left: 0px;
     width: 650px;
   }
-    .nav-link {
+  .nav-link {
     margin-left: 0px;
     font-size: 14px;
   }
@@ -300,7 +300,7 @@ header {
 }
 
 .carouselContent {
-  margin-bottom: 100px;
+  margin-bottom: 80px;
 }
 .carouselImage {
   border-radius: 35px;
@@ -353,29 +353,9 @@ header {
   }
   .carousel-item img {
     width: 100%;
-    height: 90vh;
+    height: 60vh;
     object-fit: cover;
     filter: brightness(0.79);
-  }
-  .firstContent {
-    top: 35%;
-    text-align: start;
-  }
-  .firstContent button {
-    margin-top: 8px;
-    font-size: 14px;
-    padding: 8px 22px;
-    background-color: #7e1416;
-  }
-  .firstContent h1 {
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 10px;
-  }
-  .firstContent p {
-    font-size: 12px;
-    margin: 0;
-    width: 100%;
   }
 }
 @media screen and (min-width: 480px) and (max-width: 768px) {
@@ -393,24 +373,6 @@ header {
     object-fit: cover;
     filter: brightness(0.79);
   }
-  .firstContent {
-    top: 35%;
-    text-align: start;
-  }
-  .firstContent button {
-    margin-top: 8px;
-    font-size: 16px;
-    background-color: #7e1416;
-  }
-  .firstContent h1 {
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 10px;
-  }
-  .firstContent p {
-    font-size: 16px;
-    width: 100%;
-  }
 }
 @media screen and (min-width: 767px) and (max-width: 1024px) {
   .carousel-item {
@@ -427,24 +389,6 @@ header {
     object-fit: cover;
     filter: brightness(0.79);
   }
-  .firstContent {
-    top: 40%;
-    text-align: start;
-  }
-  .firstContent button {
-    margin-top: 8px;
-    font-size: 18px;
-    background-color: #7e1416;
-  }
-  .firstContent h1 {
-    font-size: 35px;
-    font-weight: 700;
-    margin-bottom: 10px;
-  }
-  .firstContent p {
-    font-size: 18px;
-    width: 100%;
-  }
 }
 @media screen and (min-width: 1025px) and (max-width: 1442px) {
   .carousel-item {
@@ -457,20 +401,6 @@ header {
     height: 90vh;
     object-fit: cover;
     filter: brightness(0.79);
-  }
-  .firstContent button {
-    margin-top: 8px;
-    font-size: 18px;
-    background-color: #7e1416;
-  }
-  .firstContent h1 {
-    font-size: 35px;
-    font-weight: 700;
-    margin-bottom: 10px;
-  }
-  .firstContent p {
-    font-size: 18px;
-    width: 70%;
   }
 }
 
@@ -490,6 +420,18 @@ header {
 /* =============================================
    ABOUT SECTION
    ============================================= */
+
+/* ========================= About Section ======================= */
+.aboutSectionImg {
+  width: 100%;
+  height: 100vh;
+}
+.aboutSectionImg img{
+  filter: brightness(0.3);
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
 .about {
   display: flex;
   width: 100%;
