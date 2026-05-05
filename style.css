@@ -753,20 +753,84 @@ header {
 }
 
 .time23 {
-  padding: 40px 0;
+  
 }
 
-/* Timeline Line */
+/* Replace timeline::before with runway */
 .timeline::before {
   content: "";
   position: absolute;
-  top: 0;
-  bottom: 0;
+  top: 0; bottom: 0;
   left: 50%;
-  width: 4px;
-  background-color: #7e1416;
+  width: 36px;
+  background: black;
   transform: translateX(-50%);
+  opacity: 0.9;
 }
+
+.timeline::after {
+  content: "";
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 50%;
+  width: 3px;
+  background: repeating-linear-gradient(to bottom, #fff 0px, #fff 16px, transparent 16px, transparent 28px);
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+#flight-plane {
+  position: absolute;
+  left: 50%;
+  margin-right: 12px;
+  top: 0;
+  transform: translateX(-50%) rotate(90deg);
+  font-size: 30px;
+  z-index: 10;
+  transition: transform 0.3s ease;
+  pointer-events: none;
+  color: whitesmoke;
+}
+
+/* Desktop */
+.timeline::before,
+.timeline::after {
+  left: 50%;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .timeline::before,
+  .timeline::after {
+    left: 20px;
+  }
+
+  #flight-plane {
+    left: 20px; 
+    transform: translateX(-50%) rotate(90deg);
+    font-size: 30px;
+    color: #000;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .timeline-content {
+    width: calc(100% - 70px);
+    margin-left: 60px;
+  }
+
+  .timeline-date {
+    text-align: left;
+    margin-left: 60px;
+  }
+
+  .campus-img {
+    height: 180px;
+    object-fit: cover;
+  }
+}
+
 
 /* Timeline Node Row */
 .timeline-nodes {

@@ -40,7 +40,9 @@
             <div class="d-flex align-items-center gap-2 logoContent">
               <img src="../Images/UpdLogo.png" width="68" alt="NIMS Logo" />
               <div>
-                <h3 class="text-white fw-bold navbarHeading">National College</h3>
+                <h3 class="text-white fw-bold navbarHeading">
+                  National College
+                </h3>
               </div>
             </div>
           </a>
@@ -86,9 +88,7 @@
                           >
                         </li>
                         <li>
-                          <a href="../InBus/academic.html"
-                            >B.Sc Aviation</a
-                          >
+                          <a href="../InBus/academic.html">B.Sc Aviation</a>
                         </li>
                         <li>
                           <a href="../ship/shipping&log.html"
@@ -179,17 +179,17 @@
 
               <div class="col-12 col-lg-6 FormInput">
                 <label>Name of the Applicant: </label><br />
-                <input type="text" name="name" />
+                <input type="text" name="name" required/>
               </div>
 
               <div class="col-12 col-lg-6 FormInput">
                 <label>D.O.B: </label><br />
-                <input type="date" name="dob" />
+                <input type="date" name="dob" required/>
               </div>
 
               <div class="col-12 col-lg-6 FormInput">
                 <label>Nationality : </label><br />
-                <input type="text" name="nationality" />
+                <input type="text" name="nationality" required/>
               </div>
 
               <div class="col-12 col-lg-6 FormInput">
@@ -199,6 +199,7 @@
                   id="maritalStatus"
                   name="maritalStatus"
                   class="w-100 p-2"
+                  required
                 >
                   <option value="" disabled selected hidden>
                     Select Marital Status
@@ -210,7 +211,7 @@
 
               <div class="col-12 FormInput">
                 <label>Address : </label><br />
-                <input type="text" name="address" />
+                <input type="text" name="address" required/>
               </div>
 
               <div class="col-12 col-lg-3 FormInput">
@@ -227,32 +228,32 @@
 
               <div class="col-12 col-lg-3 FormInput">
                 <label>State : </label><br />
-                <input type="text" name="state" />
+                <input type="text" name="state" required/>
               </div>
 
               <div class="col-12 col-lg-3 FormInput">
                 <label>City : </label><br />
-                <input type="text" name="city" />
+                <input type="text" name="city" required/>
               </div>
 
               <div class="col-12 col-lg-3 FormInput">
                 <label>Pincode : </label><br />
-                <input type="text" name="pincode" />
+                <input type="text" name="pincode" required/>
               </div>
 
               <div class="col-12 col-lg-6 FormInput">
                 <label>Email : </label><br />
-                <input type="text" name="email" />
+                <input type="text" name="email" required/>
               </div>
 
               <div class="col-12 col-lg-3 FormInput">
                 <label>Mobile : </label><br />
-                <input type="text" name="mobile" maxlength="10" />
+                <input type="text" name="mobile" maxlength="10" required/>
               </div>
 
               <div class="col-12 col-lg-3 FormInput">
                 <label>Alternative Mobile : </label><br />
-                <input type="text" name="altMobile" maxlength="10"/>
+                <input type="text" name="altMobile" maxlength="10" required/>
               </div>
             </div>
 
@@ -264,22 +265,22 @@
 
               <div class="col-12 col-lg-6 FormInput">
                 <label>course : </label><br />
-                <input type="text" name="course" />
+                <input type="text" name="course" required/>
               </div>
 
               <div class="col-12 col-lg-6 FormInput">
                 <label>Board/University: </label><br />
-                <input type="text" name="university" />
+                <input type="text" name="university" required/>
               </div>
 
               <div class="col-12 col-lg-6 FormInput">
                 <label>Year of Passing : </label><br />
-                <input type="text" name="year" maxlength="4"/>
+                <input type="text" name="year" maxlength="4" required/>
               </div>
 
               <div class="col-12 col-lg-6 FormInput">
                 <label>Percentage of Marks : </label><br />
-                <input type="text" name="marks" maxlength="3"/>
+                <input type="text" name="marks" maxlength="3" required/>
               </div>
             </div>
 
@@ -291,42 +292,42 @@
 
               <div class="col-12 col-lg-6 FormInput">
                 <label>Father’s Name : </label><br />
-                <input type="text" name="fatherName" />
+                <input type="text" name="fatherName" required/>
               </div>
 
               <div class="col-12 col-lg-6 FormInput">
                 <label>Occupation/Title : </label><br />
-                <input type="text" name="fatherJob" />
+                <input type="text" name="fatherJob" required/>
               </div>
 
               <div class="col-12 col-lg-6 FormInput">
                 <label>Mobile : </label><br />
-                <input type="text" name="fatherMobile" maxlength="10"/>
+                <input type="text" name="fatherMobile" maxlength="10" required/>
               </div>
 
               <div class="col-12 col-lg-6 FormInput">
                 <label>Telephone : </label><br />
-                <input type="text" name="fatherPhone"/>
+                <input type="text" name="fatherPhone" maxlength="10" required/>
               </div>
 
               <div class="col-12 col-lg-6 FormInput">
                 <label>Mother’s Name : </label><br />
-                <input type="text" name="motherName" />
+                <input type="text" name="motherName" required/>
               </div>
 
               <div class="col-12 col-lg-6 FormInput">
                 <label>Occupation/Title : </label><br />
-                <input type="text" name="motherJob" />
+                <input type="text" name="motherJob" required/>
               </div>
 
               <div class="col-12 col-lg-6 FormInput">
                 <label>Mobile : </label><br />
-                <input type="text" name="motherMobile" maxlength="10"/>
+                <input type="text" name="motherMobile" maxlength="10" required/>
               </div>
 
               <div class="col-12 col-lg-6 FormInput">
                 <label>Telephone : </label><br />
-                <input type="text" name="motherPhone" />
+                <input type="text" name="motherPhone" maxlength="10" required/>
               </div>
 
               <div class="FormBtn text-center mt-3">
@@ -346,7 +347,11 @@
             <div class="">
               <div class="d-flex flex-column align-items-lg-center">
                 <div class="me-5">
-                  <img src="../Images/UpdLogo.png" alt="" style="width: 120px" />
+                  <img
+                    src="../Images/UpdLogo.png"
+                    alt=""
+                    style="width: 120px"
+                  />
                 </div>
                 <div class="mt-2">
                   <h3>NATIONAL COLLEGE</h3>
@@ -653,10 +658,10 @@
                 <option>B.Sc Fashion Design</option>
                 <option>MBA Airlines & Airport Management</option>
                 <option>MBA - HR | Finance | Marketing | Operations</option>
-                <option>Airlines & Airport Management</option>
-                <option>Banking</option>
-                <option>Fashion Design</option>
-                <option>Logistics</option>
+                <option>Diploma in Airlines & Airport Management</option>
+                <option>Diploma in Banking</option>
+                <option>Diploma in Fashion Design</option>
+                <option>Diploma in Logistics</option>
               </select>
               <small id="courseError">Please select a course</small>
 
@@ -674,12 +679,38 @@
       </div>
     </div>
 
-
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
     <script src="appForm.js"></script>
+    <div
+      class="company-watermark"
+      style="
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        color: rgb(199, 199, 199);
+        font-size: 14px;
+        font-family: Arial, sans-serif;
+        z-index: 9999;
+        pointer-events: none;
+        user-select: none;
+      "
+    >
+      Designed by
+      <a
+        href="https://www.nextwebbymindpower.com"
+        target="_blank"
+        style="
+          color: rgb(199, 199, 199);
+          text-decoration: none;
+          pointer-events: auto;
+        "
+      >
+        Nextwebby Mind Power
+      </a>
+    </div>
   </body>
 </html>

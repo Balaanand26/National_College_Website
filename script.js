@@ -105,7 +105,7 @@ const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting && !started) {
-        counter("count1", 0, 5, 3000);
+        counter("count1", 3000, 5000, 3000);
         counter("count2", 0, 150, 3000);
         counter("count3", 0, 100, 3000);
         started = true; // run only once
@@ -117,20 +117,70 @@ const observer = new IntersectionObserver(
 
 observer.observe(section);
 
-// form Script
+const plane = document.createElement("div");
+plane.id = "flight-plane";
+plane.innerHTML = `<i class="fa-solid fa-plane"></i>`;
+
+const timeline = document.querySelector(".timeline");
+timeline.appendChild(plane);
+
+let lastY = window.scrollY;
+
+window.addEventListener("scroll", () => {
+  const timelineRect = timeline.getBoundingClientRect();
+  const scrollTop = window.scrollY;
+  const timelineTop = timeline.offsetTop;
+  const timelineHeight = timeline.offsetHeight;
+
+  const isMobile = window.innerWidth <= 768;
+
+  if (
+    scrollTop >= timelineTop - window.innerHeight / 2 &&
+    scrollTop <= timelineTop + timelineHeight
+  ) {
+    const progress =
+      (scrollTop - timelineTop + window.innerHeight / 2) / timelineHeight;
+
+    // Clamp value
+    const position = Math.min(
+      Math.max(progress * timelineHeight, 0),
+      timelineHeight,
+    );
+
+    plane.style.top = `${position}px`;
+
+    // Align with line (mobile vs desktop)
+    plane.style.left = isMobile ? "20px" : "50%";
+
+    const dir = scrollTop > lastY ? "down" : "up";
+
+    plane.style.transform =
+      dir === "down"
+        ? "translateX(-50%) rotate(90deg)"
+        : "translateX(-50%) rotate(270deg)";
+
+    lastY = scrollTop;
+  }
+});
+
+// Form Section
+// ================= FORM ELEMENTS =================
+const form = document.getElementById("myForm");
 
 const name = document.getElementById("name");
 const mobile = document.getElementById("mobile");
 const email = document.getElementById("email");
 const course = document.getElementById("course");
 const agree = document.getElementById("agree");
+const state = document.getElementById("state");
+const city = document.getElementById("city");
 
-// Regex
+// ================= REGEX =================
 const nameRegex = /^[A-Za-z ]+$/;
 const mobileRegex = /^[0-9]{10}$/;
 const emailRegex = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
 
-// Validation Functions
+// ================= VALIDATION =================
 function validateName() {
   if (!nameRegex.test(name.value)) {
     nameError.style.display = "block";
@@ -184,12 +234,12 @@ function validateSelect(selectElement, errorId) {
   return true;
 }
 
-// Real-time validation
+// ================= REAL-TIME VALIDATION =================
 name.addEventListener("input", validateName);
 mobile.addEventListener("input", validateMobile);
 email.addEventListener("input", validateEmail);
 
-// Prevent typing invalid chars
+// ================= PREVENT INVALID INPUT =================
 name.addEventListener("keypress", (e) => {
   if (!/[A-Za-z ]/.test(e.key)) e.preventDefault();
 });
@@ -198,8 +248,8 @@ mobile.addEventListener("keypress", (e) => {
   if (!/[0-9]/.test(e.key)) e.preventDefault();
 });
 
-// Submit validation
-document.getElementById("myForm").addEventListener("submit", function (e) {
+// ================= FORM SUBMIT =================
+form.addEventListener("submit", function (e) {
   const isValid =
     validateName() &&
     validateMobile() &&
@@ -211,9 +261,40 @@ document.getElementById("myForm").addEventListener("submit", function (e) {
 
   if (!isValid) {
     e.preventDefault();
+  } else {
+    // ✅ clear form after submit
+    setTimeout(() => {
+      resetForm();
+    }, 1000);
   }
 });
 
+// ================= RESET FUNCTION =================
+function resetForm() {
+  form.reset();
+
+  // reset city dropdown
+  city.innerHTML = '<option value="">Select City</option>';
+
+  // hide all error messages
+  document.querySelectorAll("small").forEach((el) => {
+    el.style.display = "none";
+  });
+
+  // remove error class
+  document.querySelectorAll(".error").forEach((el) => {
+    el.classList.remove("error");
+  });
+}
+
+// ================= OFFCANVAS CLOSE RESET =================
+const offcanvas = document.getElementById("offcanvasRight");
+
+offcanvas.addEventListener("hidden.bs.offcanvas", function () {
+  resetForm();
+});
+
+// ================= STATE → CITY =================
 const citiesByState = {
   AndhraPradesh: [
     "Anantapur",
@@ -970,16 +1051,13 @@ const citiesByState = {
   ],
 };
 
-const state = document.getElementById("state");
-const city = document.getElementById("city");
-
 state.addEventListener("change", function () {
   const selectedState = this.value;
 
   city.innerHTML = '<option value="">Select City</option>';
 
   if (selectedState && citiesByState[selectedState]) {
-    citiesByState[selectedState].forEach(function (cityName) {
+    citiesByState[selectedState].forEach((cityName) => {
       const option = document.createElement("option");
       option.value = cityName;
       option.textContent = cityName;
@@ -987,4 +1065,3 @@ state.addEventListener("change", function () {
     });
   }
 });
-

@@ -1,15 +1,20 @@
+// ================= ELEMENTS =================
+const form = document.getElementById("myForm");
+
 const name = document.getElementById("name");
 const mobile = document.getElementById("mobile");
 const email = document.getElementById("email");
 const course = document.getElementById("course");
 const agree = document.getElementById("agree");
+const state = document.getElementById("state");
+const city = document.getElementById("city");
 
-// Regex
+// ================= REGEX =================
 const nameRegex = /^[A-Za-z ]+$/;
 const mobileRegex = /^[0-9]{10}$/;
 const emailRegex = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
 
-// Validation Functions
+// ================= VALIDATION =================
 function validateName() {
   if (!nameRegex.test(name.value)) {
     nameError.style.display = "block";
@@ -63,12 +68,12 @@ function validateSelect(selectElement, errorId) {
   return true;
 }
 
-// Real-time validation
+// ================= REAL-TIME VALIDATION =================
 name.addEventListener("input", validateName);
 mobile.addEventListener("input", validateMobile);
 email.addEventListener("input", validateEmail);
 
-// Prevent typing invalid chars
+// ================= PREVENT INVALID INPUT =================
 name.addEventListener("keypress", (e) => {
   if (!/[A-Za-z ]/.test(e.key)) e.preventDefault();
 });
@@ -77,8 +82,26 @@ mobile.addEventListener("keypress", (e) => {
   if (!/[0-9]/.test(e.key)) e.preventDefault();
 });
 
-// Submit validation
-document.getElementById("myForm").addEventListener("submit", function (e) {
+// ================= RESET FUNCTION =================
+function resetForm() {
+  form.reset();
+
+  // reset city dropdown
+  city.innerHTML = '<option value="">Select City</option>';
+
+  // hide all error messages
+  document.querySelectorAll("small").forEach((el) => {
+    el.style.display = "none";
+  });
+
+  // remove error styles
+  document.querySelectorAll(".error").forEach((el) => {
+    el.classList.remove("error");
+  });
+}
+
+// ================= FORM SUBMIT =================
+form.addEventListener("submit", function (e) {
   const isValid =
     validateName() &&
     validateMobile() &&
@@ -90,9 +113,15 @@ document.getElementById("myForm").addEventListener("submit", function (e) {
 
   if (!isValid) {
     e.preventDefault();
+  } else {
+    // ✅ CLEAR FORM AFTER SUBMIT
+    setTimeout(() => {
+      resetForm();
+    }, 200);
   }
 });
 
+// ================= STATE → CITY =================
 const citiesByState = {
   AndhraPradesh: [
     "Anantapur",
@@ -849,16 +878,13 @@ const citiesByState = {
   ],
 };
 
-const state = document.getElementById("state");
-const city = document.getElementById("city");
-
 state.addEventListener("change", function () {
   const selectedState = this.value;
 
   city.innerHTML = '<option value="">Select City</option>';
 
   if (selectedState && citiesByState[selectedState]) {
-    citiesByState[selectedState].forEach(function (cityName) {
+    citiesByState[selectedState].forEach((cityName) => {
       const option = document.createElement("option");
       option.value = cityName;
       option.textContent = cityName;
@@ -866,6 +892,8 @@ state.addEventListener("change", function () {
     });
   }
 });
+
+
 
 // PopUp Script js
 
