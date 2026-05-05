@@ -27,7 +27,7 @@ body.no-scroll {
   overflow: hidden;
   height: 100vh;
 }
-p{
+p {
   font-size: 16px;
 }
 
@@ -420,7 +420,7 @@ header {
   width: 100%;
   height: 100vh;
 }
-.aboutSectionImg img{
+.aboutSectionImg img {
   filter: brightness(0.3);
   width: 100%;
   height: 100vh;
@@ -753,14 +753,14 @@ header {
 }
 
 .time23 {
-  
 }
 
 /* Replace timeline::before with runway */
 .timeline::before {
   content: "";
   position: absolute;
-  top: 0; bottom: 0;
+  top: 0;
+  bottom: 0;
   left: 50%;
   width: 36px;
   background: black;
@@ -771,21 +771,27 @@ header {
 .timeline::after {
   content: "";
   position: absolute;
-  top: 0; bottom: 0;
+  top: 0;
+  bottom: 0;
   left: 50%;
   width: 3px;
-  background: repeating-linear-gradient(to bottom, #fff 0px, #fff 16px, transparent 16px, transparent 28px);
+  background: repeating-linear-gradient(
+    to bottom,
+    #fff 0px,
+    #fff 16px,
+    transparent 16px,
+    transparent 28px
+  );
   transform: translateX(-50%);
   z-index: 1;
 }
 
-#flight-plane {
+.flight-plane {
   position: absolute;
   left: 50%;
-  margin-right: 12px;
   top: 0;
   transform: translateX(-50%) rotate(90deg);
-  font-size: 30px;
+  font-size: 35px;
   z-index: 10;
   transition: transform 0.3s ease;
   pointer-events: none;
@@ -804,9 +810,22 @@ header {
   .timeline::after {
     left: 20px;
   }
+  .timeline::before {
+    background: transparent;
+  }
+  .timeline::after {
+    background: repeating-linear-gradient(
+      to bottom,
+      #000 0px,
+      #000 16px,
+      transparent 16px,
+      transparent 28px
+    );
+    
+  }
 
-  #flight-plane {
-    left: 20px; 
+  .flight-plane {
+    left: 20px;
     transform: translateX(-50%) rotate(90deg);
     font-size: 30px;
     color: #000;
@@ -814,7 +833,6 @@ header {
 }
 
 @media (max-width: 768px) {
-
   .timeline-content {
     width: calc(100% - 70px);
     margin-left: 60px;
@@ -830,7 +848,6 @@ header {
     object-fit: cover;
   }
 }
-
 
 /* Timeline Node Row */
 .timeline-nodes {

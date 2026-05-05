@@ -116,51 +116,116 @@ const observer = new IntersectionObserver(
 );
 
 observer.observe(section);
+// ===============================
+// CAMPUS SWITCH FUNCTION
+// ===============================
+function showCampus(campus) {
+  // Remove active class from all
+  document.querySelectorAll(".campus-content").forEach((el) => {
+    el.classList.remove("active");
+  });
 
-const plane = document.createElement("div");
-plane.id = "flight-plane";
-plane.innerHTML = `<i class="fa-solid fa-plane"></i>`;
+  document.querySelectorAll(".campus-btn").forEach((btn) => {
+    btn.classList.remove("active");
+  });
 
-const timeline = document.querySelector(".timeline");
-timeline.appendChild(plane);
+  // Add active class to selected
+  document.getElementById(campus).classList.add("active");
 
-let lastY = window.scrollY;
+  // Activate correct button
+  event.target.classList.add("active");
 
+  // Show/Hide plane
+  const plane = document.getElementById("flight-plane");
+  if (plane) {
+    plane.style.display = campus === "madurai" ? "block" : "none";
+  }
+}
+
+// ===============================
+// CAMPUS SWITCH FUNCTION
+// ===============================
+function showCampus(campus) {
+  document.querySelectorAll(".campus-content").forEach((el) => {
+    el.classList.remove("active");
+  });
+
+  document.querySelectorAll(".campus-btn").forEach((btn) => {
+    btn.classList.remove("active");
+  });
+
+  document.getElementById(campus).classList.add("active");
+  event.target.classList.add("active");
+}
+
+// ===============================
+// CREATE PLANES FOR ALL TIMELINES
+// ===============================
+const timelines = document.querySelectorAll(".timeline");
+
+const planes = [];
+
+timelines.forEach((timeline, index) => {
+  const plane = document.createElement("div");
+  plane.classList.add("flight-plane");
+  plane.innerHTML = `<i class="fa-solid fa-plane"></i>`;
+
+  timeline.appendChild(plane);
+
+  planes.push({
+    element: plane,
+    timeline: timeline,
+    lastY: window.scrollY,
+  });
+});
+
+// ===============================
+// SCROLL ANIMATION FOR ALL PLANES
+// ===============================
 window.addEventListener("scroll", () => {
-  const timelineRect = timeline.getBoundingClientRect();
   const scrollTop = window.scrollY;
-  const timelineTop = timeline.offsetTop;
-  const timelineHeight = timeline.offsetHeight;
-
   const isMobile = window.innerWidth <= 768;
 
-  if (
-    scrollTop >= timelineTop - window.innerHeight / 2 &&
-    scrollTop <= timelineTop + timelineHeight
-  ) {
-    const progress =
-      (scrollTop - timelineTop + window.innerHeight / 2) / timelineHeight;
+  planes.forEach((item) => {
+    const { element, timeline } = item;
 
-    // Clamp value
-    const position = Math.min(
-      Math.max(progress * timelineHeight, 0),
-      timelineHeight,
-    );
+    // Skip if parent campus is not active
+    const campusSection = timeline.closest(".campus-content");
+    if (!campusSection.classList.contains("active")) return;
 
-    plane.style.top = `${position}px`;
+    const timelineTop = timeline.offsetTop;
+    const timelineHeight = timeline.offsetHeight;
 
-    // Align with line (mobile vs desktop)
-    plane.style.left = isMobile ? "20px" : "50%";
+    if (
+      scrollTop >= timelineTop - window.innerHeight / 2 &&
+      scrollTop <= timelineTop + timelineHeight
+    ) {
+      const progress =
+        (scrollTop - timelineTop + window.innerHeight / 2) /
+        timelineHeight;
 
-    const dir = scrollTop > lastY ? "down" : "up";
+      const position = Math.min(
+        Math.max(progress * timelineHeight, 0),
+        timelineHeight
+      );
 
-    plane.style.transform =
-      dir === "down"
-        ? "translateX(-50%) rotate(90deg)"
-        : "translateX(-50%) rotate(270deg)";
+      // Move plane
+      element.style.top = `${position}px`;
 
-    lastY = scrollTop;
-  }
+      // Align
+      element.style.left = isMobile ? "20px" : "50%";
+
+      // Direction
+      const dir = scrollTop > item.lastY ? "down" : "up";
+
+      element.style.transform =
+        dir === "down"
+          ? "translateX(-50%) rotate(90deg)"
+          : "translateX(-50%) rotate(270deg)";
+
+      item.lastY = scrollTop;
+    }
+  });
 });
 
 // Form Section
