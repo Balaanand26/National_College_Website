@@ -212,7 +212,7 @@ header {
 }
 .overlay {
   animation-name: animateText;
-  animation-duration: 5s;
+  animation-duration: 1s;
 }
 @keyframes animateText {
   0% {
