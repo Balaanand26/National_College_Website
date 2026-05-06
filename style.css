@@ -20,7 +20,9 @@ section {
   width: 100%;
   overflow: hidden;
 }
-
+p{
+  font-size: 16px;
+}
 /*  LOADING VIDEO */
 
 body.no-scroll {
@@ -145,8 +147,8 @@ header {
 
 .dropdown-menu.mega-menu {
   margin-top: 25px;
-  margin-left: -200px;
-  width: 700px;
+  margin-left: -300px;
+  width: 900px;
   scrollbar-width: none;
   padding: 20px;
   border-radius: 10px;
@@ -240,13 +242,23 @@ header {
 @media screen and (min-width: 480px) and (max-width: 768px) {
   .dropdown-menu.mega-menu {
     margin-left: 00px;
-    width: 450px;
+    width: 650px;
+  }
+}
+@media (max-width:1024px){
+    .logoContent h2 {
+    font-size: 25px !important;
+  }
+}
+@media (max-width:768px){
+    .logoContent h2 {
+    font-size: 30px !important;
   }
 }
 
 @media screen and (min-width: 302px) and (max-width: 479px) {
-  .logoContent h3 {
-    font-size: 20px !important;
+  .logoContent h2 {
+    font-size: 16px !important;
   }
   .dropdown-menu.mega-menu {
     margin-top: 5px;
@@ -635,14 +647,24 @@ header {
 
 .counter-section {
   background-color: #7e1416;
-  padding: 3.8rem 0;
+  padding: 3.8rem 0 2rem;
 }
 .counter-section h2 {
   color: #fff;
 }
 .counter-section p {
   color: #ddb337;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
+}
+
+
+/* ======================== New About Section ================= */
+
+.aboutbgImg{
+  width: 100%;
+  object-fit: cover;
+  opacity: 0.4;
+  height: 120vh;
 }
 
 /* =============================================
@@ -1340,6 +1362,7 @@ header {
 .footerSection a:hover {
   color: #ddb337;
 }
+
 
 /* ==================== Whatsapp floating =================== */
 .float-image {

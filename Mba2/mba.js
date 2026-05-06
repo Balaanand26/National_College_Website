@@ -1,236 +1,4 @@
-// Loading page
-
-window.onload = function () {
-  const preloader = document.getElementById("preloader");
-
-  // 🔒 Lock scroll initially
-  document.body.classList.add("no-scroll");
-
-  // Check if loader already shown in this session
-  if (sessionStorage.getItem("loaderShown")) {
-    preloader.style.display = "none";
-
-    // 🔓 Unlock scroll
-    document.body.classList.remove("no-scroll");
-    return;
-  }
-
-  setTimeout(function () {
-    preloader.style.opacity = "0";
-    preloader.style.visibility = "hidden";
-
-    sessionStorage.setItem("loaderShown", "true");
-
-    setTimeout(() => {
-      preloader.style.display = "none";
-
-      // 🔓 Unlock scroll after loader gone
-      document.body.classList.remove("no-scroll");
-    }, 1000);
-  }, 3500);
-};
-// Buttons
-
-function showCampus(campus) {
-  // hide all
-  document.querySelectorAll(".campus-content").forEach((el) => {
-    el.classList.remove("active");
-  });
-
-  document.querySelectorAll(".campus-btn").forEach((btn) => {
-    btn.classList.remove("active");
-  });
-
-  // show selected
-  document.getElementById(campus).classList.add("active");
-
-  // highlight button
-  event.target.classList.add("active");
-}
-
-// PopUp Script js
-
-document.addEventListener("DOMContentLoaded", () => {
-  const popup = document.getElementById("applyPopup");
-  const closeBtn = popup.querySelector(".popup-close");
-
-  function showPopup() {
-    popup.classList.add("show");
-    setTimeout(() => popup.classList.remove("show"), 8000); // Hide after 8s
-  }
-
-  // Initial show after 10s
-  setTimeout(showPopup, 500);
-  // Repeat every 30s
-  setInterval(showPopup, 10000);
-
-  // Click opens modal
-  popup.addEventListener("click", (e) => {
-    if (!e.target.classList.contains("popup-close")) {
-      popup.classList.remove("show");
-      applyModal.show();
-    }
-  });
-
-  // Close button
-  closeBtn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    popup.classList.remove("show");
-  });
-});
-
-// Counter
-
-let started = false;
-
-function counter(id, start, end, duration) {
-  let obj = document.getElementById(id),
-    current = start,
-    range = end - start,
-    increment = end > start ? 1 : -1,
-    step = Math.abs(Math.floor(duration / range)),
-    timer = setInterval(() => {
-      current += increment;
-      obj.textContent = current;
-      if (current == end) {
-        clearInterval(timer);
-      }
-    }, step);
-}
-
-// Counter Section
-const section = document.getElementById("counterSection");
-
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting && !started) {
-        counter("count1", 3999, 5000, 3000);
-        counter("count2", 0, 150, 3000);
-        counter("count3", 0, 250, 3000);
-        counter("count4", 0, 100, 3000);
-        started = true; // run only once
-      }
-    });
-  },
-  { threshold: 0.5 },
-);
-
-observer.observe(section);
-// ===============================
-// CAMPUS SWITCH FUNCTION
-// ===============================
-function showCampus(campus) {
-  // Remove active class from all
-  document.querySelectorAll(".campus-content").forEach((el) => {
-    el.classList.remove("active");
-  });
-
-  document.querySelectorAll(".campus-btn").forEach((btn) => {
-    btn.classList.remove("active");
-  });
-
-  // Add active class to selected
-  document.getElementById(campus).classList.add("active");
-
-  // Activate correct button
-  event.target.classList.add("active");
-
-  // Show/Hide plane
-  const plane = document.getElementById("flight-plane");
-  if (plane) {
-    plane.style.display = campus === "madurai" ? "block" : "none";
-  }
-}
-
-// ===============================
-// CAMPUS SWITCH FUNCTION
-// ===============================
-function showCampus(campus) {
-  document.querySelectorAll(".campus-content").forEach((el) => {
-    el.classList.remove("active");
-  });
-
-  document.querySelectorAll(".campus-btn").forEach((btn) => {
-    btn.classList.remove("active");
-  });
-
-  document.getElementById(campus).classList.add("active");
-  event.target.classList.add("active");
-}
-
-// ===============================
-// CREATE PLANES FOR ALL TIMELINES
-// ===============================
-const timelines = document.querySelectorAll(".timeline");
-
-const planes = [];
-
-timelines.forEach((timeline, index) => {
-  const plane = document.createElement("div");
-  plane.classList.add("flight-plane");
-  plane.innerHTML = `<i class="fa-solid fa-plane"></i>`;
-
-  timeline.appendChild(plane);
-
-  planes.push({
-    element: plane,
-    timeline: timeline,
-    lastY: window.scrollY,
-  });
-});
-
-// ===============================
-// SCROLL ANIMATION FOR ALL PLANES
-// ===============================
-window.addEventListener("scroll", () => {
-  const scrollTop = window.scrollY;
-  const isMobile = window.innerWidth <= 768;
-
-  planes.forEach((item) => {
-    const { element, timeline } = item;
-
-    // Skip if parent campus is not active
-    const campusSection = timeline.closest(".campus-content");
-    if (!campusSection.classList.contains("active")) return;
-
-    const timelineTop = timeline.offsetTop;
-    const timelineHeight = timeline.offsetHeight;
-
-    if (
-      scrollTop >= timelineTop - window.innerHeight / 2 &&
-      scrollTop <= timelineTop + timelineHeight
-    ) {
-      const progress =
-        (scrollTop - timelineTop + window.innerHeight / 2) /
-        timelineHeight;
-
-      const position = Math.min(
-        Math.max(progress * timelineHeight, 0),
-        timelineHeight
-      );
-
-      // Move plane
-      element.style.top = `${position}px`;
-
-      // Align
-      element.style.left = isMobile ? "20px" : "50%";
-
-      // Direction
-      const dir = scrollTop > item.lastY ? "down" : "up";
-
-      element.style.transform =
-        dir === "down"
-          ? "translateX(-50%) rotate(90deg)"
-          : "translateX(-50%) rotate(270deg)";
-
-      item.lastY = scrollTop;
-    }
-  });
-});
-
-// Form Section
-// ================= FORM ELEMENTS =================
+// ================= ELEMENTS =================
 const form = document.getElementById("myForm");
 
 const name = document.getElementById("name");
@@ -314,6 +82,24 @@ mobile.addEventListener("keypress", (e) => {
   if (!/[0-9]/.test(e.key)) e.preventDefault();
 });
 
+// ================= RESET FUNCTION =================
+function resetForm() {
+  form.reset();
+
+  // reset city dropdown
+  city.innerHTML = '<option value="">Select City</option>';
+
+  // hide all error messages
+  document.querySelectorAll("small").forEach((el) => {
+    el.style.display = "none";
+  });
+
+  // remove error styles
+  document.querySelectorAll(".error").forEach((el) => {
+    el.classList.remove("error");
+  });
+}
+
 // ================= FORM SUBMIT =================
 form.addEventListener("submit", function (e) {
   const isValid =
@@ -328,36 +114,11 @@ form.addEventListener("submit", function (e) {
   if (!isValid) {
     e.preventDefault();
   } else {
-    // ✅ clear form after submit
+    // ✅ CLEAR FORM AFTER SUBMIT
     setTimeout(() => {
       resetForm();
-    }, 1000);
+    }, 200);
   }
-});
-
-// ================= RESET FUNCTION =================
-function resetForm() {
-  form.reset();
-
-  // reset city dropdown
-  city.innerHTML = '<option value="">Select City</option>';
-
-  // hide all error messages
-  document.querySelectorAll("small").forEach((el) => {
-    el.style.display = "none";
-  });
-
-  // remove error class
-  document.querySelectorAll(".error").forEach((el) => {
-    el.classList.remove("error");
-  });
-}
-
-// ================= OFFCANVAS CLOSE RESET =================
-const offcanvas = document.getElementById("offcanvasRight");
-
-offcanvas.addEventListener("hidden.bs.offcanvas", function () {
-  resetForm();
 });
 
 // ================= STATE → CITY =================
@@ -1130,4 +891,40 @@ state.addEventListener("change", function () {
       city.appendChild(option);
     });
   }
+});
+
+
+
+
+
+// PopUp Script js
+
+document.addEventListener("DOMContentLoaded", () => {
+  const popup = document.getElementById("applyPopup");
+  const closeBtn = popup.querySelector(".popup-close");
+
+
+  function showPopup() {
+    popup.classList.add("show");
+    setTimeout(() => popup.classList.remove("show"), 8000); // Hide after 8s
+  }
+
+  // Initial show after 10s
+  setTimeout(showPopup, 500);
+  // Repeat every 30s
+  setInterval(showPopup, 10000);
+
+  // Click opens modal
+  popup.addEventListener("click", (e) => {
+    if (!e.target.classList.contains("popup-close")) {
+      popup.classList.remove("show");
+      applyModal.show();
+    }
+  });
+
+  // Close button
+  closeBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    popup.classList.remove("show");
+  });
 });
