@@ -1239,10 +1239,10 @@ setInterval(() => {
 }, 4000);
 
   // =============================================
-      // DEGREE SWIPER
+      //UG DEGREE SWIPER
       // =============================================
 
-      var degreeSwiper = new Swiper(".degreeSwiper", {
+      var degreeSwiper = new Swiper(".UgDegreeSwiper", {
         slidesPerView: 4,
         spaceBetween: 25,
         loop: true,
@@ -1253,8 +1253,54 @@ setInterval(() => {
         },
 
         navigation: {
-          nextEl: ".degree-next",
-          prevEl: ".degree-prev",
+          nextEl: ".UgDegree-next",
+          prevEl: ".UgDegree-prev",
+        },
+
+        breakpoints: {
+          0: {
+            slidesPerView: 1,
+            spaceBetween: 15,
+          },
+
+          576: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 25,
+          },
+
+          1200: {
+            slidesPerView: 4,
+            spaceBetween: 25,
+          },
+        },
+      });
+  // =============================================
+      //PG DEGREE SWIPER
+      // =============================================
+
+      var degreeSwiper = new Swiper(".PgDegreeSwiper", {
+        slidesPerView: 4,
+        spaceBetween: 25,
+        loop: true,
+
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+
+        navigation: {
+          nextEl: ".PgDegree-next",
+          prevEl: ".PgDegree-prev",
         },
 
         breakpoints: {
@@ -1307,18 +1353,27 @@ setInterval(() => {
         breakpoints: {
           0: {
             slidesPerView: 1,
+            spaceBetween: 15,
           },
 
           576: {
-            slidesPerView: 2,
+            slidesPerView: 1,
+            spaceBetween: 20,
           },
 
           768: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+
+          1024: {
             slidesPerView: 3,
+            spaceBetween: 25,
           },
 
           1200: {
             slidesPerView: 4,
+            spaceBetween: 25,
           },
         },
       });
