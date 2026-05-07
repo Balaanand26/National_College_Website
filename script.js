@@ -202,12 +202,11 @@ window.addEventListener("scroll", () => {
       scrollTop <= timelineTop + timelineHeight
     ) {
       const progress =
-        (scrollTop - timelineTop + window.innerHeight / 2) /
-        timelineHeight;
+        (scrollTop - timelineTop + window.innerHeight / 2) / timelineHeight;
 
       const position = Math.min(
         Math.max(progress * timelineHeight, 0),
-        timelineHeight
+        timelineHeight,
       );
 
       // Move plane
@@ -1131,3 +1130,196 @@ state.addEventListener("change", function () {
     });
   }
 });
+
+// Carousel Text Content Section
+
+const track = document.querySelector(".carouselTrack");
+const slides = document.querySelectorAll(".carouselSlide");
+const nextBtn = document.querySelector(".nextBtn");
+const prevBtn = document.querySelector(".prevBtn");
+
+let index = 0;
+
+/* Next Slide */
+
+nextBtn.addEventListener("click", () => {
+  index++;
+
+  if (index >= slides.length) {
+    index = 0;
+  }
+
+  updateCarousel();
+});
+
+/* Previous Slide */
+
+prevBtn.addEventListener("click", () => {
+  index--;
+
+  if (index < 0) {
+    index = slides.length - 1;
+  }
+
+  updateCarousel();
+});
+
+/* Update */
+
+function updateCarousel() {
+  track.style.transform = `translateX(-${index * 100}%)`;
+}
+
+/* Auto Slide */
+
+setInterval(() => {
+  index++;
+
+  if (index >= slides.length) {
+    index = 0;
+  }
+
+  updateCarousel();
+}, 4000);
+
+  // =============================================
+      // DEGREE SWIPER
+      // =============================================
+
+      var degreeSwiper = new Swiper(".degreeSwiper", {
+        slidesPerView: 4,
+        spaceBetween: 25,
+        loop: true,
+
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+
+        navigation: {
+          nextEl: ".degree-next",
+          prevEl: ".degree-prev",
+        },
+
+        breakpoints: {
+          0: {
+            slidesPerView: 1,
+            spaceBetween: 15,
+          },
+
+          576: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 25,
+          },
+
+          1200: {
+            slidesPerView: 4,
+            spaceBetween: 25,
+          },
+        },
+      });
+
+      // =============================================
+      // DIPLOMA SWIPER
+      // =============================================
+
+      var diplomaSwiper = new Swiper(".diplomaSwiper", {
+        slidesPerView: 4,
+        spaceBetween: 25,
+        loop: true,
+
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+
+        navigation: {
+          nextEl: ".diploma-next",
+          prevEl: ".diploma-prev",
+        },
+
+        breakpoints: {
+          0: {
+            slidesPerView: 1,
+          },
+
+          576: {
+            slidesPerView: 2,
+          },
+
+          768: {
+            slidesPerView: 3,
+          },
+
+          1200: {
+            slidesPerView: 4,
+          },
+        },
+      });
+
+
+
+
+// About Section
+
+/* =============================================
+   PLANE IMAGE SCROLL ZOOM
+============================================= */
+
+const plane =
+document.getElementById("planeImg");
+
+const aviationSection =
+document.getElementById("aviationSection");
+
+const MIN_SCALE = 1;
+const MAX_SCALE = 2;
+
+function updatePlaneZoom(){
+
+    const rect =
+    aviationSection.getBoundingClientRect();
+
+    const windowHeight =
+    window.innerHeight;
+
+    let progress =
+    1 - (rect.top / windowHeight);
+
+    progress =
+    Math.max(0, Math.min(progress, 1));
+
+    progress =
+    progress * progress * (3 - 2 * progress);
+
+    const scale =
+    MIN_SCALE +
+    (MAX_SCALE - MIN_SCALE) * progress;
+
+    plane.style.transform =
+    `scale(${scale})`;
+
+}
+
+window.addEventListener(
+    "scroll",
+    updatePlaneZoom,
+    { passive:true }
+);
+
+window.addEventListener(
+    "resize",
+    updatePlaneZoom
+);
+
+updatePlaneZoom();

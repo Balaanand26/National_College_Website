@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>NIMS Aviation Section</title>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Open+Sans:wght@400;600&display=swap"
+rel="stylesheet"
+/>
+
+<style>
+
+/* =============================================
+   RESET
+============================================= */
+
+*,
+*::before,
+*::after{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:"Open Sans",sans-serif;
+    background:#f5f5f5;
+    overflow-x:hidden;
+}
+
+/* =============================================
+   DUMMY SECTION
+============================================= */
+
+.scroll-space{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:50px;
+    font-weight:700;
+    color:#999;
+}
+
+/* =============================================
+   ABOUT SECTION
+============================================= */
+
+.aboutSection{
+    width:100%;
+    padding:80px 0;
+    overflow:hidden;
+}
+
+.container{
+    width:100%;
+    max-width:1400px;
+    margin:auto;
+    padding:0 120px;
+}
+
+/* =============================================
+   TOP CONTENT
+============================================= */
+
+.top-label{
+    color:#b71c1c;
+    font-family:"Montserrat",sans-serif;
+    font-weight:700;
+    font-size:14px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    margin-bottom:20px;
+}
+
+.hero-title{
+    font-family:"Montserrat",sans-serif;
+    font-size:4rem;
+    font-weight:900;
+    color:#1a1a1a;
+    line-height:1.15;
+    margin-bottom:20px;
+}
+
+.hero-title .highlight{
+    color:#b71c1c;
+}
+
+.hero-subtitle{
+    color:#555;
+    font-size:1.1rem;
+    line-height:1.9;
+    max-width:800px;
+}
+
+/* =============================================
+   MAIN SECTION
+============================================= */
+
+.aviation-section{
+    margin-top:70px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:60px;
+
+    position:relative;
+}
+
+/* =============================================
+   PLANE SIDE
+============================================= */
+
+.plane-wrapper{
+    flex:0 0 48%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    position:relative;
+
+    min-height:550px;
+
+    overflow:visible;
+}
+
+.plane-img{
+    width:100%;
+    max-width:650px;
+
+    object-fit:contain;
+
+    transform-origin:center center;
+    transform:scale(1);
+
+    transition:transform 0.08s linear;
+
+    filter:drop-shadow(0 30px 60px rgba(0,0,0,0.18));
+
+    will-change:transform;
+
+    position:relative;
+    z-index:10;
+}
+
+/* =============================================
+   TEXT SIDE
+============================================= */
+
+.text-content{
+    flex:1;
+    position:relative;
+    z-index:1;
+}
+
+.about-heading{
+    font-family:"Montserrat",sans-serif;
+    font-size:3rem;
+    font-weight:800;
+    color:#b71c1c;
+    margin-bottom:25px;
+}
+
+.about-text{
+    color:#333;
+    font-size:1rem;
+    line-height:2;
+    margin-bottom:20px;
+    max-width:650px;
+}
+
+/* =============================================
+   LARGE LAPTOP
+============================================= */
+
+@media(max-width:1200px){
+
+    .container{
+        padding:0 70px;
+    }
+
+    .hero-title{
+        font-size:3.2rem;
+    }
+
+    .about-heading{
+        font-size:2.5rem;
+    }
+
+    .plane-wrapper{
+        min-height:450px;
+    }
+
+    .plane-img{
+        max-width:520px;
+    }
+}
+
+/* =============================================
+   TABLET
+============================================= */
+
+@media(max-width:1024px){
+
+    .aboutSection{
+        padding:70px 0;
+    }
+
+    .container{
+        padding:0 40px;
+    }
+
+    .aviation-section{
+        flex-direction:column;
+        gap:40px;
+    }
+
+    .plane-wrapper{
+        width:100%;
+        min-height:380px;
+    }
+
+    .plane-img{
+        max-width:450px;
+    }
+
+    .text-content{
+        text-align:center;
+    }
+
+    .hero-title{
+        font-size:2.8rem;
+    }
+
+    .about-heading{
+        font-size:2.2rem;
+    }
+
+    .hero-subtitle{
+        font-size:1rem;
+    }
+
+    .about-text{
+        max-width:100%;
+    }
+}
+
+/* =============================================
+   MOBILE
+============================================= */
+
+@media(max-width:768px){
+
+    .aboutSection{
+        padding:60px 0;
+    }
+
+    .container{
+        padding:0 22px;
+    }
+
+    .aviation-section{
+        margin-top:50px;
+        gap:30px;
+    }
+
+    .top-label{
+        font-size:12px;
+    }
+
+    .hero-title{
+        font-size:2rem;
+    }
+
+    .hero-subtitle{
+        font-size:0.95rem;
+        line-height:1.8;
+    }
+
+    .plane-wrapper{
+        min-height:280px;
+    }
+
+    .plane-img{
+        max-width:320px;
+    }
+
+    .about-heading{
+        font-size:1.8rem;
+    }
+
+    .about-text{
+        font-size:0.92rem;
+        line-height:1.9;
+    }
+}
+
+/* =============================================
+   SMALL MOBILE
+============================================= */
+
+@media(max-width:480px){
+
+    .container{
+        padding:0 15px;
+    }
+
+    .hero-title{
+        font-size:1.7rem;
+    }
+
+    .hero-subtitle{
+        font-size:0.88rem;
+    }
+
+    .plane-wrapper{
+        min-height:220px;
+    }
+
+    .plane-img{
+        max-width:240px;
+    }
+
+    .about-heading{
+        font-size:1.5rem;
+    }
+
+    .about-text{
+        font-size:0.85rem;
+        line-height:1.8;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =============================================
+     TOP SPACE
+============================================= -->
+
+<section class="scroll-space">
+    Scroll Down
+</section>
+
+<!-- =============================================
+     ABOUT SECTION
+============================================= -->
+
+<section class="aboutSection">
+
+    <div class="container">
+
+        <!-- TOP CONTENT -->
+
+        <p class="top-label">
+            Why Choose Us
+        </p>
+
+        <h1 class="hero-title">
+            Best Aviation <br>
+            college in
+            <span class="highlight">TamilNadu</span>
+        </h1>
+
+        <p class="hero-subtitle">
+            NIMS offers world-class aviation training with international
+            accreditations. We prepare students for global airline careers.
+        </p>
+
+        <!-- MAIN CONTENT -->
+
+        <div class="aviation-section" id="aviationSection">
+
+            <!-- LEFT SIDE -->
+
+            <div class="plane-wrapper">
+
+                <img
+                id="planeImg"
+                class="plane-img"
+                src="./Images/flightAt.png"
+                alt="Flight Image"
+                />
+
+            </div>
+
+            <!-- RIGHT SIDE -->
+
+            <div class="text-content">
+
+                <h2 class="about-heading">
+                    About Us
+                </h2>
+
+                <p class="about-text">
+                    National Institute of Management & Science (NIMS) is a
+                    leading institution offering career-focused programs in
+                    Aviation, Banking, Fashion Designing, and Logistics.
+                    With campuses in Madurai & Tirunelveli, we are committed
+                    to delivering practical, industry-oriented education
+                    that prepares students for real-world careers.
+                </p>
+
+                <p class="about-text">
+                    Our programs combine classroom learning with hands-on
+                    training, internships, and dedicated placement
+                    support—preparing students for successful careers.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =============================================
+     BOTTOM SPACE
+============================================= -->
+
+<section class="scroll-space">
+    Scroll Up
+</section>
+
+<script>
+
+/* =============================================
+   ELEMENTS
+============================================= */
+
+const plane =
+document.getElementById("planeImg");
+
+const section =
+document.getElementById("aviationSection");
+
+/* =============================================
+   SETTINGS
+============================================= */
+
+const MIN_SCALE = 1;
+const MAX_SCALE = 2;
+
+/* =============================================
+   SMOOTH ZOOM FUNCTION
+============================================= */
+
+function updatePlaneZoom(){
+
+    const rect =
+    section.getBoundingClientRect();
+
+    const windowHeight =
+    window.innerHeight;
+
+    /* Visibility Progress */
+
+    let progress =
+    1 - (rect.top / windowHeight);
+
+    /* Clamp */
+
+    progress =
+    Math.max(0, Math.min(progress, 1));
+
+    /* Smooth Ease */
+
+    progress =
+    progress * progress * (3 - 2 * progress);
+
+    /* Final Scale */
+
+    const scale =
+    MIN_SCALE +
+    (MAX_SCALE - MIN_SCALE) * progress;
+
+    /* Apply */
+
+    plane.style.transform =
+    `scale(${scale})`;
+
+}
+
+/* =============================================
+   EVENTS
+============================================= */
+
+window.addEventListener(
+    "scroll",
+    updatePlaneZoom,
+    { passive:true }
+);
+
+window.addEventListener(
+    "resize",
+    updatePlaneZoom
+);
+
+/* Initial */
+
+updatePlaneZoom();
+
+</script>
+
+</body>
+</html>

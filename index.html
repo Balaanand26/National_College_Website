@@ -9,6 +9,12 @@
       rel="stylesheet"
     />
 
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
     <!-- Css -->
     <link rel="stylesheet" href="style.css" />
 
@@ -51,7 +57,7 @@
           <!-- Logo -->
           <a class="navbar-brand" href="./index.html">
             <div class="d-flex align-items-center gap-2 logoContent">
-              <img src="./Images/UpdLogo.png" width="68" alt="NIMS Logo" />
+              <img src="./Images/UpdLogo.png" alt="NIMS Logo" />
               <div>
                 <h2 class="text-white fw-bold navbarHeading">
                   NATIONAL COLLEGE
@@ -199,7 +205,7 @@
             </div>
             <div class="col-12 col-lg-7">
               <div class="titlePara ms-lg-5 mt-4 m-lg-0 m-md-0">
-                <p class="fs-5 fw-semibold text-center">
+                <p class="fs-5 fw-semibold text-start text-lg-center">
                   Join the Future of Professional Education & <br />
                   Build Your Career with Industry-Focused Degrees
                 </p>
@@ -217,7 +223,7 @@
 
       <!-- Hero Section -->
       <!-- Image Carousel -->
-      <section>
+      <section class="position-relative">
         <div
           id="carouselExampleAutoplaying"
           class="carousel slide container carouselContent"
@@ -268,12 +274,54 @@
             <span class="visually-hidden">Next</span>
           </button>
         </div>
-        <div>
+
+        <div class="position-absolute carouselTextContent">
+          <div class="carouselContainer">
+            <!-- Previous Button -->
+            <button class="carouselBtn prevBtn">
+              <i class="fa-solid fa-arrow-left"></i>
+            </button>
+
+            <!-- Next Button -->
+            <button class="carouselBtn nextBtn">
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+            <!-- Carousel Track -->
+            <div class="carouselTrack">
+              <!-- Slide 1 -->
+              <div class="carouselSlide">
+                <h3>Admissions Open 2026!</h3>
+                <p>
+                  Join Tamil Nadu’s No.1 Aviation College.
+                  <span>Enquire Today!</span>
+                </p>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="carouselSlide">
+                <h3>MBA Admissions 2026!</h3>
+                <p>
+                  Logistics | Digital Marketing | Data Analytics.
+                  <span>Apply Now!</span>
+                </p>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="carouselSlide">
+                <h3>Campus Placements Started!</h3>
+                <p>
+                  Top companies are hiring students now.
+                  <span>Register Today!</span>
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       <!-- Section 2 Counter -->
-      <section id="counterSection">
+      <section id="counterSection" style="margin-top: 50px">
         <section class="counter-section">
           <div class="container">
             <div class="row text-center">
@@ -307,86 +355,113 @@
         </section>
       </section>
 
-      <!-- ===== ABOUT SECTION ===== -->
+      <!-- =============================================
+     NEW ABOUT SECTION
+============================================= -->
 
-      <section>
-        <div class="about">
-          <div class="left-image">
-            <img src="../Campus/College campus/clg-4.jpg" alt="" />
-            <div class="about-content">
-              <h1 data-aos="fade-right" data-aos-duration="500">About Us</h1>
-              <p data-aos="fade-" data-aos-duration="700">
-                National Institute of Management & Science (NIMS) is a leading
-                institution offering career-focused programs in Aviation,
-                Banking, Fashion Designing, and Logistics. With campuses in
-                Madurai & Tirunelveli, we are committed to delivering practical,
-                industry-oriented education that prepares students for
-                real-world careers.
-              </p>
-              <p data-aos="fade-" data-aos-duration="1000">
-                Our programs combine classroom learning with hands-on training,
-                internships, and dedicated placement support—preparing students
-                for successful careers.
-              </p>
-            </div>
+      <section class="aboutSection">
+        <div class="container">
+          <!-- TOP CONTENT -->
+
+          <div class="aboutTop">
+            <p class="aboutTag">Why choose us</p>
+
+            <h1 class="aboutTitle">
+              Best Aviation <br />
+              college in
+              <span>TamilNadu</span>
+            </h1>
+
+            <p class="aboutDesc">
+              NIMS offers world-class aviation training with international
+              accreditations. we prepare students for global airline careers.
+            </p>
           </div>
-          <div class="right-image">
-            <img src="Images/right.png" alt="" />
+
+          <!-- CONTENT -->
+
+          <div class="AnimationFlight" id="aviationSection">
+            <!-- IMAGE -->
+
+            <div class="flightImage">
+              <img id="planeImg" src="./Images/flights.png" alt="" />
+            </div>
+
+            <!-- TEXT -->
+
+            <div class="AboutContent">
+              <div data-aos="fade-left" data-aos-duration="1000">
+                <h1 class="aboutHeading">About Us</h1>
+              </div>
+
+              <div data-aos="fade-left" data-aos-duration="1500">
+                <p>
+                  National Institute of Management & Science (NIMS) is a leading
+                  institution offering career-focused programs in Aviation,
+                  Banking, Fashion Designing, and Logistics. With campuses in
+                  Madurai & Tirunelveli, we are committed to delivering
+                  practical, industry-oriented education that prepares students
+                  for real-world careers.
+                </p>
+              </div>
+
+              <div data-aos="fade-left" data-aos-duration="2000">
+                <p>
+                  Our programs combine classroom learning with hands-on
+                  training, internships, and dedicated placement
+                  support—preparing students for successful careers.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- ============== New About Section ============= -->
-       <section>
-        <div class="">
+      <!-- =============================================
+       ACADEMIC SECTION
+  ============================================= -->
 
-        </div>
-       </section>
-
-      <!-- ===== ACADEMIC SECTION ===== -->
-      <section style="margin: 20px 0px; background-color: whitesmoke">
+      <section class="academicSection">
         <div class="container">
-          <div class="text-center mt-4">
-            <h2 class="ac-head" data-aos="fade-right" data-aos-duration="1000">
-              Our Programs
-            </h2>
+          <div class="text-center">
+            <h2 class="ac-head">Our Programs</h2>
           </div>
-        </div>
-        <div class="container-fluid" style="margin-bottom: 30px">
+
+          <!-- Tabs -->
           <div class="AcademicBtn">
             <ul
-              class="nav nav-pills mb-3 d-flex justify-content-center gap-1 gap-md-5 gap-lg-5"
+              class="nav nav-pills mb-5 d-flex justify-content-center gap-3"
               id="pills-tab"
               role="tablist"
             >
-              <li
-                class="nav-item"
-                role="presentation"
-                data-aos="fade-right"
-                data-aos-duration="1500"
-              >
+              <li class="nav-item">
                 <button
                   class="nav-link active ChooseBtn"
                   data-bs-toggle="pill"
-                  data-bs-target="#pills-AirHost"
+                  data-bs-target="#ugDegree"
                   type="button"
-                  role="tab"
                 >
-                  Degree
+                  UG Degree
                 </button>
               </li>
-              <li
-                class="nav-item"
-                role="presentation"
-                data-aos="fade-left"
-                data-aos-duration="1500"
-              >
+
+              <li class="nav-item">
                 <button
                   class="nav-link ChooseBtn"
                   data-bs-toggle="pill"
-                  data-bs-target="#pills-Agh"
+                  data-bs-target="#pgDegree"
                   type="button"
-                  role="tab"
+                >
+                  PG Degree
+                </button>
+              </li>
+
+              <li class="nav-item">
+                <button
+                  class="nav-link ChooseBtn"
+                  data-bs-toggle="pill"
+                  data-bs-target="#diploma"
+                  type="button"
                 >
                   Diploma
                 </button>
@@ -394,33 +469,27 @@
             </ul>
           </div>
 
-          <div class="tab-content" id="pills-tabContent">
-            <div
-              class="tab-pane fade show active"
-              id="pills-AirHost"
-              role="tabpanel"
-              tabindex="0"
-            >
-              <div class="container AcademicContainer">
-                <div
-                  class="row d-flex justify-content-center align-items-center"
-                >
-                  <div class="col-12 col-lg-4 col-xl-3 col-md-6">
+          <!-- TAB CONTENT -->
+          <div class="tab-content">
+            <!-- =============================================
+             UG DEGREE
+        ============================================= -->
+
+            <div class="tab-pane fade show active" id="ugDegree">
+              <div class="swiper degreeSwiper">
+                <div class="swiper-wrapper">
+                  <!-- CARD1 -->
+                  <div class="swiper-slide">
                     <div class="academicCard">
                       <div class="academicImg">
                         <img src="./Images/bba.png" alt="" />
                       </div>
 
                       <div class="academicContent">
-                        <h2 class="card-title">
-                          BBA Airlines & <br />Airport Management
-                        </h2>
-                        <p class="card-text">
+                        <h2>BBA Airlines & Airport Management</h2>
+                        <p>
                           Approved by Alagappa University along with Aviation &
                           Aerospace Skill India Council Certification.
-                          <span class="d-lg-none d-md-none"
-                            >Certification.</span
-                          >
                         </p>
                         <a href="./airline/academic.html">
                           <button>Apply Now</button>
@@ -428,215 +497,303 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-12 col-lg-4 col-xl-3 col-md-6">
-                    <div class="academicCard">
-                      <div class="academicImg">
-                        <img src="./Images/mbaair.png" alt="" />
-                      </div>
-                      <div class="academicContent">
-                        <h2 class="card-title">
-                          MBA Airlines & <br />
-                          Airport Management
-                        </h2>
-                        <p class="card-text">
-                          Approved by Alagappa University along with Aviation &
-                          Aerospace Skill India Council Certification.
-                        </p>
-                        <a href="./airport/airport.html">
-                          <button>Apply Now</button>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-12 col-lg-4 col-xl-3 col-md-6">
-                    <div class="academicCard">
-                      <div class="academicImg">
-                        <img src="./Images/mbaHr.png" alt="" />
-                      </div>
-                      <div class="academicContent">
-                        <h2 class="card-title">
-                          MBA - HR | Finance | <br />
-                          Marketing | Operations..
-                        </h2>
-                        <p class="card-text">
-                          Approved by Alagappa University along with Industry
-                          Skill India Council Certification.
-                        </p>
-                        <a href="./hr/hr.html">
-                          <button>Apply Now</button>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-12 col-lg-4 col-xl-3 col-md-6">
+                  <!-- CARD4 -->
+                  <div class="swiper-slide">
                     <div class="academicCard">
                       <div class="academicImg">
                         <img src="./Images/bscAvi.png" alt="" />
                       </div>
+
                       <div class="academicContent">
-                        <h2 class="card-title">BSC <br />Aviation</h2>
-                        <p class="card-text">
+                        <h2>B.Sc Aviation</h2>
+
+                        <p>
                           Approved by Alagappa University along with Aviation &
                           Aerospace Skill India Council Certification.
                         </p>
+
                         <a href="./InBus/academic.html">
                           <button>Apply Now</button>
                         </a>
                       </div>
                     </div>
                   </div>
-                  <div class="col-12 col-lg-4 col-xl-3 col-md-6">
+
+                  <!-- CARD5 -->
+                  <div class="swiper-slide">
                     <div class="academicCard">
                       <div class="academicImg">
                         <img src="./Images/bsc_Fas.png" alt="" />
                       </div>
+
                       <div class="academicContent">
-                        <h2 class="card-title">
-                          B.Sc Fashion <br />
-                          Design
-                        </h2>
-                        <p class="card-text">
+                        <h2>B.Sc Fashion Design</h2>
+
+                        <p>
                           Approved by Alagappa University along with Apparel
                           Design Skill India Council Certification.
                         </p>
+
                         <a href="./fashion/fashion.html">
                           <button>Apply Now</button>
                         </a>
                       </div>
                     </div>
                   </div>
-                  <div class="col-12 col-lg-4 col-xl-3 col-md-6">
+                  <!-- CARD6 -->
+                  <div class="swiper-slide">
                     <div class="academicCard">
                       <div class="academicImg">
-                        <img src="./Images/bcomBank.png" alt="" />
+                        <img src="./Images/bba.png" alt="" />
                       </div>
+
                       <div class="academicContent">
-                        <h2 class="card-title">
-                          B.Com Banking <br />
-                          & Finance
-                        </h2>
-                        <p class="card-text">
+                        <h2>B.Com Banking & Finance</h2>
+
+                        <p>
                           Approved by Alagappa University along with
-                          Banking,Financial Services & Insurance(BFSI)
-                          Skill<span class="d-lg-none">
-                            Council Certification</span
-                          >.
+                          Banking,Financial Services & Insurance(BFSI) Skill
+                          Council Certification.
                         </p>
+
                         <a href="./Bank/bank.html">
                           <button>Apply Now</button>
                         </a>
                       </div>
                     </div>
                   </div>
-                  <div class="col-12 col-lg-4 col-xl-3 col-md-6">
+
+                  <!-- CARD7 -->
+                  <div class="swiper-slide">
                     <div class="academicCard">
                       <div class="academicImg">
-                        <img src="./Images/bbaShip.png" alt="" />
+                        <img src="./Images/mbaair.png" alt="" />
                       </div>
+
                       <div class="academicContent">
-                        <h2 class="card-title">
-                          BBA Shipping <br />
-                          and Logistics
-                        </h2>
-                        <p class="card-text">
+                        <h2>BBA Shipping and Logistics</h2>
+
+                        <p>
                           Approved by Alagappa University along with Logistics
                           Skill India Council Certification
                         </p>
+
                         <a href="./ship/shipping&log.html">
                           <button>Apply Now</button>
                         </a>
                       </div>
                     </div>
                   </div>
+
+                  <!-- CARD9 -->
+                  <div class="swiper-slide">
+                    <div class="academicCard">
+                      <div class="academicImg">
+                        <img src="./Images/bscAvi.png" alt="" />
+                      </div>
+
+                      <div class="academicContent">
+                        <h2>BBA International Business</h2>
+
+                        <p>
+                          Approved by Alagappa University along with Aviation &
+                          Aerospace Skill India Council Certification.
+                        </p>
+
+                        <a href="./inter/inter.html">
+                          <button>Apply Now</button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
                 </div>
+
+                <!-- Buttons -->
+                <div class="swiper-button-next degree-next"></div>
+                <div class="swiper-button-prev degree-prev"></div>
               </div>
             </div>
-            <div
-              class="tab-pane fade"
-              id="pills-Agh"
-              role="tabpanel"
-              tabindex="0"
-            >
-              <div class="container AcademicContainer">
-                <div
-                  class="row d-flex justify-content-center align-items-center"
-                >
-                  <div class="col-12 col-lg-4 col-xl-3 col-md-6">
+            <!-- =============================================
+             PG DEGREE
+        ============================================= -->
+
+            <div class="tab-pane fade show active" id="pgDegree">
+              <div class="swiper degreeSwiper">
+                <div class="swiper-wrapper">
+                  <!-- CARD1 -->
+                  <div class="swiper-slide">
+                    <div class="academicCard">
+                      <div class="academicImg">
+                        <img src="./Images/mbaair.png" alt="" />
+                      </div>
+
+                      <div class="academicContent">
+                        <h2>MBA Airlines & Airport Management</h2>
+
+                        <p>
+                          Approved by Alagappa University along with Aviation &
+                          Aerospace Skill India Council Certification.
+                        </p>
+
+                        <a href="./airport/airport.html">
+                          <button>Apply Now</button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- CARD2 -->
+                  <div class="swiper-slide">
+                    <div class="academicCard">
+                      <div class="academicImg">
+                        <img src="./Images/mbaHr.png" alt="" />
+                      </div>
+
+                      <div class="academicContent">
+                        <h2>MBA - HR | Finance | Marketing | Operations</h2>
+
+                        <p>
+                          Approved by Alagappa University along with Industry
+                          Skill India Council Certification.
+                        </p>
+
+                        <a href="./hr/hr.html">
+                          <button>Apply Now</button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- CARD3 -->
+                  <div class="swiper-slide">
+                    <div class="academicCard">
+                      <div class="academicImg">
+                        <img src="./Images/mbaHr.png" alt="" />
+                      </div>
+
+                      <div class="academicContent">
+                        <h2>
+                          MBA - Logistics | Digital Marketing | Data Analyst
+                        </h2>
+
+                        <p>
+                          Approved by Alagappa University along with Industry
+                          Skill India Council Certification.
+                        </p>
+
+                        <a href="./Mba2/mba.html">
+                          <button>Apply Now</button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Buttons -->
+                <div class="swiper-button-next degree-next"></div>
+                <div class="swiper-button-prev degree-prev"></div>
+              </div>
+            </div>
+
+            <!-- =============================================
+             DIPLOMA
+        ============================================= -->
+
+            <div class="tab-pane fade" id="diploma">
+              <div class="swiper diplomaSwiper">
+                <div class="swiper-wrapper">
+                  <!-- CARD -->
+                  <div class="swiper-slide">
                     <div class="academicCard">
                       <div class="academicImg">
                         <img src="./Images/dp1.png" alt="" />
                       </div>
+
                       <div class="academicContent">
                         <h2>Airlines & Airport Management</h2>
+
                         <p>
                           Approved by Alagappa University along with Aviation &
-                          Aerospace
-                          <span class="d-none"
-                            >Skill India Council Certification</span
-                          >
-
-                          .
+                          Aerospace Skill India Council Certification.
                         </p>
-                        <a href="./dip-1/dip-1.html">
+
+                        <a href="#">
                           <button>Apply Now</button>
                         </a>
                       </div>
                     </div>
                   </div>
-                  <div class="col-12 col-lg-4 col-xl-3 col-md-6">
+
+                  <!-- CARD -->
+                  <div class="swiper-slide">
                     <div class="academicCard">
                       <div class="academicImg">
                         <img src="./Images/dp2.png" alt="" />
                       </div>
+
                       <div class="academicContent">
                         <h2>Banking</h2>
+
                         <p>
-                          Approved by Alagappa University along with
-                          Banking,Financial Services & Insurance(BFSI) Skill
-                          <span class="d-lg-none">Council Certification</span>
-                          .
+                          Approved by Alagappa University along with BFSI Skill
+                          Council Certification.
                         </p>
-                        <a href="./dip-2/dip-2.html">
+
+                        <a href="#">
                           <button>Apply Now</button>
                         </a>
                       </div>
                     </div>
                   </div>
-                  <div class="col-12 col-lg-4 col-xl-3 col-md-6">
+
+                  <!-- CARD -->
+                  <div class="swiper-slide">
                     <div class="academicCard">
                       <div class="academicImg">
                         <img src="./Images/dp3.png" alt="" />
                       </div>
+
                       <div class="academicContent">
                         <h2>Fashion Design</h2>
+
                         <p>
                           Approved by Alagappa University along with Apparel
                           Design Skill India Council Certification.
                         </p>
-                        <a href="./dip-3/dip-3.html">
+
+                        <a href="#">
                           <button>Apply Now</button>
                         </a>
                       </div>
                     </div>
                   </div>
-                  <div class="col-12 col-lg-4 col-xl-3 col-md-6">
+
+                  <!-- CARD -->
+                  <div class="swiper-slide">
                     <div class="academicCard">
                       <div class="academicImg">
                         <img src="./Images/dp4.png" alt="" />
                       </div>
+
                       <div class="academicContent">
                         <h2>Logistics</h2>
+
                         <p>
                           Approved by Alagappa University along with Logistics
-                          Skill India Council Certification
+                          Skill India Council Certification.
                         </p>
-                        <a href="./dip-4/dip-4.html">
+
+                        <a href="#">
                           <button>Apply Now</button>
                         </a>
                       </div>
                     </div>
                   </div>
                 </div>
+
+                <!-- Buttons -->
+                <div class="swiper-button-next diploma-next"></div>
+                <div class="swiper-button-prev diploma-prev"></div>
               </div>
             </div>
           </div>
@@ -1566,11 +1723,11 @@
       </div>
     </div>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-      crossorigin="anonymous"
-    ></script>
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
     <!-- AOS JS -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
