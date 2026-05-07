@@ -1422,6 +1422,29 @@ header {
   }
 }
 
+@media (max-width: 425px) {
+  .academicSection {
+    padding: 50px 0px;
+    max-height: 750px;
+  }
+  .ac-head {
+    font-size: 24px;
+  }
+
+  .academicImg img {
+    height: 160px;
+  }
+
+  .academicContent h2 {
+    font-size: 16px;
+  }
+
+  .academicContent p {
+    font-size: 12px;
+  }
+}
+
+
 /* NEW CAMPUS */
 
 /* TIMELINE */
