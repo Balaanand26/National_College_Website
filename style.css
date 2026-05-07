@@ -541,6 +541,21 @@ header {
     font-size: 30px !important;
   }
 }
+@media screen and (min-width:992px) and (max-width:1400px) {
+  .logoContent h2{
+    font-size: 22px;
+  }
+  .logoContent img{
+    width: 75px;
+  }
+  .nav-link{
+    font-size: 15px;
+    margin-left: 0px;
+  }
+  .ApplyBtn button {
+    padding: 5px 10px;
+  }
+}
 
 @media screen and (min-width: 376px) and (max-width: 479px) {
   .logoContent h2 {
