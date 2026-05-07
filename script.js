@@ -103,7 +103,7 @@ window.addEventListener("load", () => {
 
         document.body.style.overflow = "hidden";
 
-    }, 6000);
+    }, 3000);
 
 });
 
