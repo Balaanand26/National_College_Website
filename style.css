@@ -85,10 +85,288 @@ p {
   }
 }
 
+/* ====================== Modal Section =================== */
+/* =============================================
+   MODAL BACKGROUND
+============================================= */
+
+.custom-modal{
+    position:fixed;
+    inset:0;
+
+    width:100%;
+    height:100vh;
+
+    background:rgba(0,0,0,0.7);
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+
+    padding:20px;
+
+    z-index:9999;
+
+    animation:fadeIn 0.3s ease;
+}
+
+/* =============================================
+   SHOW MODAL
+============================================= */
+
+.custom-modal.show{
+    display:flex;
+}
+
+/* =============================================
+   MODAL BOX
+============================================= */
+
+.modal-box{
+    position:relative;
+
+    width:800px;
+    max-width:100%;
+
+    background:#fff;
+
+    border-radius:22px;
+
+    padding:20px;
+
+    animation:popup 0.35s ease;
+}
+
+/* =============================================
+   IMAGE
+============================================= */
+
+.modal-img{
+    width:100%;
+    height:auto;
+
+    max-height:500px;
+
+    object-fit:cover;
+
+    border-radius:16px;
+
+    display:block;
+}
+
+/* =============================================
+   CLOSE BUTTON
+============================================= */
+
+.close-btn{
+    position:absolute;
+
+    top:12px;
+    right:12px;
+
+    width:45px;
+    height:45px;
+
+    border:none;
+    border-radius:50%;
+
+    background:#fff;
+
+    color:#000;
+
+    font-size:28px;
+    font-weight:700;
+
+    cursor:pointer;
+
+    box-shadow:0 2px 10px rgba(0,0,0,0.2);
+
+    z-index:10;
+
+    transition:0.3s;
+}
+
+.close-btn:hover{
+    background:#7e1416;
+    color:#fff;
+}
+
+/* =============================================
+   BUTTON
+============================================= */
+
+.apply-btn{
+    width:100%;
+
+    margin-top:20px;
+
+    padding:16px;
+
+    border:none;
+    border-radius:50px;
+
+    background:#7e1416;
+
+    color:#fff;
+
+    font-size:22px;
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.apply-btn:hover{
+    background:#d21418;
+}
+
+/* =============================================
+   LARGE DEVICE
+============================================= */
+
+@media(max-width:1200px){
+
+    .modal-box{
+        width:700px;
+    }
+
+    .modal-img{
+        max-height:450px;
+    }
+
+}
+
+/* =============================================
+   TABLET
+============================================= */
+
+@media(max-width:992px){
+
+    .hero-section h1{
+        font-size:48px;
+    }
+
+    .modal-box{
+        width:600px;
+        padding:18px;
+    }
+
+    .modal-img{
+        max-height:400px;
+    }
+
+    .apply-btn{
+        font-size:20px;
+        padding:14px;
+    }
+
+}
+
+/* =============================================
+   MOBILE
+============================================= */
+
+@media(max-width:768px){
+
+    .hero-section h1{
+        font-size:34px;
+    }
+
+    .custom-modal{
+        padding:14px;
+    }
+
+    .modal-box{
+        width:100%;
+        padding:12px;
+        border-radius:18px;
+    }
+
+    .modal-img{
+        max-height:none;
+        object-fit:contain;
+    }
+
+    .close-btn{
+        width:38px;
+        height:38px;
+        font-size:22px;
+    }
+
+    .apply-btn{
+        font-size:18px;
+        padding:13px;
+    }
+
+}
+
+/* =============================================
+   SMALL MOBILE
+============================================= */
+
+@media(max-width:480px){
+
+    .hero-section h1{
+        font-size:28px;
+    }
+
+    .modal-box{
+        border-radius:16px;
+    }
+
+    .modal-img{
+        max-height:280px;
+    }
+
+    .close-btn{
+        width:34px;
+        height:34px;
+        font-size:20px;
+    }
+
+    .apply-btn{
+        font-size:16px;
+        padding:12px;
+    }
+
+}
+
+/* =============================================
+   ANIMATION
+============================================= */
+
+@keyframes popup{
+
+    from{
+        transform:scale(0.8);
+        opacity:0;
+    }
+
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+
+}
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+
+}
+
+
 /* =============================================
    NAVBAR
    ============================================= */
-
 
 header {
   position: sticky;
@@ -195,7 +473,7 @@ header {
   background: #999;
   border-radius: 10px;
 }
-.logoContent img{
+.logoContent img {
   width: 80px;
 }
 
@@ -254,7 +532,7 @@ header {
   .logoContent h2 {
     font-size: 25px !important;
   }
-  .logoContent img{
+  .logoContent img {
     width: 80px;
   }
 }
@@ -275,12 +553,12 @@ header {
     padding: 10px;
   }
 }
-@media (max-width: 376px){
+@media (max-width: 376px) {
   .logoContent h2 {
     font-size: 16px !important;
   }
 }
-@media (max-width: 321px){
+@media (max-width: 321px) {
   .logoContent h2 {
     font-size: 14px !important;
   }
@@ -440,257 +718,246 @@ header {
   width: 50%;
 }
 
-
 /* ============================== About Section ======================= */
 /* =============================================
    ABOUT SECTION
 ============================================= */
 
-.aboutSection{
-  width:100%;
-  padding:100px 0;
-  overflow:hidden;
-  background:#fff;
+.aboutSection {
+  width: 100%;
+  padding: 100px 0;
+  overflow: hidden;
+  background: #fff;
 }
 
-.aboutTop{
-  margin-bottom:60px;
+.aboutTop {
+  margin-bottom: 60px;
 }
 
-.aboutTag{
-  font-size:22px;
-  font-weight:700;
-  color:#7e1416;
-  margin-bottom:15px;
+.aboutTag {
+  font-size: 22px;
+  font-weight: 700;
+  color: #7e1416;
+  margin-bottom: 15px;
 }
 
-.aboutTitle{
-  font-size:40px;
-  font-weight:700;
-  color:#111;
-  margin-bottom:20px;
+.aboutTitle {
+  font-size: 40px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 20px;
 }
 
-.aboutTitle span{
-  color:#7e1416;
+.aboutTitle span {
+  color: #7e1416;
 }
 
-.aboutDesc{
-  font-size:18px;
-  line-height:1.8;
-  color:#555;
-  max-width:900px;
+.aboutDesc {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #555;
+  max-width: 900px;
 }
 
 /* =============================================
    CONTENT
 ============================================= */
 
-.AnimationFlight{
-  width:100%;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:60px;
+.AnimationFlight {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
 }
 
 /* =============================================
    IMAGE
 ============================================= */
 
-.flightImage{
-  width:100%;
-  flex:1;
+.flightImage {
+  width: 100%;
+  flex: 1;
 
-  display:flex;
-  justify-content:center;
-  align-items:center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  overflow:visible;
+  overflow: visible;
 
-  position:relative;
+  position: relative;
   z-index: 10;
 }
 
-.flightImage img{
-  width:100%;
-  max-width:650px;
+.flightImage img {
+  width: 100%;
+  max-width: 650px;
 
-  object-fit:contain;
+  object-fit: contain;
 
-  transform:scale(1);
+  transform: scale(1);
 
-  transition:transform 0.1s linear;
+  transition: transform 0.1s linear;
 
-  transform-origin:center center;
+  transform-origin: center center;
 
-  will-change:transform;
+  will-change: transform;
 
-  filter:drop-shadow(0 25px 50px rgba(0,0,0,0.18));
+  filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.18));
 }
 
 /* =============================================
    CONTENT
 ============================================= */
 
-.AboutContent{
-  width:100%;
-  flex:1;
+.AboutContent {
+  width: 100%;
+  flex: 1;
 }
 
-.aboutHeading{
-  font-size:40px;
-  font-weight:700;
-  color:#7e1416;
-  margin-bottom:25px;
+.aboutHeading {
+  font-size: 40px;
+  font-weight: 700;
+  color: #7e1416;
+  margin-bottom: 25px;
 }
 
-.AboutContent p{
-  font-size:18px;
-  line-height:2;
-  color:#555;
-  margin-bottom:25px;
+.AboutContent p {
+  font-size: 18px;
+  line-height: 2;
+  color: #555;
+  margin-bottom: 25px;
 }
 
 /* =============================================
    LARGE DEVICE
 ============================================= */
 
-@media(max-width:1200px){
-
-  .aboutTitle{
-    font-size:50px;
+@media (max-width: 1200px) {
+  .aboutTitle {
+    font-size: 50px;
   }
 
-  .aboutHeading{
-    font-size:42px;
+  .aboutHeading {
+    font-size: 42px;
   }
 
-  .flightImage img{
-    max-width:520px;
+  .flightImage img {
+    max-width: 520px;
   }
-
 }
 
 /* =============================================
    TABLET
 ============================================= */
 
-@media(max-width:1024px){
-
-  .aboutSection{
-    padding:80px 0;
+@media (max-width: 1024px) {
+  .aboutSection {
+    padding: 80px 0;
   }
 
-  .AnimationFlight{
-    flex-direction:column;
-    gap:50px;
+  .AnimationFlight {
+    flex-direction: column;
+    gap: 50px;
   }
 
-  .aboutTop{
-    margin-bottom:50px;
+  .aboutTop {
+    margin-bottom: 50px;
   }
 
-  .aboutTitle{
-    font-size:42px;
+  .aboutTitle {
+    font-size: 42px;
   }
 
-  .aboutDesc{
-    font-size:18px;
+  .aboutDesc {
+    font-size: 18px;
   }
 
-  .flightImage img{
-    max-width:450px;
+  .flightImage img {
+    max-width: 450px;
   }
 
-
-
-  .aboutHeading{
-    font-size:38px;
+  .aboutHeading {
+    font-size: 38px;
   }
 
-  .AboutContent p{
-    font-size:16px;
+  .AboutContent p {
+    font-size: 16px;
   }
-
 }
 
 /* =============================================
    MOBILE
 ============================================= */
 
-@media(max-width:768px){
-
-  .aboutSection{
-    padding:70px 0;
+@media (max-width: 768px) {
+  .aboutSection {
+    padding: 70px 0;
   }
 
-  .aboutTop{
-    margin-bottom:40px;
+  .aboutTop {
+    margin-bottom: 40px;
   }
 
-  .aboutTag{
-    font-size:18px;
+  .aboutTag {
+    font-size: 18px;
   }
 
-  .aboutTitle{
-    font-size:34px;
+  .aboutTitle {
+    font-size: 34px;
   }
 
-  .aboutDesc{
-    font-size:16px;
-    line-height:1.8;
+  .aboutDesc {
+    font-size: 16px;
+    line-height: 1.8;
   }
 
-  .AnimationFlight{
-    gap:35px;
+  .AnimationFlight {
+    gap: 35px;
   }
 
-  .flightImage img{
-    max-width:320px;
+  .flightImage img {
+    max-width: 320px;
   }
 
-  .aboutHeading{
-    font-size:32px;
+  .aboutHeading {
+    font-size: 32px;
   }
 
-  .AboutContent p{
-    font-size:15px;
-    line-height:1.9;
+  .AboutContent p {
+    font-size: 15px;
+    line-height: 1.9;
   }
-
 }
 
 /* =============================================
    SMALL MOBILE
 ============================================= */
 
-@media(max-width:480px){
-
-  .aboutSection{
-    padding:60px 0;
+@media (max-width: 480px) {
+  .aboutSection {
+    padding: 60px 0;
   }
 
-  .aboutTitle{
-    font-size:28px;
+  .aboutTitle {
+    font-size: 28px;
   }
 
-  .aboutDesc{
-    font-size:14px;
+  .aboutDesc {
+    font-size: 14px;
   }
 
-  .flightImage img{
-    max-width:240px;
+  .flightImage img {
+    max-width: 240px;
   }
 
-  .aboutHeading{
-    font-size:28px;
+  .aboutHeading {
+    font-size: 28px;
   }
 
-  .AboutContent p{
-    font-size:14px;
+  .AboutContent p {
+    font-size: 14px;
   }
-
 }
 /* ======================= Counter Section ======================= */
 

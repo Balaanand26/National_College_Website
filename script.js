@@ -79,6 +79,62 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// ======================== Modal Section =====================
+
+/* =============================================
+   ELEMENTS
+============================================= */
+
+const modal =
+document.getElementById("popupModal");
+
+const closeBtn =
+document.getElementById("closeModal");
+
+/* =============================================
+   AUTO OPEN AFTER 6 SECONDS
+============================================= */
+
+window.addEventListener("load", () => {
+
+    setTimeout(() => {
+
+        modal.classList.add("show");
+
+        document.body.style.overflow = "hidden";
+
+    }, 6000);
+
+});
+
+/* =============================================
+   CLOSE BUTTON
+============================================= */
+
+closeBtn.addEventListener("click", () => {
+
+    modal.classList.remove("show");
+
+    document.body.style.overflow = "auto";
+
+});
+
+/* =============================================
+   CLICK OUTSIDE CLOSE
+============================================= */
+
+modal.addEventListener("click", (e) => {
+
+    if(e.target === modal){
+
+        modal.classList.remove("show");
+
+        document.body.style.overflow = "auto";
+
+    }
+
+});
+
 // Counter
 
 let started = false;
