@@ -294,6 +294,7 @@ p {
   .apply-btn {
     font-size: 18px;
     padding: 13px;
+    padding: 12px 40px;
   }
 }
 
@@ -321,8 +322,8 @@ p {
   }
 
   .apply-btn {
-    font-size: 16px;
-    padding: 12px;
+    font-size: 12px;
+    padding: 10px 35px;
   }
 }
 
