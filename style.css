@@ -2065,10 +2065,11 @@ header {
   z-index: 60;
   display: flex;
   align-items: center;
-  padding: 10px 20px;
+  padding: 13px 15px;
   background-color: #25d366;
-  border-radius: 25px;
+  border-radius: 35px;
   cursor: pointer;
+  box-shadow: 2px 2px 5px #2a985b;
 }
 .float-image span {
   margin-left: 15px;
@@ -2076,7 +2077,32 @@ header {
   font-weight: 600;
 }
 .float-image i {
-  font-size: 25px;
+  font-size: 30px;
+}
+/* ==================== PureChat floating =================== */
+.float-image1 {
+  position: fixed;
+
+  bottom: 0;
+  right: 0;
+  margin-bottom: 120px;
+  margin-right: 30px;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  padding: 13px 15px;
+  background-color: #fff;
+  border-radius: 35px;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px #1b5154;
+}
+.float-image1 span {
+  margin-left: 15px;
+  color: #fff;
+  font-weight: 600;
+}
+.float-image1 i {
+  font-size: 30px;
 }
 
 /* PopUPs Section */
