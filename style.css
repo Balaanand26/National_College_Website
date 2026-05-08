@@ -1064,7 +1064,7 @@ header {
     position: relative;
     overflow: hidden;
     border-radius: 80px;
-    background: #ead86a;
+    background: #ddb337;
   }
 }
 
@@ -1079,7 +1079,7 @@ header {
     position: relative;
     overflow: hidden;
     border-radius: 80px;
-    background: #ead86a;
+    background: #ddb337;
   }
   .carouselSlide {
     padding: 30px 70px;
@@ -1113,11 +1113,11 @@ header {
     position: relative;
     overflow: hidden;
     border-radius: 20px;
-    background: #ead86a;
+    background: #ddb337;
   }
   .carouselSlide {
     min-width: 100%;
-    background: #ead86a;
+    background: #ddb337;
     border-radius: 20px;
     padding: 15px 50px;
     text-align: center;
