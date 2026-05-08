@@ -1575,6 +1575,7 @@
             class="fa-brands fa-whatsapp"
             style="color: rgb(255, 255, 255)"
           ></i>
+          <span class="d-none d-lg-block"> Chat with us</span>
         </div>
       </a>
     </div>
@@ -1739,7 +1740,9 @@
                 <option>B.Sc Fashion Design</option>
                 <option>MBA Airlines & Airport Management</option>
                 <option>MBA - HR | Finance | Marketing | Operations</option>
-                <option>MBA - Logistics | Digital Marketing | Data Analyst | Systems</option>
+                <option>
+                  MBA - Logistics | Digital Marketing | Data Analyst | Systems
+                </option>
                 <option>Diploma in Airlines & Airport Management</option>
                 <option>Diploma in Banking</option>
                 <option>Diploma in Fashion Design</option>
@@ -1780,7 +1783,7 @@
       class="company-watermark"
       style="
         position: fixed;
-        bottom: 10px;
+        bottom: 5px;
         right: 10px;
         color: rgb(199, 199, 199);
         font-size: 14px;
@@ -1803,5 +1806,37 @@
         Nextwebby Mind Power
       </a>
     </div>
+
+    <script type="text/javascript" data-cfasync="false">
+      window.purechatApi = {
+        l: [],
+        t: [],
+        on: function () {
+          this.l.push(arguments);
+        },
+      };
+      (function () {
+        var done = false;
+        var script = document.createElement("script");
+        script.async = true;
+        script.type = "text/javascript";
+        script.src = "https://app.purechat.com/VisitorWidget/WidgetScript";
+        document.getElementsByTagName("HEAD").item(0).appendChild(script);
+        script.onreadystatechange = script.onload = function (e) {
+          if (
+            !done &&
+            (!this.readyState ||
+              this.readyState == "loaded" ||
+              this.readyState == "complete")
+          ) {
+            var w = new PCWidget({
+              c: "e29deaae-1588-4a25-b810-9c72c672b38a",
+              f: true,
+            });
+            done = true;
+          }
+        };
+      })();
+    </script>
   </body>
 </html>
