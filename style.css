@@ -1243,16 +1243,15 @@ header {
 .academicContent h2 {
   font-size: 20px;
   margin-bottom: 5px;
-  min-height: 48px;
+  min-height: 50px;
   color: #111;
 }
 
 .academicContent p {
   font-size: 15px;
   color: gray;
-  line-height: 1.7;
   margin-bottom: 15px;
-  min-height: 70px;
+  min-height: 75px;
 }
 
 .academicContent button {
@@ -1283,7 +1282,7 @@ header {
   padding: 10px 22px;
   background-color: #7e1416b9;
   border-radius: 25px;
-  top: 40%;
+  top: 35%;
   z-index: 10 !important;
   cursor: pointer;
 }
@@ -1302,16 +1301,13 @@ header {
     ============================================= */
 
 @media (max-width: 1200px) {
-  .academicContent h2 {
-    font-size: 18px;
-  }
-
-  .academicContent p {
-    font-size: 14px;
-  }
+ 
   .swiper-button-next,
   .swiper-button-prev {
-    top: 30%;
+    top: 40%;
+  }
+  .academicImg img {
+    height: 180px;
   }
 }
 
@@ -1325,22 +1321,13 @@ header {
   }
 
   .academicCard {
-    min-height: 420px;
+    min-height: 450px;
   }
 
   .academicImg img {
     height: 180px;
   }
 
-  .academicContent h2 {
-    font-size: 18px;
-    line-height: 1.5;
-  }
-
-  .academicContent p {
-    font-size: 14px;
-    line-height: 1.6;
-  }
 }
 
 /* =============================================
@@ -1368,31 +1355,15 @@ header {
 
   .academicCard {
     max-height: 300px;
-    padding: 12px;
   }
 
   .academicImg img {
-    height: 170px;
+    height: 180px;
   }
 
-  .academicContent h2 {
-    font-size: 18px;
-    min-height: 40px;
-  }
-
-  .academicContent p {
-    font-size: 14px;
-    min-height: 70px;
-  }
-
-  .academicContent button {
-    width: 100%;
-    padding: 10px;
-    font-size: 13px;
-  }
   .swiper-button-next,
   .swiper-button-prev {
-    top: 30%;
+    top: 40%;
   }
 }
 
@@ -1410,15 +1381,7 @@ header {
   }
 
   .academicImg img {
-    height: 160px;
-  }
-
-  .academicContent h2 {
-    font-size: 16px;
-  }
-
-  .academicContent p {
-    font-size: 12px;
+    height: 180px;
   }
 }
 
@@ -1430,17 +1393,8 @@ header {
   .ac-head {
     font-size: 24px;
   }
-
   .academicImg img {
-    height: 160px;
-  }
-
-  .academicContent h2 {
-    font-size: 16px;
-  }
-
-  .academicContent p {
-    font-size: 12px;
+    height: 180px;
   }
 }
 

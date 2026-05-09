@@ -1226,6 +1226,8 @@ setInterval(() => {
   updateCarousel();
 }, 4000);
 
+// ====================== Academic Section =========================
+
 let ugSwiper;
 let pgSwiper;
 let diplomaSwiper;
@@ -1280,7 +1282,6 @@ const commonOptions = {
 // =============================================
 
 function initSwipers() {
-
   // DESTROY OLD SWIPERS
   if (ugSwiper) ugSwiper.destroy(true, true);
   if (pgSwiper) pgSwiper.destroy(true, true);
@@ -1331,7 +1332,6 @@ function initSwipers() {
       prevEl: ".diploma-prev",
     },
   });
-
 }
 
 // =============================================
@@ -1344,20 +1344,12 @@ initSwipers();
 // REINITIALIZE ON TAB CHANGE
 // =============================================
 
-document
-  .querySelectorAll('[data-bs-toggle="pill"]')
-  .forEach((tab) => {
-
-    tab.addEventListener("shown.bs.tab", () => {
-
-      setTimeout(() => {
-
-        initSwipers();
-
-      }, 300);
-
-    });
-
+document.querySelectorAll('[data-bs-toggle="pill"]').forEach((tab) => {
+  tab.addEventListener("shown.bs.tab", () => {
+    setTimeout(() => {
+      initSwipers();
+    }, 300);
+  });
 });
 // About Section
 
