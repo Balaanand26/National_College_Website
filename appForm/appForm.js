@@ -51,6 +51,14 @@ mainForm.addEventListener("input", function (e) {
   }
 });
 
+mainForm.addEventListener("submit",function(e){
+  e.preventDefault();
+
+  setTimeout(()=>{
+    mainForm.reset();
+  },500)
+})
+
 
 
 
