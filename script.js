@@ -29,7 +29,7 @@ window.onload = function () {
     }, 1000);
   }, 3500);
 };
-// Buttons
+// Buttonss
 
 function showCampus(campus) {
   // hide all
@@ -85,26 +85,20 @@ document.addEventListener("DOMContentLoaded", () => {
    ELEMENTS
 ============================================= */
 
-const modal =
-document.getElementById("popupModal");
+const modal = document.getElementById("popupModal");
 
-const closeBtn =
-document.getElementById("closeModal");
+const closeBtn = document.getElementById("closeModal");
 
 /* =============================================
    AUTO OPEN AFTER 6 SECONDS
 ============================================= */
 
 window.addEventListener("load", () => {
+  setTimeout(() => {
+    modal.classList.add("show");
 
-    setTimeout(() => {
-
-        modal.classList.add("show");
-
-        document.body.style.overflow = "hidden";
-
-    }, 3000);
-
+    document.body.style.overflow = "hidden";
+  }, 3000);
 });
 
 /* =============================================
@@ -112,11 +106,9 @@ window.addEventListener("load", () => {
 ============================================= */
 
 closeBtn.addEventListener("click", () => {
+  modal.classList.remove("show");
 
-    modal.classList.remove("show");
-
-    document.body.style.overflow = "auto";
-
+  document.body.style.overflow = "auto";
 });
 
 /* =============================================
@@ -124,15 +116,11 @@ closeBtn.addEventListener("click", () => {
 ============================================= */
 
 modal.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.classList.remove("show");
 
-    if(e.target === modal){
-
-        modal.classList.remove("show");
-
-        document.body.style.overflow = "auto";
-
-    }
-
+    document.body.style.overflow = "auto";
+  }
 });
 
 // Counter
@@ -1238,6 +1226,10 @@ setInterval(() => {
   updateCarousel();
 }, 4000);
 
+let ugSwiper;
+let pgSwiper;
+let diplomaSwiper;
+
 // =============================================
 // COMMON SETTINGS
 // =============================================
@@ -1252,6 +1244,8 @@ const commonOptions = {
 
   observer: true,
   observeParents: true,
+
+  watchOverflow: true,
 
   breakpoints: {
     0: {
@@ -1282,119 +1276,120 @@ const commonOptions = {
 };
 
 // =============================================
-// UG SWIPER
+// INIT SWIPERS
 // =============================================
 
-const ugSwiper = new Swiper(".UgDegreeSwiper", {
-  ...commonOptions,
+function initSwipers() {
 
-  loop: true,
+  // DESTROY OLD SWIPERS
+  if (ugSwiper) ugSwiper.destroy(true, true);
+  if (pgSwiper) pgSwiper.destroy(true, true);
+  if (diplomaSwiper) diplomaSwiper.destroy(true, true);
 
-  navigation: {
-    nextEl: ".UgDegree-next",
-    prevEl: ".UgDegree-prev",
-  },
-});
+  // =============================================
+  // UG SWIPER
+  // =============================================
 
-// =============================================
-// PG SWIPER
-// =============================================
+  ugSwiper = new Swiper(".UgDegreeSwiper", {
+    ...commonOptions,
 
-const pgSwiper = new Swiper(".PgDegreeSwiper", {
-  ...commonOptions,
+    loop: true,
 
-  loop: false,
-
-  navigation: {
-    nextEl: ".PgDegree-next",
-    prevEl: ".PgDegree-prev",
-  },
-});
-
-// =============================================
-// DIPLOMA SWIPER
-// =============================================
-
-const diplomaSwiper = new Swiper(".diplomaSwiper", {
-  ...commonOptions,
-
-  loop: true,
-
-  navigation: {
-    nextEl: ".diploma-next",
-    prevEl: ".diploma-prev",
-  },
-});
-
-// =============================================
-// FIX SWIPER INSIDE BOOTSTRAP TABS
-// =============================================
-
-const tabButtons = document.querySelectorAll(
-  '[data-bs-toggle="pill"]'
-);
-
-tabButtons.forEach((tab) => {
-  tab.addEventListener("shown.bs.tab", () => {
-
-    ugSwiper.update();
-    pgSwiper.update();
-    diplomaSwiper.update();
-
+    navigation: {
+      nextEl: ".UgDegree-next",
+      prevEl: ".UgDegree-prev",
+    },
   });
+
+  // =============================================
+  // PG SWIPER
+  // =============================================
+
+  pgSwiper = new Swiper(".PgDegreeSwiper", {
+    ...commonOptions,
+
+    // IMPORTANT
+    loop: true,
+
+    navigation: {
+      nextEl: ".PgDegree-next",
+      prevEl: ".PgDegree-prev",
+    },
+  });
+
+  // =============================================
+  // DIPLOMA SWIPER
+  // =============================================
+
+  diplomaSwiper = new Swiper(".diplomaSwiper", {
+    ...commonOptions,
+
+    loop: true,
+
+    navigation: {
+      nextEl: ".diploma-next",
+      prevEl: ".diploma-prev",
+    },
+  });
+
+}
+
+// =============================================
+// INITIAL LOAD
+// =============================================
+
+initSwipers();
+
+// =============================================
+// REINITIALIZE ON TAB CHANGE
+// =============================================
+
+document
+  .querySelectorAll('[data-bs-toggle="pill"]')
+  .forEach((tab) => {
+
+    tab.addEventListener("shown.bs.tab", () => {
+
+      setTimeout(() => {
+
+        initSwipers();
+
+      }, 300);
+
+    });
+
 });
-
-
 // About Section
 
 /* =============================================
    PLANE IMAGE SCROLL ZOOM
 ============================================= */
 
-const plane =
-document.getElementById("planeImg");
+const plane = document.getElementById("planeImg");
 
-const aviationSection =
-document.getElementById("aviationSection");
+const aviationSection = document.getElementById("aviationSection");
 
 const MIN_SCALE = 1;
 const MAX_SCALE = 2;
 
-function updatePlaneZoom(){
+function updatePlaneZoom() {
+  const rect = aviationSection.getBoundingClientRect();
 
-    const rect =
-    aviationSection.getBoundingClientRect();
+  const windowHeight = window.innerHeight;
 
-    const windowHeight =
-    window.innerHeight;
+  let progress = 1 - rect.top / windowHeight;
 
-    let progress =
-    1 - (rect.top / windowHeight);
+  progress = Math.max(0, Math.min(progress, 1));
 
-    progress =
-    Math.max(0, Math.min(progress, 1));
+  progress = progress * progress * (3 - 2 * progress);
 
-    progress =
-    progress * progress * (3 - 2 * progress);
+  const scale = MIN_SCALE + (MAX_SCALE - MIN_SCALE) * progress;
 
-    const scale =
-    MIN_SCALE +
-    (MAX_SCALE - MIN_SCALE) * progress;
-
-    plane.style.transform =
-    `scale(${scale})`;
-
+  plane.style.transform = `scale(${scale})`;
 }
 
-window.addEventListener(
-    "scroll",
-    updatePlaneZoom,
-    { passive:true }
-);
+window.addEventListener("scroll", updatePlaneZoom, { passive: true });
 
-window.addEventListener(
-    "resize",
-    updatePlaneZoom
-);
+window.addEventListener("resize", updatePlaneZoom);
 
 updatePlaneZoom();
