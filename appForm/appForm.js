@@ -20,7 +20,7 @@ mainForm.addEventListener("input", function (e) {
     "fatherJob",
     "motherJob",
     "course",
-    "university"
+    "university",
   ];
 
   // ===== NUMBER ONLY FIELDS =====
@@ -33,7 +33,7 @@ mainForm.addEventListener("input", function (e) {
     "motherPhone",
     "pincode",
     "year",
-    "marks"
+    "marks",
   ];
 
   // ===============================
@@ -51,16 +51,6 @@ mainForm.addEventListener("input", function (e) {
   }
 });
 
-mainForm.addEventListener("submit",function(e){
-  e.preventDefault();
-
-  setTimeout(()=>{
-    mainForm.reset();
-  },500)
-})
-
-
-
 
 
 // PopUp Script js
@@ -68,7 +58,6 @@ mainForm.addEventListener("submit",function(e){
 document.addEventListener("DOMContentLoaded", () => {
   const popup = document.getElementById("applyPopup");
   const closeBtn = popup.querySelector(".popup-close");
-
 
   function showPopup() {
     popup.classList.add("show");
@@ -94,7 +83,6 @@ document.addEventListener("DOMContentLoaded", () => {
     popup.classList.remove("show");
   });
 });
-
 
 // Form Section
 // ================= FORM ELEMENTS =================
@@ -998,6 +986,3 @@ state.addEventListener("change", function () {
     });
   }
 });
-
-
-
