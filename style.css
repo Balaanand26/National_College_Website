@@ -1300,6 +1300,7 @@ header {
        RESPONSIVE
     ============================================= */
 
+
 @media (max-width: 1200px) {
  
   .swiper-button-next,
@@ -1307,6 +1308,7 @@ header {
     top: 40%;
   }
   .academicImg img {
+    width: 100%;
     height: 180px;
   }
 }
