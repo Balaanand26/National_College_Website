@@ -991,5 +991,19 @@
         };
       })();
     </script>
+        <script>
+      window.addEventListener("load", () => {
+        setTimeout(() => {
+          const purechat = document.getElementById("purechat-container");
+
+          if (purechat) {
+            purechat.style.zIndex = "9";
+            purechat.style.bottom = "20px";
+            purechat.style.right = "20px";
+            purechat.style.position = "fixed";
+          }
+        }, 3000);
+      });
+    </script>
   </body>
 </html>

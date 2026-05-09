@@ -438,6 +438,7 @@ header {
 
 .modalContainer {
   background-color: #7e1416 !important;
+  z-index: 99999;
 }
 .EnrollFormContent {
   position: fixed;
@@ -510,3 +511,13 @@ small {
 .error1 {
   border: 1px solid #F6EC74;
 }
+
+
+/* PURECHAT STYLE */
+
+#purechat-container {
+  z-index: 9 !important;
+  bottom: 20px !important;
+  right: 20px !important;
+}
+

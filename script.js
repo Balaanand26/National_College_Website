@@ -1238,147 +1238,111 @@ setInterval(() => {
   updateCarousel();
 }, 4000);
 
-  // =============================================
-      //UG DEGREE SWIPER
-      // =============================================
+// =============================================
+// COMMON SETTINGS
+// =============================================
 
-      var degreeSwiper = new Swiper(".UgDegreeSwiper", {
-        slidesPerView: 4,
-        spaceBetween: 25,
-        loop: true,
+const commonOptions = {
+  spaceBetween: 25,
 
-        autoplay: {
-          delay: 3000,
-          disableOnInteraction: false,
-        },
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
 
-        navigation: {
-          nextEl: ".UgDegree-next",
-          prevEl: ".UgDegree-prev",
-        },
+  observer: true,
+  observeParents: true,
 
-        breakpoints: {
-          0: {
-            slidesPerView: 1,
-            spaceBetween: 15,
-          },
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+      spaceBetween: 15,
+    },
 
-          576: {
-            slidesPerView: 1,
-            spaceBetween: 20,
-          },
+    576: {
+      slidesPerView: 1,
+      spaceBetween: 20,
+    },
 
-          768: {
-            slidesPerView: 2,
-            spaceBetween: 20,
-          },
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
 
-          1024: {
-            slidesPerView: 3,
-            spaceBetween: 25,
-          },
+    1024: {
+      slidesPerView: 3,
+      spaceBetween: 25,
+    },
 
-          1200: {
-            slidesPerView: 4,
-            spaceBetween: 25,
-          },
-        },
-      });
-  // =============================================
-      //PG DEGREE SWIPER
-      // =============================================
+    1200: {
+      slidesPerView: 4,
+      spaceBetween: 25,
+    },
+  },
+};
 
-      var degreeSwiper = new Swiper(".PgDegreeSwiper", {
-        slidesPerView: 4,
-        spaceBetween: 25,
-        loop: true,
+// =============================================
+// UG SWIPER
+// =============================================
 
-        autoplay: {
-          delay: 3000,
-          disableOnInteraction: false,
-        },
+const ugSwiper = new Swiper(".UgDegreeSwiper", {
+  ...commonOptions,
 
-        navigation: {
-          nextEl: ".PgDegree-next",
-          prevEl: ".PgDegree-prev",
-        },
+  loop: true,
 
-        breakpoints: {
-          0: {
-            slidesPerView: 1,
-            spaceBetween: 15,
-          },
+  navigation: {
+    nextEl: ".UgDegree-next",
+    prevEl: ".UgDegree-prev",
+  },
+});
 
-          576: {
-            slidesPerView: 1,
-            spaceBetween: 20,
-          },
+// =============================================
+// PG SWIPER
+// =============================================
 
-          768: {
-            slidesPerView: 2,
-            spaceBetween: 20,
-          },
+const pgSwiper = new Swiper(".PgDegreeSwiper", {
+  ...commonOptions,
 
-          1024: {
-            slidesPerView: 3,
-            spaceBetween: 25,
-          },
+  loop: false,
 
-          1200: {
-            slidesPerView: 4,
-            spaceBetween: 25,
-          },
-        },
-      });
+  navigation: {
+    nextEl: ".PgDegree-next",
+    prevEl: ".PgDegree-prev",
+  },
+});
 
-      // =============================================
-      // DIPLOMA SWIPER
-      // =============================================
+// =============================================
+// DIPLOMA SWIPER
+// =============================================
 
-      var diplomaSwiper = new Swiper(".diplomaSwiper", {
-        slidesPerView: 4,
-        spaceBetween: 25,
-        loop: true,
+const diplomaSwiper = new Swiper(".diplomaSwiper", {
+  ...commonOptions,
 
-        autoplay: {
-          delay: 3000,
-          disableOnInteraction: false,
-        },
+  loop: true,
 
-        navigation: {
-          nextEl: ".diploma-next",
-          prevEl: ".diploma-prev",
-        },
+  navigation: {
+    nextEl: ".diploma-next",
+    prevEl: ".diploma-prev",
+  },
+});
 
-        breakpoints: {
-          0: {
-            slidesPerView: 1,
-            spaceBetween: 15,
-          },
+// =============================================
+// FIX SWIPER INSIDE BOOTSTRAP TABS
+// =============================================
 
-          576: {
-            slidesPerView: 1,
-            spaceBetween: 20,
-          },
+const tabButtons = document.querySelectorAll(
+  '[data-bs-toggle="pill"]'
+);
 
-          768: {
-            slidesPerView: 2,
-            spaceBetween: 20,
-          },
+tabButtons.forEach((tab) => {
+  tab.addEventListener("shown.bs.tab", () => {
 
-          1024: {
-            slidesPerView: 3,
-            spaceBetween: 25,
-          },
+    ugSwiper.update();
+    pgSwiper.update();
+    diplomaSwiper.update();
 
-          1200: {
-            slidesPerView: 4,
-            spaceBetween: 25,
-          },
-        },
-      });
-
-
+  });
+});
 
 
 // About Section
