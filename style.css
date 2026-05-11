@@ -29,7 +29,7 @@ body.no-scroll {
   overflow: hidden;
   height: 100vh;
 }
-p {a
+p {
   font-size: 16px;
 }
 
@@ -1053,11 +1053,25 @@ header {
 
 /* Responsive */
 
-@media (max-width: 1024px) {
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
   .carouselTextContent {
     bottom: 20;
     left: 0;
     margin-left: 300px;
+  }
+  .carouselContainer {
+    width: 60%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 80px;
+    background: #ddb337;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+  .carouselTextContent {
+    bottom: 20;
+    left: 0;
+    margin-left: 200px;
   }
   .carouselContainer {
     width: 60%;
@@ -1300,9 +1314,27 @@ header {
        RESPONSIVE
     ============================================= */
 
+@media screen and (min-width: 1200px) and (max-width: 1300px) {
+  .academicCard {
+    width: 100%;
+    max-width: 100%;
+    max-height: 420px;
+  }
+  .academicImg {
+    overflow: hidden;
+    border-radius: 10px;
+    width: 100%;
+    height: 160px;
+    margin-bottom: 0;
+  }
+  .academicImg img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+  }
+}
 
 @media (max-width: 1200px) {
- 
   .swiper-button-next,
   .swiper-button-prev {
     top: 40%;
@@ -1329,7 +1361,6 @@ header {
   .academicImg img {
     height: 180px;
   }
-
 }
 
 /* =============================================
@@ -1422,9 +1453,6 @@ header {
 .timeline {
   position: relative;
   padding: 20px 0;
-}
-
-.time23 {
 }
 
 /* Replace timeline::before with runway */
@@ -2037,7 +2065,6 @@ header {
 .float-image i {
   font-size: 30px;
 }
-
 
 /* PopUPs Section */
 
