@@ -764,6 +764,7 @@ header {
   line-height: 1.8;
   color: #555;
   width: 100%;
+ 
 }
 
 /* =============================================
@@ -1827,8 +1828,6 @@ header {
 
 /* latest news */
 
-
-
 .news-title {
   color: #7e1416;
   font-weight: 700;
@@ -1841,14 +1840,10 @@ header {
   object-fit: cover;
 }
 
-
-
 .text-title {
   color: #ddb337;
   font-weight: 600;
 }
-
-
 
 .card-container img {
   transition: 0.5s ease;
