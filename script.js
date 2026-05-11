@@ -1181,8 +1181,16 @@ const track = document.querySelector(".carouselTrack");
 const slides = document.querySelectorAll(".carouselSlide");
 const nextBtn = document.querySelector(".nextBtn");
 const prevBtn = document.querySelector(".prevBtn");
+const carouselContainer = document.querySelector(".carouselContainer");
 
 let index = 0;
+let autoSlide;
+
+/* Update */
+
+function updateCarousel() {
+  track.style.transform = `translateX(-${index * 100}%)`;
+}
 
 /* Next Slide */
 
@@ -1208,23 +1216,36 @@ prevBtn.addEventListener("click", () => {
   updateCarousel();
 });
 
-/* Update */
+/* Auto Slide Function */
 
-function updateCarousel() {
-  track.style.transform = `translateX(-${index * 100}%)`;
+function startAutoSlide() {
+  autoSlide = setInterval(() => {
+    index++;
+
+    if (index >= slides.length) {
+      index = 0;
+    }
+
+    updateCarousel();
+  }, 3000);
 }
 
-/* Auto Slide */
+/* Stop Auto Slide */
 
-setInterval(() => {
-  index++;
+function stopAutoSlide() {
+  clearInterval(autoSlide);
+}
 
-  if (index >= slides.length) {
-    index = 0;
-  }
+/* Hover Events */
 
-  updateCarousel();
-}, 4000);
+carouselContainer.addEventListener("mouseenter", stopAutoSlide);
+
+carouselContainer.addEventListener("mouseleave", startAutoSlide);
+
+/* Start Initially */
+
+startAutoSlide();
+
 
 // ====================== Academic Section =========================
 

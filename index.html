@@ -309,16 +309,28 @@
 
               <!-- Slide 2 -->
               <div class="carouselSlide">
-                <h3>MBA Admissions</h3>
+                <h3>Under Graduate (UG) Admissions</h3>
                 <p>
-                  Logistics | Digital Marketing | Data Analytics.
-                  <a href="./appForm/appForm.html" class="text-decoration-none"
-                    ><span>Apply Now!</span></a
+                  
+                  <a href="./airline/academic.html" class="text-decoration-none"
+                    ><span>View Details!</span></a
                   >
                 </p>
               </div>
 
+
               <!-- Slide 3 -->
+              <div class="carouselSlide">
+                <h3>Under Graduate (UG) Admissions</h3>
+                <p>
+                  
+                  <a href="./airline/academic.html" class="text-decoration-none"
+                    ><span>View Details!</span></a
+                  >
+                </p>
+              </div>
+
+              <!-- Slide 4 -->
               <div class="carouselSlide">
                 <h3>Campus Placements Started!</h3>
                 <p>
@@ -412,7 +424,7 @@
                   National Institute of Management & Science (NIMS) is a leading
                   institution offering career-focused programs in Aviation,
                   Banking, Fashion Designing, and Logistics. With campuses in
-                  Madurai & Tirunelveli, we are committed to delivering
+                  Madurai and Tirunelveli, we are committed to delivering
                   practical, industry-oriented education that prepares students
                   for real-world careers.
                 </p>
@@ -884,7 +896,7 @@
                       data-aos="fade-right"
                     >
                       <img
-                        src="../Campus/Environment click/ev-8.jpeg"
+                        src="./Images/env.png"
                         class="campus-img"
                         alt=""
                         srcset=""
@@ -934,7 +946,7 @@
                       data-aos="fade-right"
                     >
                       <img
-                        src="../Campus/College campus/clg-7.jpg"
+                        src="./Images/campus.png"
                         class="campus-img"
                         alt=""
                         srcset=""
@@ -959,7 +971,7 @@
                       data-aos="fade-left"
                     >
                       <img
-                        src="../Campus/College infrastructure/campus-3.jpg"
+                        src="./Images/indoor.jpeg"
                         class="campus-img"
                         alt=""
                         srcset=""
@@ -990,7 +1002,7 @@
                       data-aos="fade-right"
                     >
                       <img
-                        src="../Campus/Environment click/ev-8.jpeg"
+                        src="./Images/Tir-env.jpeg"
                         class="campus-img"
                         alt=""
                         srcset=""
@@ -1015,7 +1027,7 @@
                       data-aos="fade-left"
                     >
                       <img
-                        src="../Campus/Event click/event-1.jpeg"
+                        src="./Images/tiru_Event.jpeg"
                         class="campus-img"
                         alt=""
                         srcset=""
@@ -1040,7 +1052,7 @@
                       data-aos="fade-right"
                     >
                       <img
-                        src="../Campus/College campus/clg-7.jpg"
+                        src="./Images/tri-campus.png"
                         class="campus-img"
                         alt=""
                         srcset=""
@@ -1271,7 +1283,6 @@
                     <h3 class="text-white">Admission News</h3>
                   </div>
                 </div>
-               
               </a>
             </div>
             <div class="col-12 col-md-6 col-lg-4">
@@ -1431,16 +1442,16 @@
         <div class="row">
           <div class="col-12 col-lg-4">
             <div class="">
-              <div class="d-flex flex-column ">
+              <div class="d-flex flex-column">
                 <div class="me-5">
                   <img src="./Images/UpdLogo.png" alt="" style="width: 120px" />
                 </div>
                 <div class="mt-2">
                   <h3>NATIONAL COLLEGE</h3>
                   <p>
-                    National Institute of Management and Science <br> offers quality
-                    education in Aviation, Banking, Logistics and Fashion Design
-                    with excellent placement record.
+                    National Institute of Management and Science <br />
+                    offers quality education in Aviation, Banking, Logistics and
+                    Fashion Design with excellent placement record.
                   </p>
                 </div>
               </div>
@@ -1796,7 +1807,7 @@
       });
     </script>
 
-    <div
+    <!-- <div
       class="company-watermark"
       style="
         position: fixed;
@@ -1822,52 +1833,61 @@
       >
         Nextwebby Mind Power
       </a>
-    </div>
+    </div> -->
 
-    <script type="text/javascript" data-cfasync="false">
-      window.purechatApi = {
-        l: [],
-        t: [],
-        on: function () {
-          this.l.push(arguments);
-        },
+<script type="text/javascript" data-cfasync="false">
+  window.purechatApi = {
+    l: [],
+    t: [],
+    on: function () {
+      this.l.push(arguments);
+    },
+  };
+
+  // LOAD PURECHAT AFTER 6 SECONDS
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      let done = false;
+
+      const script = document.createElement("script");
+      script.async = true;
+      script.type = "text/javascript";
+      script.src =
+        "https://app.purechat.com/VisitorWidget/WidgetScript";
+
+      document.head.appendChild(script);
+
+      script.onreadystatechange = script.onload = function () {
+        if (
+          !done &&
+          (!this.readyState ||
+            this.readyState === "loaded" ||
+            this.readyState === "complete")
+        ) {
+          new PCWidget({
+            c: "e29deaae-1588-4a25-b810-9c72c672b38a",
+            f: true,
+          });
+
+          done = true;
+
+          // STYLE AFTER WIDGET LOAD
+          setTimeout(() => {
+            const purechat = document.getElementById(
+              "purechat-container"
+            );
+
+            if (purechat) {
+              purechat.style.zIndex = "9";
+              purechat.style.bottom = "20px";
+              purechat.style.right = "20px";
+              purechat.style.position = "fixed";
+            }
+          }, 1000);
+        }
       };
-      (function () {
-        var done = false;
-        var script = document.createElement("script");
-        script.async = true;
-        script.type = "text/javascript";
-        script.src = "https://app.purechat.com/VisitorWidget/WidgetScript";
-        document.getElementsByTagName("HEAD").item(0).appendChild(script);
-        script.onreadystatechange = script.onload = function (e) {
-          if (
-            !done &&
-            (!this.readyState ||
-              this.readyState == "loaded" ||
-              this.readyState == "complete")
-          ) {
-            var w = new PCWidget({
-              c: "e29deaae-1588-4a25-b810-9c72c672b38a",
-              f: true,
-            });
-            done = true;
-          }
-        };
-      })();
-    </script>
-    <script>
-      window.addEventListener("load", () => {
-        setTimeout(() => {
-          const purechat = document.getElementById("purechat-container");
-
-          if (purechat) {
-            purechat.style.zIndex = "9";
-            purechat.style.bottom = "20px";
-            purechat.style.right = "20px";
-            purechat.style.position = "fixed";
-          }
-        }, 3000);
-      });
-    </script>
+    }, 6000); // 6 SECOND DELAY
+  });
+</script>
   </body>
 </html>
