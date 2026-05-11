@@ -1310,7 +1310,7 @@ function initSwipers() {
     ...commonOptions,
 
     // IMPORTANT
-    loop: false,
+    loop: true,
 
     navigation: {
       nextEl: ".PgDegree-next",

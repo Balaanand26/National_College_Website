@@ -609,7 +609,7 @@ header {
   margin-bottom: 80px;
 }
 .carouselImage {
-  border-radius: 35px;
+  /* border-radius: 35px; */
 }
 .carousel-item {
   width: 100%;
