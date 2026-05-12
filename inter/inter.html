@@ -287,9 +287,9 @@
                   holistic preparation for a successful global business career.
                   Graduates emerge with a skill set that extends beyond borders,
                   positioning them as valuable contributors to the international
-                  business arena. This program is not just an academic
-                  journey, it is preparation for a successful career in the
-                  dynamic and interconnected world of global business.
+                  business arena. This program is not just an academic journey,
+                  it is preparation for a successful career in the dynamic and
+                  interconnected world of global business.
                 </p>
                 <p class="text-secondary">
                   Graduates with a BBA in International Business unlock a myriad
@@ -482,7 +482,11 @@
             <div class="">
               <div class="d-flex flex-column">
                 <div class="me-5">
-                  <img src="../Images/UpdLogo.png" alt="" style="width: 120px" />
+                  <img
+                    src="../Images/UpdLogo.png"
+                    alt=""
+                    style="width: 120px"
+                  />
                 </div>
                 <div class="mt-2">
                   <h3>NATIONAL COLLEGE</h3>
@@ -642,7 +646,6 @@
       </div>
     </footer>
 
-    
     <!-- Whatsapp -->
     <div class="w-100">
       <a
@@ -750,6 +753,20 @@
           }
         };
       })();
+    </script>
+    <script>
+      window.addEventListener("load", () => {
+        setTimeout(() => {
+          const purechat = document.getElementById("purechat-container");
+
+          if (purechat) {
+            purechat.style.zIndex = "1001";
+            purechat.style.bottom = "20px";
+            purechat.style.right = "20px";
+            purechat.style.position = "fixed";
+          }
+        }, 3000);
+      });
     </script>
   </body>
 </html>

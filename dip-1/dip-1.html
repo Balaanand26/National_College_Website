@@ -1083,14 +1083,14 @@
                     <h3 class="headText">Career Opportunities</h3>
                     <p class="text-secondary">
                       There is no dearth of job opportunities for an Air
-                      Hostess. With the legalization of the private airline,
-                      new golden opportunities have opened for air hostesses.
-                      After joining as air hostess, one can be promoted to
-                      Senior Flight Attendant and from there to Head Attendant.
-                      Career span on board is often about eight to ten years,
-                      but after that, one can easily move to various ground jobs
-                      such as Ground Hostess, Guest Relationship Officer and
-                      providing training to the entry level air hostesses etc.
+                      Hostess. With the legalization of the private airline, new
+                      golden opportunities have opened for air hostesses. After
+                      joining as air hostess, one can be promoted to Senior
+                      Flight Attendant and from there to Head Attendant. Career
+                      span on board is often about eight to ten years, but after
+                      that, one can easily move to various ground jobs such as
+                      Ground Hostess, Guest Relationship Officer and providing
+                      training to the entry level air hostesses etc.
                     </p>
                   </div>
                 </div>
@@ -1249,7 +1249,11 @@
             <div class="">
               <div class="d-flex flex-column">
                 <div class="me-5">
-                  <img src="../Images/UpdLogo.png" alt="" style="width: 120px" />
+                  <img
+                    src="../Images/UpdLogo.png"
+                    alt=""
+                    style="width: 120px"
+                  />
                 </div>
                 <div class="mt-2">
                   <h3>NATIONAL COLLEGE</h3>
@@ -1408,7 +1412,7 @@
         </div>
       </div>
     </footer>
-    
+
     <!-- Whatsapp -->
     <div class="w-100">
       <a
@@ -1515,6 +1519,20 @@
           }
         };
       })();
+    </script>
+    <script>
+      window.addEventListener("load", () => {
+        setTimeout(() => {
+          const purechat = document.getElementById("purechat-container");
+
+          if (purechat) {
+            purechat.style.zIndex = "1001";
+            purechat.style.bottom = "20px";
+            purechat.style.right = "20px";
+            purechat.style.position = "fixed";
+          }
+        }, 3000);
+      });
     </script>
   </body>
 </html>
