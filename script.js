@@ -27,7 +27,7 @@ window.onload = function () {
       // 🔓 Unlock scroll after loader gone
       document.body.classList.remove("no-scroll");
     }, 1000);
-  }, 3500);
+  }, 1000);
 };
 // Buttonss
 
@@ -98,7 +98,7 @@ window.addEventListener("load", () => {
     modal.classList.add("show");
 
     document.body.style.overflow = "hidden";
-  }, 3000);
+  }, 6000);
 });
 
 /* =============================================
