@@ -2055,11 +2055,10 @@ header {
   z-index: 60;
   display: flex;
   align-items: center;
-  padding: 13px 15px;
+  padding: 10px 20px;
   background-color: #25d366;
-  border-radius: 35px;
+  border-radius: 25px;
   cursor: pointer;
-  box-shadow: 2px 2px 5px #2a985b;
 }
 .float-image span {
   margin-left: 15px;
@@ -2067,7 +2066,7 @@ header {
   font-weight: 600;
 }
 .float-image i {
-  font-size: 30px;
+  font-size: 25px;
 }
 
 /* PopUPs Section */

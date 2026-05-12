@@ -1,3 +1,22 @@
+document.addEventListener("click", function (event) {
+  const navbarCollapse = document.getElementById("navbarNav");
+  const navbarToggler = document.querySelector(".navbar-toggler");
+
+  // CHECK IF NAVBAR IS OPEN
+  const isOpen = navbarCollapse.classList.contains("show");
+
+  // IF CLICK OUTSIDE NAVBAR
+  if (
+    isOpen &&
+    !navbarCollapse.contains(event.target) &&
+    !navbarToggler.contains(event.target)
+  ) {
+    const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+    bsCollapse.hide();
+  }
+});
+
+
 const name = document.getElementById("name");
 const mobile = document.getElementById("mobile");
 const email = document.getElementById("email");
