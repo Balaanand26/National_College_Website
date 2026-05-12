@@ -572,6 +572,12 @@ header {
   .logoContent h2 {
     font-size: 14px !important;
   }
+  .dropdown-menu.mega-menu {
+    margin-top: 5px;
+    margin-left: 0px;
+    width: 290px;
+    padding: 10px;
+  }
 }
 
 /* Hero Section */
@@ -2088,7 +2094,7 @@ header {
   transition:
     transform 0.6s ease,
     opacity 0.5s ease;
-  z-index: 999;
+  z-index: 99999;
   min-width: 240px;
   box-shadow: 0 6px 25px #7e1416;
 }
@@ -2132,7 +2138,6 @@ header {
   .apply-popup {
     padding: 8px 12px;
   }
-
 
   .popup-logo img {
     width: 55px;

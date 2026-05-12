@@ -237,6 +237,12 @@ header {
   .logoContent h2 {
     font-size: 14px !important;
   }
+  .dropdown-menu.mega-menu {
+    margin-top: 5px;
+    margin-left: 0px;
+    width: 290px;
+    padding: 10px;
+  }
 }
 /* Hero Section */
 /* ===== HERO SECTION ===== */
