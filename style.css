@@ -42,7 +42,7 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999;
+  z-index: 999999;
   overflow: hidden;
   transition:
     opacity 0.8s ease,
@@ -2088,7 +2088,7 @@ header {
   transition:
     transform 0.6s ease,
     opacity 0.5s ease;
-  z-index: 999999;
+  z-index: 999;
   min-width: 240px;
   box-shadow: 0 6px 25px #7e1416;
 }
